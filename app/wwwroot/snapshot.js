@@ -36,9 +36,17 @@ form.addEventListener('submit', async (event) => {
   status.textContent = 'Sending your photo…';
 
   try {
+    let jpeg;
+    try {
+      jpeg = await shrink(form.photo.files[0]);
+    } catch {
+      status.textContent = "This browser can't read that photo. Please try a JPEG or PNG.";
+      return;
+    }
+
     const body = new FormData();
     body.append('room', form.room.value);
-    body.append('photo', await shrink(form.photo.files[0]), 'room.jpg');
+    body.append('photo', jpeg, 'room.jpg');
 
     const response = await fetch('/api/snapshots', { method: 'POST', body });
     if (response.status === 429) {
@@ -46,9 +54,10 @@ form.addEventListener('submit', async (event) => {
       return;
     }
 
-    const data = await response.json();
-    if (!response.ok) {
-      status.textContent = data.error;
+    // A proxy timeout or similar error won't have our JSON body.
+    const data = await response.json().catch(() => null);
+    if (!response.ok || !data) {
+      status.textContent = data?.error ?? 'That took too long. Please try again.';
       return;
     }
 

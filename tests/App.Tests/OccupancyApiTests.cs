@@ -173,6 +173,25 @@ public class OccupancyApiTests(WebApplicationFactory<Program> factory) : IClassF
         Assert.Contains("Photo, just now", html);
     }
 
+    private sealed class SlowAnalyzer : ISnapshotAnalyzer
+    {
+        public Task<SnapshotEstimate> AnalyzeAsync(byte[] jpeg, RoomDefinition room, CancellationToken cancellationToken) =>
+            throw new SnapshotTimedOutException();
+    }
+
+    [Fact]
+    public async Task A_slow_analysis_gets_a_clear_error_and_saves_nothing()
+    {
+        var client = Host(services: s => s.AddSingleton<ISnapshotAnalyzer>(new SlowAnalyzer())).CreateClient();
+
+        var response = await client.PostAsync("/api/snapshots", Photo("room-101", Jpeg));
+        var html = await client.GetStringAsync("/?handler=Live");
+
+        Assert.Equal(HttpStatusCode.GatewayTimeout, response.StatusCode);
+        Assert.Contains("too long", await response.Content.ReadAsStringAsync());
+        Assert.DoesNotContain("Photo, just now", html);
+    }
+
     [Fact]
     public async Task A_low_confidence_snapshot_is_not_counted()
     {

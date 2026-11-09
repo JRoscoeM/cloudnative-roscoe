@@ -126,11 +126,9 @@ public sealed class LocalReadingStore(TimeProvider time) : IReadingStore
 {
     private static readonly (string Target, int From, int To)[] Examples =
     [
-        ("main-hall", 560, 612),
-        ("room-101", 95, 116),
-        ("room-102", 31, 31),
-        ("room-201", 60, 60),
-        ("room-202", 52, 66),
+        ("main-hall", 10, 14),
+        ("room-101", 4, 5),
+        ("room-102", 3, 3),
         ("coffee", 14, 14),
         ("lunch", 38, 38),
         ("badges", 4, 4),

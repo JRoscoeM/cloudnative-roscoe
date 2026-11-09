@@ -25,6 +25,20 @@ if (backends.OpenAI is { } openAi)
         new OpenAiSnapshotAnalyzer(openAi, builder.Configuration["OPENAI_MODEL"] ?? "gpt-5-mini"));
 }
 
+builder.Services.AddSingleton<SearchBudget>();
+builder.Services.AddSingleton<TalkFinder>();
+if (backends.Elasticsearch is { } talksClient)
+{
+    var talkSearch = new ElasticTalkSearch(talksClient);
+    builder.Services.AddSingleton(talkSearch);
+    builder.Services.AddSingleton<ITalkSearch>(talkSearch);
+    builder.Services.AddHostedService<TalkIndexer>();
+}
+else
+{
+    builder.Services.AddSingleton<ITalkSearch, LocalTalkSearch>();
+}
+
 builder.Services.AddOccupancyRateLimits();
 // Antiforgery keys live in each pod, so a form rendered by one replica would be
 // rejected by the other. The app has no login or cookies for CSRF to abuse; add

@@ -79,11 +79,11 @@ public class OccupancyApiTests(WebApplicationFactory<Program> factory) : IClassF
         var client = Host().CreateClient();
         var token = await TokenAsync(client, "room-101");
 
-        var response = await ReportAsync(client, "room-101", 42, token);
+        var response = await ReportAsync(client, "room-101", 4, token);
         var html = await client.GetStringAsync("/?handler=Live");
 
         Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
-        Assert.Contains("42 of 120", html);
+        Assert.Contains("4 of 5", html);
     }
 
     [Fact]
@@ -129,7 +129,7 @@ public class OccupancyApiTests(WebApplicationFactory<Program> factory) : IClassF
 
     [Theory]
     [InlineData(-1)]
-    [InlineData(241)]
+    [InlineData(11)]
     public async Task An_impossible_count_is_rejected(int people)
     {
         var client = Host().CreateClient();
@@ -163,13 +163,13 @@ public class OccupancyApiTests(WebApplicationFactory<Program> factory) : IClassF
     [Fact]
     public async Task A_snapshot_updates_the_board_from_fullness()
     {
-        var client = HostWithAnalyzer(new SnapshotEstimate(30, 50, 40, 0.9)).CreateClient();
+        var client = HostWithAnalyzer(new SnapshotEstimate(30, 60, 40, 0.9)).CreateClient();
 
         var response = await client.PostAsync("/api/snapshots", Photo("room-101", Jpeg));
         var html = await client.GetStringAsync("/?handler=Live");
 
         response.EnsureSuccessStatusCode();
-        Assert.Contains("60 of 120", html);
+        Assert.Contains("3 of 5", html);
         Assert.Contains("Photo, just now", html);
     }
 
@@ -284,7 +284,7 @@ public class OccupancyApiTests(WebApplicationFactory<Program> factory) : IClassF
             await ReportAsync(client, "room-101", 1, token: null);
         }
 
-        var response = await ReportAsync(client, "room-101", 42, token);
+        var response = await ReportAsync(client, "room-101", 3, token);
 
         Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
     }
@@ -320,7 +320,7 @@ public class OccupancyApiTests(WebApplicationFactory<Program> factory) : IClassF
         var client = Host(services: s => s.AddSingleton<IReadingStore>(new FailingStore())).CreateClient();
         var token = await TokenAsync(client, "room-101");
 
-        var response = await ReportAsync(client, "room-101", 42, token);
+        var response = await ReportAsync(client, "room-101", 3, token);
 
         Assert.Equal(HttpStatusCode.ServiceUnavailable, response.StatusCode);
     }

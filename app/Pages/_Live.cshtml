@@ -75,6 +75,13 @@ else if (!Model.HasAnyReading)
                         <span>@(item.HasReading ? $"{item.Percent}% full · {item.People} of {item.Capacity}" : $"Holds {item.Capacity}")</span>
                         <span>@item.Outlook</span>
                     </p>
+                    @if (item.Alternative is { } alternative)
+                    {
+                        <p class="room-alternative">
+                            Try instead: <a href="#room-@alternative.RoomId">@alternative.Title</a>
+                            in @alternative.RoomName (@alternative.Percent% full)
+                        </p>
+                    }
                     <p class="room-foot">
                         <span>@item.Freshness</span>
                         <a href="/snapshot?room=@item.Id">Report with a photo</a>

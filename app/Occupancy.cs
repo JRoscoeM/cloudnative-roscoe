@@ -37,7 +37,8 @@ public sealed record RoomStatus(
     int? MinutesToFull,
     MapArea Area,
     string? NextUp = null,
-    string? Freshness = null)
+    string? Freshness = null,
+    TalkAlternative? Alternative = null)
 {
     public bool HasReading => People is not null;
 

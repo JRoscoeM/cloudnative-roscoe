@@ -17,9 +17,9 @@
 
 <section id="schedule" aria-labelledby="schedule-title">
     <h2 id="schedule-title">Schedule</h2>
-    <label for="q">Search sessions</label>
-    <input id="q" name="q" type="search" autocomplete="off" placeholder="Try &quot;panel&quot;"
-           hx-get="/?handler=Results" hx-trigger="input changed delay:200ms, search" hx-target="#results">
+    <label for="q">Find a talk by topic</label>
+    <input id="q" name="q" type="search" autocomplete="off" placeholder="Try &quot;making clusters cheaper&quot;"
+           hx-get="/?handler=Results" hx-trigger="input changed delay:350ms, search" hx-target="#results">
     <ul id="results" class="schedule">
         <partial name="_Results" model="Model.Results" />
     </ul>

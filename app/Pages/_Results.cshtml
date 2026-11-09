@@ -1,10 +1,19 @@
-@model IReadOnlyList<Session>
-@foreach (var session in Model)
+@model IReadOnlyList<TalkResult>
+@foreach (var result in Model)
 {
-    <li>
-        <span class="schedule-time">@session.Time</span>
-        <span class="schedule-title">@session.Title</span>
-        <span class="schedule-room">@session.Room</span>
+    <li class="level-@result.StatusLevel">
+        <span class="schedule-time">@result.Session.Time</span>
+        <span class="schedule-body">
+            <span class="schedule-title">@result.Session.Title</span>
+            <span class="schedule-abstract">@result.Session.Abstract</span>
+        </span>
+        <span class="schedule-meta">
+            <span class="schedule-room">@result.Session.Room</span>
+            @if (result.Status is not null)
+            {
+                <span class="pill">@result.Status</span>
+            }
+        </span>
     </li>
 }
 @if (Model.Count == 0)

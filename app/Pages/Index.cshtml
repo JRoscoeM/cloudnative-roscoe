@@ -1,0 +1,23 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = Model.Info.Team;
+}
+
+<h1>@Model.Info.Team</h1>
+<p>version @Model.Info.Version</p>
+
+<label for="q">Search sessions</label>
+<input id="q" name="q" type="search" autocomplete="off"
+       hx-get="/?handler=Results" hx-trigger="input changed delay:200ms, search" hx-target="#results">
+
+<ul id="results">
+    <partial name="_Results" model="Model.Results" />
+</ul>
+
+<h2>Integrations</h2>
+<ul>
+    <li>Elasticsearch: @(Model.Backends.Elasticsearch is null ? "not configured" : "configured")</li>
+    <li>OpenAI: @(Model.Backends.OpenAI is null ? "not configured" : "configured")</li>
+    <li>Dash0: @(Model.Backends.TelemetryExportEnabled ? "configured" : "not configured")</li>
+</ul>

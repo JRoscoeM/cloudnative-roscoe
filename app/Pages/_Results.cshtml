@@ -1,0 +1,9 @@
+@model IReadOnlyList<Session>
+@foreach (var session in Model)
+{
+    <li>@session.Time · @session.Room · @session.Title</li>
+}
+@if (Model.Count == 0)
+{
+    <li>No matching sessions.</li>
+}

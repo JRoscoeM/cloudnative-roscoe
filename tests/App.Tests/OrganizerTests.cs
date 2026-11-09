@@ -474,6 +474,41 @@ public class ElasticVenueStoreTests
         Assert.Equal("/headroom-venue/_doc/expo", delete.Path);
     }
 
+    private static string SearchBody(params string[] sources) => $$"""
+        {
+          "_index":"headroom-venue","_id":"x","result":"created","_version":1,"_seq_no":0,"_primary_term":1,
+          "_shards":{"total":1,"successful":1,"skipped":0,"failed":0},
+          "took":1,"timed_out":false,
+          "hits":{"total":{"value":{{sources.Length}},"relation":"eq"},"hits":[{{string.Join(",", sources.Select(source => $$"""{"_index":"headroom-venue","_id":"x","_score":1,"_source":{{source}}}"""))}}]}
+        }
+        """;
+
+    private const string MainHall = """{"kind":"room","id":"main-hall","name":"Renamed by an organizer","shortName":"","capacity":99,"secondsPerPerson":0}""";
+    private const string Marker = """{"kind":"setup-complete","id":"__setup-complete","name":"","shortName":"","capacity":0,"secondsPerPerson":0}""";
+
+    private IEnumerable<string> Writes() => _requests.Where(request => request.Method == "PUT" && request.Path.Contains("/_doc/")).Select(request => request.Path);
+
+    [Fact]
+    public async Task An_interrupted_setup_adds_only_what_is_missing()
+    {
+        var venue = await Store(SearchBody(MainHall)).LoadAsync(CancellationToken.None);
+
+        Assert.DoesNotContain("/headroom-venue/_doc/main-hall", Writes());
+        Assert.Contains("/headroom-venue/_doc/coffee", Writes());
+        Assert.Equal("/headroom-venue/_doc/__setup-complete", Writes().Last());
+        Assert.Equal("Renamed by an organizer", venue.FindRoom("main-hall")?.Name);
+        Assert.NotNull(venue.FindQueue("coffee"));
+    }
+
+    [Fact]
+    public async Task A_finished_setup_never_brings_back_a_deleted_default()
+    {
+        var venue = await Store(SearchBody(MainHall, Marker)).LoadAsync(CancellationToken.None);
+
+        Assert.Empty(Writes());
+        Assert.Null(venue.FindQueue("coffee"));
+    }
+
     [Fact]
     public async Task Stored_rooms_and_queues_are_read_back()
     {
@@ -482,7 +517,8 @@ public class ElasticVenueStoreTests
               "took":1,"timed_out":false,"_shards":{"total":1,"successful":1,"skipped":0,"failed":0},
               "hits":{"total":{"value":2,"relation":"eq"},"hits":[
                 {"_index":"headroom-venue","_id":"expo","_score":1,"_source":{"kind":"room","id":"expo","name":"Expo","shortName":"","capacity":40,"secondsPerPerson":0}},
-                {"_index":"headroom-venue","_id":"tea","_score":1,"_source":{"kind":"queue","id":"tea","name":"Tea","shortName":"Tea","capacity":0,"secondsPerPerson":15}}
+                {"_index":"headroom-venue","_id":"tea","_score":1,"_source":{"kind":"queue","id":"tea","name":"Tea","shortName":"Tea","capacity":0,"secondsPerPerson":15}},
+                {"_index":"headroom-venue","_id":"__setup-complete","_score":1,"_source":{"kind":"setup-complete","id":"__setup-complete","name":"","shortName":"","capacity":0,"secondsPerPerson":0}}
               ]}
             }
             """).LoadAsync(CancellationToken.None);

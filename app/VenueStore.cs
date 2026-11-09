@@ -25,6 +25,8 @@ public sealed class ElasticVenueStore(ElasticsearchClient client) : IVenueStore
 
     private const string RoomKind = "room";
     private const string QueueKind = "queue";
+    private const string SetupMarkerKind = "setup-complete";
+    private const string SetupMarkerId = "__setup-complete";
 
     private volatile bool _indexReady;
 
@@ -42,11 +44,12 @@ public sealed class ElasticVenueStore(ElasticsearchClient client) : IVenueStore
 
         var documents = response.Documents.ToList();
 
-        // The dashboard refuses to delete the last room, so no rooms means a new venue.
-        if (documents.All(document => document.Kind != RoomKind))
+        // The marker is written last, so an interrupted setup resumes on the next
+        // load. Once it exists, a deleted default stays deleted.
+        if (documents.All(document => document.Kind != SetupMarkerKind))
         {
-            await SeedAsync(cancellationToken);
-            return Venue.Default;
+            // Not the request's token: a visitor leaving mustn't stop the setup halfway.
+            documents.AddRange(await FinishSetupAsync(documents, CancellationToken.None));
         }
 
         return new VenueSnapshot(
@@ -55,12 +58,16 @@ public sealed class ElasticVenueStore(ElasticsearchClient client) : IVenueStore
     }
 
     public Task SaveRoomAsync(RoomDefinition room, CancellationToken cancellationToken) =>
-        WriteAsync(new VenueDocument { Kind = RoomKind, Id = room.Id, Name = room.Name, Capacity = room.Capacity }, cancellationToken);
+        WriteAsync(ToDocument(room), cancellationToken);
 
     public Task SaveQueueAsync(QueueDefinition queue, CancellationToken cancellationToken) =>
-        WriteAsync(
-            new VenueDocument { Kind = QueueKind, Id = queue.Id, Name = queue.Name, ShortName = queue.ShortName, SecondsPerPerson = queue.SecondsPerPerson },
-            cancellationToken);
+        WriteAsync(ToDocument(queue), cancellationToken);
+
+    private static VenueDocument ToDocument(RoomDefinition room) =>
+        new() { Kind = RoomKind, Id = room.Id, Name = room.Name, Capacity = room.Capacity };
+
+    private static VenueDocument ToDocument(QueueDefinition queue) =>
+        new() { Kind = QueueKind, Id = queue.Id, Name = queue.Name, ShortName = queue.ShortName, SecondsPerPerson = queue.SecondsPerPerson };
 
     public async Task DeleteAsync(string id, CancellationToken cancellationToken)
     {
@@ -85,22 +92,31 @@ public sealed class ElasticVenueStore(ElasticsearchClient client) : IVenueStore
             cancellationToken);
         if (!response.IsValidResponse)
         {
-            throw new VenueStoreException($"Couldn't save {document.Id}: {response.ElasticsearchServerError?.Error?.Type}");
+            var reason = response.ElasticsearchServerError?.Error?.Type ?? response.ApiCallDetails.OriginalException?.GetType().Name;
+            throw new VenueStoreException($"Couldn't save {document.Id}: {reason}");
         }
     }
 
-    private async Task SeedAsync(CancellationToken cancellationToken)
+    /// <summary>
+    /// Adds only the defaults that are missing, so anything an organizer has
+    /// already changed is left alone. Fixed ids make it safe for both replicas
+    /// to run at once. Returns the documents it added.
+    /// </summary>
+    private async Task<List<VenueDocument>> FinishSetupAsync(List<VenueDocument> existing, CancellationToken cancellationToken)
     {
-        // Fixed ids, so both replicas seeding at once write the same documents.
-        foreach (var room in Venue.Default.Rooms)
+        var existingIds = existing.Select(document => document.Id).ToHashSet();
+        var missing = Venue.Default.Rooms.Select(ToDocument)
+            .Concat(Venue.Default.Queues.Select(ToDocument))
+            .Where(document => !existingIds.Contains(document.Id))
+            .ToList();
+
+        foreach (var document in missing)
         {
-            await SaveRoomAsync(room, cancellationToken);
+            await WriteAsync(document, cancellationToken);
         }
 
-        foreach (var queue in Venue.Default.Queues)
-        {
-            await SaveQueueAsync(queue, cancellationToken);
-        }
+        await WriteAsync(new VenueDocument { Kind = SetupMarkerKind, Id = SetupMarkerId }, cancellationToken);
+        return missing;
     }
 
     private async Task EnsureIndexAsync(CancellationToken cancellationToken)

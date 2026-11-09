@@ -19,6 +19,16 @@ spec:
         prometheus.io/scrape: "true"
         prometheus.io/port: "8080"
     spec:
+      # The app never calls the Kubernetes API, so it doesn't need a token.
+      automountServiceAccountToken: false
+      # ScheduleAnyway: prefer separate nodes, but never block a rollout over it.
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              app: app
       containers:
         - name: app
           image: app
@@ -30,6 +40,10 @@ spec:
               value: "roscoe"
             - name: OTEL_EXPORTER_OTLP_PROTOCOL
               value: http/protobuf
+            # ASP.NET writes its keys under the home directory, so point it at
+            # the one writable path. The root filesystem is read-only.
+            - name: HOME
+              value: /tmp
           # Provider credentials, created outside git (see the README). Optional,
           # so the app still starts before the Secret exists.
           envFrom:
@@ -53,10 +67,19 @@ spec:
               path: /healthz
               port: http
             periodSeconds: 10
+          # Photo uploads and .NET's runtime files need somewhere to write.
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
           securityContext:
             runAsNonRoot: true
             allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
             seccompProfile:
               type: RuntimeDefault
             capabilities:
               drop: ["ALL"]
+      volumes:
+        - name: tmp
+          emptyDir:
+            sizeLimit: 64Mi

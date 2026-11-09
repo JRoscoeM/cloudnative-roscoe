@@ -1,6 +1,7 @@
 using App;
 using Elastic.Clients.Elasticsearch;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.StaticFiles;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +10,22 @@ var info = new AppInfo(
     Version: builder.Configuration["APP_VERSION"] ?? "dev");
 
 builder.Services.AddSingleton(info);
-builder.Services.AddSingleton(Backends.FromConfiguration(builder.Configuration));
+var backends = Backends.FromConfiguration(builder.Configuration);
+builder.Services.AddSingleton(backends);
+builder.Services.AddSingleton(TimeProvider.System);
+builder.Services.AddMemoryCache();
+builder.Services.AddSingleton<BoardService>();
+builder.Services.AddSingleton(new SensorAuth(builder.Configuration["SENSOR_KEY"]));
+builder.Services.AddSingleton<IReadingStore>(services => backends.Elasticsearch is { } elastic
+    ? new ElasticReadingStore(elastic)
+    : new LocalReadingStore(services.GetRequiredService<TimeProvider>()));
+if (backends.OpenAI is { } openAi)
+{
+    builder.Services.AddSingleton<ISnapshotAnalyzer>(
+        new OpenAiSnapshotAnalyzer(openAi, builder.Configuration["OPENAI_MODEL"] ?? "gpt-5-mini"));
+}
+
+builder.Services.AddOccupancyRateLimits();
 // Antiforgery keys live in each pod, so a form rendered by one replica would be
 // rejected by the other. The app has no login or cookies for CSRF to abuse; add
 // shared Data Protection keys before removing this or adding authentication.
@@ -19,8 +35,24 @@ builder.AddAppTelemetry(info);
 
 var app = builder.Build();
 
-app.UseStaticFiles();
+var contentTypes = new FileExtensionContentTypeProvider();
+contentTypes.Mappings[".mjs"] = "text/javascript";
+contentTypes.Mappings[".tflite"] = "application/octet-stream";
+app.UseStaticFiles(new StaticFileOptions
+{
+    ContentTypeProvider = contentTypes,
+    OnPrepareResponse = context =>
+    {
+        // The detector is about 17 MB and pinned to a version, so phones keep it.
+        if (context.Context.Request.Path.StartsWithSegments("/vendor"))
+        {
+            context.Context.Response.Headers.CacheControl = "public, max-age=86400";
+        }
+    },
+});
+app.UseRateLimiter();
 app.MapRazorPages();
+app.MapOccupancyApi();
 
 // Kubernetes probes. Deliberately independent of Elasticsearch and OpenAI: an
 // outage at a provider should show as errors, not as pods being restarted.

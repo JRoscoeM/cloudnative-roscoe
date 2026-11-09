@@ -1,0 +1,100 @@
+@model Board
+
+@if (Model.IsSample)
+{
+    <p class="notice"><strong>Sample data.</strong> No database is connected, so these numbers are examples.</p>
+}
+else if (Model.DataUnavailable)
+{
+    <p class="notice"><strong>Live counts are unavailable right now.</strong> This page will catch up on its own.</p>
+}
+else if (!Model.HasAnyReading)
+{
+    <p class="notice"><strong>No live readings yet.</strong> Counts appear as soon as a sensor or an attendee's photo reports in.</p>
+}
+
+@if (Model.MostSpace is not null || Model.ShortestLine is not null || Model.FillingFastest is not null)
+{
+    <section aria-labelledby="best-title">
+        <h2 id="best-title">Best right now</h2>
+        <div class="best">
+            @if (Model.MostSpace is { } room)
+            {
+                <a class="best-card" href="#room-@room.Id">
+                    <span class="best-label">Most space</span>
+                    <span class="best-name">@room.Name</span>
+                    <span class="best-detail">@room.Percent% full · @room.TalkText</span>
+                </a>
+            }
+            @if (Model.ShortestLine is { } line)
+            {
+                <a class="best-card" href="#line-@line.Id">
+                    <span class="best-label">Shortest line</span>
+                    <span class="best-name">@line.Name</span>
+                    <span class="best-detail">@line.WaitText · @line.PeopleText</span>
+                </a>
+            }
+            @if (Model.FillingFastest is { } filling)
+            {
+                <a class="best-card" href="#room-@filling.Id">
+                    <span class="best-label">Filling fastest</span>
+                    <span class="best-name">@filling.Name</span>
+                    <span class="best-detail">@filling.Outlook · @filling.TalkText</span>
+                </a>
+            }
+        </div>
+    </section>
+}
+
+<div class="columns">
+    <section class="map-section" aria-labelledby="map-title">
+        <h2 id="map-title">Floor plan</h2>
+        <partial name="_FloorPlan" model="Model" />
+        <ul class="legend" aria-label="What the colors mean">
+            <li class="level-open"><span class="swatch"></span>Open: under 60%</li>
+            <li class="level-filling"><span class="swatch"></span>Filling: 60–84%</li>
+            <li class="level-packed"><span class="swatch"></span>Packed: 85–99%</li>
+            <li class="level-full"><span class="swatch"></span>Full</li>
+            <li class="level-unknown"><span class="swatch"></span>No reading</li>
+        </ul>
+    </section>
+
+    <section aria-labelledby="rooms-title">
+        <h2 id="rooms-title">Rooms <small>most space first</small></h2>
+        <ul class="rooms">
+            @foreach (var item in Model.RoomsWithMostSpaceFirst)
+            {
+                <li id="room-@item.Id" class="room level-@item.Level.ToString().ToLowerInvariant()">
+                    <div class="room-head">
+                        <h3>@item.Name</h3>
+                        <span class="pill">@(item.HasReading ? item.Level.ToString() : "No reading")</span>
+                    </div>
+                    <p class="room-talk">@item.TalkText</p>
+                    <div class="meter" role="img" aria-label="@(item.HasReading ? $"{item.Percent} percent full" : "No reading yet")"><span style="width: @item.Percent%"></span></div>
+                    <p class="room-stats">
+                        <span>@(item.HasReading ? $"{item.Percent}% full · {item.People} of {item.Capacity}" : $"Holds {item.Capacity}")</span>
+                        <span>@item.Outlook</span>
+                    </p>
+                    <p class="room-foot">
+                        <span>@item.Freshness</span>
+                        <a href="/snapshot?room=@item.Id">Report with a photo</a>
+                    </p>
+                </li>
+            }
+        </ul>
+    </section>
+</div>
+
+<section aria-labelledby="lines-title">
+    <h2 id="lines-title">Lines</h2>
+    <ul class="lines">
+        @foreach (var queue in Model.Queues)
+        {
+            <li id="line-@queue.Id" class="line">
+                <h3>@queue.Name</h3>
+                <p class="line-wait">@queue.WaitText</p>
+                <p class="line-people">@queue.PeopleText</p>
+            </li>
+        }
+    </ul>
+</section>

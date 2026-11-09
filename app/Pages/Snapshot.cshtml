@@ -1,0 +1,43 @@
+@page "/snapshot"
+@model SnapshotModel
+@{
+    ViewData["Title"] = "Report a room · Headroom";
+}
+
+<header class="intro">
+    <h1>Report a room</h1>
+    <p>Take one photo from the back of the room, and we'll update how full it looks for everyone.</p>
+</header>
+
+<form id="snapshot-form" class="panel">
+    <label for="room">Room</label>
+    <select id="room" name="room" required>
+        <option value="">Choose a room</option>
+        @foreach (var room in Venue.Rooms)
+        {
+            <option value="@room.Id" selected="@(room.Id == Model.Room)">@room.Name</option>
+        }
+    </select>
+
+    <label for="photo">Photo</label>
+    <input id="photo" name="photo" type="file" accept="image/*" capture="environment" required>
+
+    <p class="privacy">
+        Your photo is sent to OpenAI to estimate how full the room is, then discarded.
+        We don't store it, only the numbers. Please avoid close-ups of people.
+    </p>
+
+    <button class="button" type="submit">Send photo</button>
+    <p id="snapshot-status" class="status" role="status"></p>
+</form>
+
+<section id="snapshot-result" class="panel" hidden aria-labelledby="result-title">
+    <h2 id="result-title">Thanks</h2>
+    <p class="result-figure"><span id="result-percent"></span> full</p>
+    <p id="result-detail"></p>
+    <p><a href="/#map-title">Back to the map</a></p>
+</section>
+
+@section Scripts {
+    <script type="module" src="/snapshot.js"></script>
+}

@@ -9,8 +9,18 @@
     @* Dash0 website monitoring: paste the snippet from your Dash0 account here. *@
 </head>
 <body>
+    <div class="brand-bar">
+        <a class="brand" href="/">Headroom</a>
+        <nav aria-label="Page sections">
+            <a href="/#map-title">Map</a>
+            <a href="/#rooms-title">Rooms</a>
+            <a href="/#lines-title">Lines</a>
+            <a href="/#schedule-title">Schedule</a>
+        </nav>
+    </div>
     <main>
         @RenderBody()
     </main>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

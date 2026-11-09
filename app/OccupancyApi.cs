@@ -97,6 +97,7 @@ public static class OccupancyApi
         SensorAuth auth,
         IReadingStore store,
         TimeProvider time,
+        ILogger<IReadingStore> logger,
         CancellationToken cancellationToken)
     {
         if (!auth.Enabled)
@@ -121,7 +122,7 @@ public static class OccupancyApi
         }
 
         var reading = new Reading(target, ReadingSource.Sensor, request.People, Math.Clamp(request.Confidence, 0, 1), time.GetUtcNow());
-        return await SaveAsync(store, reading, cancellationToken) ? Results.NoContent() : StoreUnavailable();
+        return await SaveAsync(store, reading, logger, cancellationToken) ? Results.NoContent() : StoreUnavailable();
     }
 
     private static async Task<IResult> AddSnapshot(
@@ -131,6 +132,7 @@ public static class OccupancyApi
         SnapshotBudget budget,
         IReadingStore store,
         TimeProvider time,
+        ILogger<IReadingStore> logger,
         CancellationToken cancellationToken)
     {
         if (analyzer is null)
@@ -184,7 +186,7 @@ public static class OccupancyApi
             // Fullness, not the head count: a photo rarely shows the whole room.
             var people = (int)Math.Round(definition.Capacity * estimate.FullnessPercent / 100d);
             var reading = new Reading(definition.Id, ReadingSource.Snapshot, people, estimate.Confidence, time.GetUtcNow());
-            if (!await SaveAsync(store, reading, cancellationToken))
+            if (!await SaveAsync(store, reading, logger, cancellationToken))
             {
                 return StoreUnavailable();
             }
@@ -201,7 +203,11 @@ public static class OccupancyApi
         });
     }
 
-    private static async Task<bool> SaveAsync(IReadingStore store, Reading reading, CancellationToken cancellationToken)
+    private static async Task<bool> SaveAsync(
+        IReadingStore store,
+        Reading reading,
+        ILogger logger,
+        CancellationToken cancellationToken)
     {
         try
         {
@@ -209,6 +215,7 @@ public static class OccupancyApi
         }
         catch (Exception e) when (e is ReadingStoreException or HttpRequestException or Elastic.Transport.TransportException)
         {
+            logger.LogError(e, "Couldn't save a {Source} reading", reading.Source);
             return false;
         }
 

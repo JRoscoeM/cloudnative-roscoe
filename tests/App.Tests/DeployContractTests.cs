@@ -74,6 +74,16 @@ public class DeployContractTests : IClassFixture<WebApplicationFactory<Program>>
     }
 
     [Fact]
+    public async Task Htmx_is_served_by_the_app()
+    {
+        var html = await _client.GetStringAsync("/");
+        var script = await _client.GetAsync("/htmx.min.js");
+
+        Assert.Contains("src=\"/htmx.min.js\"", html);
+        script.EnsureSuccessStatusCode();
+    }
+
+    [Fact]
     public async Task Search_returns_a_fragment_for_htmx()
     {
         var html = await _client.GetStringAsync("/?handler=Results&q=panel");

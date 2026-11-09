@@ -32,7 +32,8 @@ public static class OccupancyApi
             options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
             AddWindow(options, SetupPolicy, permitsPerMinute: 10, ClientKey);
             AddWindow(options, SensorPolicy, permitsPerMinute: 30, SensorKey);
-            AddWindow(options, SnapshotPolicy, permitsPerMinute: 3, ClientKey);
+            // Attendees on venue Wi-Fi can share one address, so leave some room.
+            AddWindow(options, SnapshotPolicy, permitsPerMinute: 5, ClientKey);
         });
     }
 
@@ -55,11 +56,11 @@ public static class OccupancyApi
         BearerToken(context) ?? ClientKey(context);
 
     // Behind the platform's proxy every connection has the same address, so use
-    // the original client from the forwarded header. A caller can fake this to
-    // get more attempts, which is why SnapshotBudget doesn't depend on it.
+    // the forwarded header. Only the last entry counts: the proxy appends it,
+    // while a caller can put anything in the entries before it.
     private static string ClientKey(HttpContext context)
     {
-        var forwarded = context.Request.Headers["X-Forwarded-For"].ToString().Split(',')[0].Trim();
+        var forwarded = context.Request.Headers["X-Forwarded-For"].ToString().Split(',')[^1].Trim();
         return forwarded.Length > 0 ? forwarded : context.Connection.RemoteIpAddress?.ToString() ?? "unknown";
     }
 

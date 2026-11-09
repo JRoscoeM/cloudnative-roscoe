@@ -214,7 +214,7 @@ public class OccupancyApiTests(WebApplicationFactory<Program> factory) : IClassF
     {
         var client = HostWithAnalyzer(new SnapshotEstimate(30, 50, 40, 0.9)).CreateClient();
 
-        for (var attempt = 0; attempt < 3; attempt++)
+        for (var attempt = 0; attempt < 5; attempt++)
         {
             (await SendPhotoAsync(client, "203.0.113.1", Jpeg)).EnsureSuccessStatusCode();
         }
@@ -227,7 +227,26 @@ public class OccupancyApiTests(WebApplicationFactory<Program> factory) : IClassF
     }
 
     [Fact]
-    public async Task Faked_callers_still_hit_the_openai_budget()
+    public async Task A_faked_forwarded_address_gets_no_extra_setup_guesses()
+    {
+        var client = Host().CreateClient();
+
+        HttpStatusCode last = default;
+        for (var attempt = 0; attempt < 11; attempt++)
+        {
+            var request = new HttpRequestMessage(HttpMethod.Post, "/api/sensor/token")
+            {
+                Content = JsonContent.Create(new { target = "room-101", setupKey = "wrong" }),
+            };
+            request.Headers.Add("X-Forwarded-For", $"198.51.100.{attempt}, 203.0.113.9");
+            last = (await client.SendAsync(request)).StatusCode;
+        }
+
+        Assert.Equal(HttpStatusCode.TooManyRequests, last);
+    }
+
+    [Fact]
+    public async Task Many_callers_still_hit_the_openai_budget()
     {
         var client = HostWithAnalyzer(new SnapshotEstimate(30, 50, 40, 0.9)).CreateClient();
 

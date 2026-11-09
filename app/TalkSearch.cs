@@ -24,10 +24,12 @@ public interface ITalkSearch
 /// </summary>
 public sealed class ElasticTalkSearch(ElasticsearchClient client) : ITalkSearch
 {
-    public const string IndexName = "headroom-talks";
-    // Few talks in the index, so a longer list would just be weak matches.
-    private const int SearchResultCount = 5;
-    private const int SimilarResultCount = 8;
+    public const string IndexName = "livevision-talks";
+    private const int SearchResultCount = 8;
+
+    // Most similar talks won't be on right now, so fetch enough to find one that is.
+    private const int SimilarResultCount = 40;
+    private const int BulkBatchSize = 50;
 
     private const string Mapping = """
         {
@@ -35,7 +37,6 @@ public sealed class ElasticTalkSearch(ElasticsearchClient client) : ITalkSearch
             "properties": {
               "sessionId": { "type": "integer" },
               "title": { "type": "text" },
-              "abstract": { "type": "text" },
               "semantic_content": { "type": "semantic_text" }
             }
           }
@@ -51,24 +52,44 @@ public sealed class ElasticTalkSearch(ElasticsearchClient client) : ITalkSearch
             throw new TalkSearchException($"Couldn't create the talk index: {create.ApiCallDetails.HttpStatusCode}");
         }
 
-        var bulk = new StringBuilder();
-        foreach (var session in sessions)
+        // Every talk needs an embedding, so don't redo them each time a pod starts.
+        if (await CountAsync(cancellationToken) == sessions.Count)
         {
-            bulk.Append($$$"""{"index":{"_id":"{{{session.Id}}}"}}""").Append('\n');
-            bulk.Append(JsonSerializer.Serialize(new Dictionary<string, object>
-            {
-                ["sessionId"] = session.Id,
-                ["title"] = session.Title,
-                ["abstract"] = session.Abstract,
-                ["semantic_content"] = SemanticText(session),
-            })).Append('\n');
+            return;
         }
 
-        var written = await SendAsync(Elastic.Transport.HttpMethod.POST, $"/{IndexName}/_bulk?refresh=wait_for", bulk.ToString(), cancellationToken);
-        if (!written.ApiCallDetails.HasSuccessfulStatusCode || written.Body.Contains("\"errors\":true"))
+        foreach (var batch in sessions.Chunk(BulkBatchSize))
         {
-            throw new TalkSearchException($"Couldn't index the talks: {written.ApiCallDetails.HttpStatusCode}");
+            var bulk = new StringBuilder();
+            foreach (var session in batch)
+            {
+                bulk.Append($$$"""{"index":{"_id":"{{{session.Id}}}"}}""").Append('\n');
+                bulk.Append(JsonSerializer.Serialize(new Dictionary<string, object>
+                {
+                    ["sessionId"] = session.Id,
+                    ["title"] = session.Title,
+                    ["semantic_content"] = SemanticText(session),
+                })).Append('\n');
+            }
+
+            var written = await SendAsync(Elastic.Transport.HttpMethod.POST, $"/{IndexName}/_bulk?refresh=wait_for", bulk.ToString(), cancellationToken);
+            if (!written.ApiCallDetails.HasSuccessfulStatusCode || written.Body.Contains("\"errors\":true"))
+            {
+                throw new TalkSearchException($"Couldn't index the talks: {written.ApiCallDetails.HttpStatusCode}");
+            }
         }
+    }
+
+    private async Task<long> CountAsync(CancellationToken cancellationToken)
+    {
+        var response = await SendAsync(Elastic.Transport.HttpMethod.POST, $"/{IndexName}/_count", """{"query":{"match_all":{}}}""", cancellationToken);
+        if (!response.ApiCallDetails.HasSuccessfulStatusCode)
+        {
+            return -1;
+        }
+
+        using var document = JsonDocument.Parse(response.Body);
+        return document.RootElement.TryGetProperty("count", out var count) ? count.GetInt64() : -1;
     }
 
     public Task<IReadOnlyList<int>> SearchAsync(string query, CancellationToken cancellationToken)
@@ -84,7 +105,7 @@ public sealed class ElasticTalkSearch(ElasticsearchClient client) : ITalkSearch
                 "rrf": {
                   "rank_window_size": 20,
                   "retrievers": [
-                    { "standard": { "query": { "multi_match": { "query": {{text}}, "fields": ["title^2", "abstract"] } } } },
+                    { "standard": { "query": { "multi_match": { "query": {{text}}, "fields": ["title"] } } } },
                     { "standard": { "query": { "semantic": { "field": "semantic_content", "query": {{text}} } } } }
                   ]
                 }
@@ -132,7 +153,7 @@ public sealed class ElasticTalkSearch(ElasticsearchClient client) : ITalkSearch
         CancellationToken cancellationToken) =>
         client.Transport.RequestAsync<StringResponse>(new EndpointPath(method, path), PostData.String(body), cancellationToken: cancellationToken);
 
-    private static string SemanticText(Session session) => $"{session.Title}. {session.Abstract}";
+    private static string SemanticText(Session session) => session.Title;
 }
 
 /// <summary>For running without Elasticsearch: keywords only.</summary>

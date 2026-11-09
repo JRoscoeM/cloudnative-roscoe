@@ -26,17 +26,17 @@ public static class BoardBuilder
         var estimate = OccupancyEstimator.Estimate(readings, now);
         var minutesToFull = estimate is null
             ? null
-            : FillForecast.MinutesToFull(readings, estimate.People, room.Capacity, now, Schedule.InUseUntil(room.Id, now));
+            : FillForecast.MinutesToFull(readings, estimate.People, room.Capacity, now, Schedule.InUseUntil(VenueIds.Slug(room.Name), now));
 
         return new RoomStatus(
             room.Id,
             room.Name,
-            Schedule.Current(room.Id, now)?.Title,
+            Schedule.Current(VenueIds.Slug(room.Name), now)?.Title,
             room.Capacity,
             estimate?.People,
             minutesToFull,
             area,
-            NextUpText(room.Id, now),
+            NextUpText(VenueIds.Slug(room.Name), now),
             estimate is null ? null : OccupancyEstimator.Describe(estimate, now));
     }
 
@@ -61,7 +61,7 @@ public static class BoardBuilder
             return null;
         }
 
-        var startsIn = next.StartsOn(Schedule.VenueDay(now)) - now;
+        var startsIn = next.Starts - now;
         return startsIn <= NextTalkHorizon ? $"Next talk in {Math.Max(1, (int)startsIn.TotalMinutes)} min" : null;
     }
 }

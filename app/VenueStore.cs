@@ -287,7 +287,8 @@ public sealed class VenueService(IVenueStore store, IMemoryCache cache, ILogger<
 public static class VenueIds
 {
     /// <summary>A URL-safe id from a name, kept unique across rooms and queues.</summary>
-    public static string New(string name, VenueSnapshot venue)
+    /// <summary>A URL-safe form of a name. Also how a room is matched to its talks.</summary>
+    public static string Slug(string name)
     {
         var slug = new StringBuilder();
         foreach (var character in name.Trim().ToLowerInvariant())
@@ -302,8 +303,13 @@ public static class VenueIds
             }
         }
 
-        var baseId = slug.ToString().Trim('-');
-        baseId = baseId.Length == 0 ? "space" : baseId;
+        var result = slug.ToString().Trim('-');
+        return result.Length == 0 ? "space" : result;
+    }
+
+    public static string New(string name, VenueSnapshot venue)
+    {
+        var baseId = Slug(name);
 
         var id = baseId;
         for (var suffix = 2; venue.IsKnownTarget(id); suffix++)

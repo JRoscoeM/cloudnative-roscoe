@@ -619,7 +619,7 @@ input[type="search"] {
 
 .schedule li {
   display: grid;
-  grid-template-columns: 3.5rem minmax(0, 1fr) auto;
+  grid-template-columns: 5.5rem minmax(0, 1fr) auto;
   gap: 0.75rem;
   padding: 0.625rem 1rem;
   border-top: 1px solid var(--line);
@@ -628,7 +628,6 @@ input[type="search"] {
 .schedule-body, .schedule-meta { display: flex; flex-direction: column; }
 .schedule-meta { align-items: flex-end; gap: 0.25rem; }
 .schedule-title { font-weight: 600; }
-.schedule-abstract { color: var(--muted); font-size: 0.875rem; }
 
 .room-alternative {
   margin-top: 0.5rem;

@@ -43,7 +43,7 @@ public sealed class BoardService(
         var rooms = new List<RoomStatus>(board.Rooms.Count);
         foreach (var room in board.Rooms)
         {
-            var current = room.Level is Busyness.Packed or Busyness.Full ? Schedule.Current(room.Id, now) : null;
+            var current = room.Level is Busyness.Packed or Busyness.Full ? Schedule.Current(room.ScheduleKey, now) : null;
             if (current is null)
             {
                 rooms.Add(room);

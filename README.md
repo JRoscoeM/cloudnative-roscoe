@@ -15,7 +15,7 @@ Start here if your team has its own cluster at the hackathon: a virtual Kubernet
 - **Talk search:** hybrid keyword and semantic search in Elasticsearch, and "try instead" suggestions when a room is packed.
 - **Organizer dashboard:** `/organizer` edits rooms and lines, creates sensor links, and shows site health from the cluster's Prometheus.
 
-Rooms and lines start from `app/Venue.cs` and are then managed from the dashboard. Talks in `app/Schedule.cs` are placeholders.
+Rooms and lines start from `app/Venue.cs` and are then managed from the dashboard. Talks come from the public KubeCon + CloudNativeCon North America 2026 schedule, stored in `app/talks.json` (titles, times and rooms only). A room shows its talks when its name matches the schedule, such as `Hall DE`.
 
 | Part | Choice |
 |---|---|

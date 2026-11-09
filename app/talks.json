@@ -1,0 +1,5186 @@
+[
+{
+"id": 1344383,
+"date": "2026-11-08",
+"time": "09:00",
+"end": "18:00",
+"roomId": "off-site-location",
+"room": "Off-Site Location",
+"title": "Agent Rush Hackathon Hosted by Vultr | SOLD OUT"
+},
+{
+"id": 1379082,
+"date": "2026-11-08",
+"time": "09:00",
+"end": "17:30",
+"roomId": "250-a-c",
+"room": "250 A-C",
+"title": "CNCF Maintainer Summit [SOLD OUT]"
+},
+{
+"id": 1309278,
+"date": "2026-11-09",
+"time": "08:00",
+"end": "15:00",
+"roomId": "off-site-location",
+"room": "Off-Site Location",
+"title": "OpenShift Commons Gathering Hosted by Red Hat | SEPARATE REGISTRATION REQUIRED"
+},
+{
+"id": 1341814,
+"date": "2026-11-09",
+"time": "08:00",
+"end": "18:00",
+"roomId": "off-site-location",
+"room": "Off-Site Location",
+"title": "Microsoft Azure Day with Kubernetes | SEPARATE REGISTRATION REQUIRED"
+},
+{
+"id": 1345255,
+"date": "2026-11-09",
+"time": "08:30",
+"end": "17:00",
+"roomId": "off-site-location",
+"room": "Off-Site Location",
+"title": "DSX OS AI Inference and Contributor Workshop Hosted by NVIDIA | SOLD OUT"
+},
+{
+"id": 1356273,
+"date": "2026-11-09",
+"time": "08:30",
+"end": "12:30",
+"roomId": "off-site-location",
+"room": "Off-Site Location",
+"title": "Building, Scaling + Running Secure Agents on Kubernetes with AWS | SEPARATE REGISTRATION REQUIRED"
+},
+{
+"id": 1289755,
+"date": "2026-11-09",
+"time": "09:00",
+"end": "17:30",
+"roomId": "151",
+"room": "151",
+"title": "ArgoCon Hosted by CNCF - Full Day Event | ALL ACCESS PASS REQUIRED"
+},
+{
+"id": 1289756,
+"date": "2026-11-09",
+"time": "09:00",
+"end": "17:30",
+"roomId": "255-ef",
+"room": "255 EF",
+"title": "BackstageCon Hosted by CNCF - Full Day Event | ALL ACCESS PASS REQUIRED"
+},
+{
+"id": 1289758,
+"date": "2026-11-09",
+"time": "09:00",
+"end": "12:25",
+"roomId": "grand-ballroom-j",
+"room": "Grand Ballroom J",
+"title": "CiliumCon Hosted by CNCF - Half Day Event | ALL ACCESS PASS REQUIRED"
+},
+{
+"id": 1289760,
+"date": "2026-11-09",
+"time": "09:00",
+"end": "17:30",
+"roomId": "254",
+"room": "254",
+"title": "Cloud Native AI + Inference Day Hosted by CNCF - Full Day Event | ALL ACCESS PASS REQUIRED"
+},
+{
+"id": 1289762,
+"date": "2026-11-09",
+"time": "09:00",
+"end": "12:25",
+"roomId": "grand-ballroom-h",
+"room": "Grand Ballroom H",
+"title": "FluxCon Hosted by CNCF - Half Day Event | ALL ACCESS PASS REQUIRED"
+},
+{
+"id": 1289769,
+"date": "2026-11-09",
+"time": "09:00",
+"end": "17:30",
+"roomId": "250-a-c",
+"room": "250 A-C",
+"title": "Observability Day Hosted by CNCF - Full Day Event | ALL ACCESS PASS REQUIRED"
+},
+{
+"id": 1289771,
+"date": "2026-11-09",
+"time": "09:00",
+"end": "17:30",
+"roomId": "255-bc",
+"room": "255 BC",
+"title": "Open Source SecurityCon Hosted by CNCF - Full Day Event | ALL ACCESS PASS REQUIRED"
+},
+{
+"id": 1289774,
+"date": "2026-11-09",
+"time": "09:00",
+"end": "17:30",
+"roomId": "grand-ballroom-bdf",
+"room": "Grand Ballroom BDF",
+"title": "Platform Engineering Day Hosted by CNCF - Full Day Event | ALL ACCESS PASS REQUIRED"
+},
+{
+"id": 1289780,
+"date": "2026-11-09",
+"time": "09:00",
+"end": "17:30",
+"roomId": "grand-ballroom-ace",
+"room": "Grand Ballroom ACE",
+"title": "Agentics Day: MCP + Agents Hosted by CNCF - Full Day Event | ALL ACCESS PASS REQUIRED"
+},
+{
+"id": 1289955,
+"date": "2026-11-09",
+"time": "09:30",
+"end": "09:35",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Project Lightning Talk Opening/ Intro"
+},
+{
+"id": 1339971,
+"date": "2026-11-09",
+"time": "09:30",
+"end": "15:00",
+"roomId": "off-site-location",
+"room": "Off-Site Location",
+"title": "Hands-On with Apple Open Source Tooling Hosted by Apple | SOLD OUT"
+},
+{
+"id": 1289969,
+"date": "2026-11-09",
+"time": "09:37",
+"end": "09:52",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Project Lightning Talk - Project Overview"
+},
+{
+"id": 1289828,
+"date": "2026-11-09",
+"time": "09:54",
+"end": "09:59",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Kubernetes under Fire: Igniting Performance and Burning Through Bottlenecks with Kube-Burner"
+},
+{
+"id": 1289832,
+"date": "2026-11-09",
+"time": "10:01",
+"end": "10:06",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "OpenChoreo: Developer Platform for Both Humans and Agents"
+},
+{
+"id": 1289876,
+"date": "2026-11-09",
+"time": "10:08",
+"end": "10:13",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Architecture Without Gatekeepers: Decoupling for Neutrality"
+},
+{
+"id": 1289834,
+"date": "2026-11-09",
+"time": "10:15",
+"end": "10:20",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Cloud Native MySQL"
+},
+{
+"id": 1289835,
+"date": "2026-11-09",
+"time": "10:22",
+"end": "10:27",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Celebrate Flux's 10 Years!"
+},
+{
+"id": 1289892,
+"date": "2026-11-09",
+"time": "10:29",
+"end": "10:34",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Container Builds at Scale with Buildpacks"
+},
+{
+"id": 1336214,
+"date": "2026-11-09",
+"time": "10:30",
+"end": "19:00",
+"roomId": "off-site-location",
+"room": "Off-Site Location",
+"title": "KubeAuto Day North America with Kelsey Hightower Hosted by Cast AI | SEPARATE REGISTRATION REQUIRED"
+},
+{
+"id": 1289836,
+"date": "2026-11-09",
+"time": "10:36",
+"end": "10:41",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Simplifying Distributed LLM Serving: What's New in KServe"
+},
+{
+"id": 1289915,
+"date": "2026-11-09",
+"time": "10:43",
+"end": "10:48",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Extending the Immutable OS: Adding Tools to Flatcar with Systemd-Sysext"
+},
+{
+"id": 1289870,
+"date": "2026-11-09",
+"time": "11:03",
+"end": "11:08",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Monitoring Power at Planet Scale with Kepler"
+},
+{
+"id": 1331660,
+"date": "2026-11-09",
+"time": "11:10",
+"end": "11:15",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Maintaining at Agent Speed with Hive Commons"
+},
+{
+"id": 1289872,
+"date": "2026-11-09",
+"time": "11:17",
+"end": "11:22",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "From Kernel to Kubectl in 30 Seconds: eBPF Observability with Inspektor Gadget"
+},
+{
+"id": 1289874,
+"date": "2026-11-09",
+"time": "11:24",
+"end": "11:29",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Fluent Bit: The Evolution of High-Performance Telemetry Pipelines"
+},
+{
+"id": 1289875,
+"date": "2026-11-09",
+"time": "11:31",
+"end": "11:36",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "LitmusChaos 2026: What’s New & What’s Next"
+},
+{
+"id": 1370530,
+"date": "2026-11-09",
+"time": "11:38",
+"end": "11:43",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Supply Chain Security at Home: From Source to Service Without the Hassle"
+},
+{
+"id": 1289877,
+"date": "2026-11-09",
+"time": "11:45",
+"end": "11:50",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Secure Your Agents in 5 Minutes: Durable Execution with Cadence"
+},
+{
+"id": 1289878,
+"date": "2026-11-09",
+"time": "11:52",
+"end": "11:57",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Scaling Across the Horizon: Dynamic Hardware Composability for Distributed LLM Inference via CoHDI"
+},
+{
+"id": 1289881,
+"date": "2026-11-09",
+"time": "11:59",
+"end": "12:04",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "k8gb Is Growing up: Incubating Global Load Balancing for Kubernetes"
+},
+{
+"id": 1328916,
+"date": "2026-11-09",
+"time": "12:00",
+"end": "17:30",
+"roomId": "off-site-location",
+"room": "Off-Site Location",
+"title": "Distributed SQL Summit Hosted by YugabyteDB | SEPARATE REGISTRATION REQUIRED"
+},
+{
+"id": 1367685,
+"date": "2026-11-09",
+"time": "12:00",
+"end": "16:00",
+"roomId": "off-site-location",
+"room": "Off-Site Location",
+"title": "Stateful Done Right Hosted by Cockroach Labs | SOLD OUT"
+},
+{
+"id": 1289883,
+"date": "2026-11-09",
+"time": "12:06",
+"end": "12:11",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Hub → Managed Cluster: How Long Did the Workload Take? Did It Arrive?"
+},
+{
+"id": 1289885,
+"date": "2026-11-09",
+"time": "12:13",
+"end": "12:18",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Multi-Cluster Orchestration System: Karmada Updates and Use Cases"
+},
+{
+"id": 1289886,
+"date": "2026-11-09",
+"time": "12:20",
+"end": "12:25",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "K3s Lightning Update"
+},
+{
+"id": 1289889,
+"date": "2026-11-09",
+"time": "12:27",
+"end": "12:32",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "What Changes When Crossplane Adoption Gets Real"
+},
+{
+"id": 1309279,
+"date": "2026-11-09",
+"time": "12:30",
+"end": "17:00",
+"roomId": "off-site-location",
+"room": "Off-Site Location",
+"title": "VM on Kubernetes Day Hosted by Portworx by Everpure | SEPARATE REGISTRATION REQUIRED"
+},
+{
+"id": 1356091,
+"date": "2026-11-09",
+"time": "12:30",
+"end": "16:30",
+"roomId": "off-site-location",
+"room": "Off-Site Location",
+"title": "Accelerate Platform Engineering on Kubernetes Hosted by AWS | SEPARATE REGISTRATION REQUIRED"
+},
+{
+"id": 1289890,
+"date": "2026-11-09",
+"time": "12:34",
+"end": "12:39",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "etcd Operator, Rebuilt and Ready"
+},
+{
+"id": 1289891,
+"date": "2026-11-09",
+"time": "12:41",
+"end": "12:46",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Is Service Mesh for Everyone?"
+},
+{
+"id": 1289767,
+"date": "2026-11-09",
+"time": "13:25",
+"end": "17:30",
+"roomId": "255-a",
+"room": "255 A",
+"title": "Kubernetes on Edge Day Hosted by CNCF - Half Day Event | ALL ACCESS PASS REQUIRED"
+},
+{
+"id": 1289773,
+"date": "2026-11-09",
+"time": "13:25",
+"end": "17:30",
+"roomId": "grand-ballroom-h",
+"room": "Grand Ballroom H",
+"title": "OpenTofu Day Hosted by CNCF - Half Day Event | ALL ACCESS PASS REQUIRED"
+},
+{
+"id": 1289970,
+"date": "2026-11-09",
+"time": "13:37",
+"end": "13:42",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Project Lightning Talk - Project Overview"
+},
+{
+"id": 1289972,
+"date": "2026-11-09",
+"time": "13:54",
+"end": "13:59",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Meshery: Your Cluster as a Knowledge Graph, Not a Pile of YAML"
+},
+{
+"id": 1328984,
+"date": "2026-11-09",
+"time": "14:00",
+"end": "17:00",
+"roomId": "off-site-location",
+"room": "Off-Site Location",
+"title": "Discovering and Securing AI Agents in Kubernetes Hosted by Tigera | SEPARATE REGISTRATION REQUIRED"
+},
+{
+"id": 1289893,
+"date": "2026-11-09",
+"time": "14:01",
+"end": "14:06",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Envoy Turns 10: From Lyft’s Sidecar to the Front Door of AI"
+},
+{
+"id": 1325640,
+"date": "2026-11-09",
+"time": "14:08",
+"end": "14:13",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Rego Without Borders: Breaking Down Language Barriers for Security Policy"
+},
+{
+"id": 1289896,
+"date": "2026-11-09",
+"time": "14:15",
+"end": "14:20",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "KitOps: The Whole Kit for AI Agents"
+},
+{
+"id": 1289897,
+"date": "2026-11-09",
+"time": "14:22",
+"end": "14:27",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "What’s New in Kairos, 2026 Edition"
+},
+{
+"id": 1289901,
+"date": "2026-11-09",
+"time": "14:29",
+"end": "14:34",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Kyverno: The Supercharged Future of Cloud Native Policy as Code"
+},
+{
+"id": 1289902,
+"date": "2026-11-09",
+"time": "14:36",
+"end": "14:41",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Lightning Harbor Update"
+},
+{
+"id": 1289904,
+"date": "2026-11-09",
+"time": "14:43",
+"end": "14:48",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Flatcar Container Linux: Growing the Cloud Native OS Ecosystem"
+},
+{
+"id": 1345969,
+"date": "2026-11-09",
+"time": "15:00",
+"end": "16:00",
+"roomId": "capitol-reef",
+"room": "Capitol Reef",
+"title": "Peer Group Mentoring"
+},
+{
+"id": 1289905,
+"date": "2026-11-09",
+"time": "15:03",
+"end": "15:08",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Cedar Authorization with Incomplete Information"
+},
+{
+"id": 1289906,
+"date": "2026-11-09",
+"time": "15:10",
+"end": "15:15",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Metal3 Project Update! Whats New and Exciting?"
+},
+{
+"id": 1289907,
+"date": "2026-11-09",
+"time": "15:17",
+"end": "15:22",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Atlantis: What's New in IaC Orchestration"
+},
+{
+"id": 1289909,
+"date": "2026-11-09",
+"time": "15:24",
+"end": "15:29",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Longhorn: The 2026 Wrap-up Edition"
+},
+{
+"id": 1289910,
+"date": "2026-11-09",
+"time": "15:31",
+"end": "15:36",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "ORAS Go v3: Batteries-Included Registry SDK"
+},
+{
+"id": 1289912,
+"date": "2026-11-09",
+"time": "15:38",
+"end": "15:43",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "k0s - CNCF Sandbox Distro Updates"
+},
+{
+"id": 1289913,
+"date": "2026-11-09",
+"time": "15:45",
+"end": "15:50",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Velero: Faster Backups, Consistent Snapshots, Incremental Everything"
+},
+{
+"id": 1289914,
+"date": "2026-11-09",
+"time": "15:52",
+"end": "15:57",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "What's New in OVN-Kubernetes?"
+},
+{
+"id": 1289871,
+"date": "2026-11-09",
+"time": "15:59",
+"end": "16:04",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Your Go-to Compliance-as-Skill: OSCAL Compass"
+},
+{
+"id": 1363748,
+"date": "2026-11-09",
+"time": "16:00",
+"end": "17:30",
+"roomId": "off-site-location",
+"room": "Off-Site Location",
+"title": "AgentCore Workshop with AWS & Sonrai Security | SEPARATE REGISTRATION REQUIRED"
+},
+{
+"id": 1375159,
+"date": "2026-11-09",
+"time": "16:06",
+"end": "16:11",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Kagent 1.0 with Agent Substrate"
+},
+{
+"id": 1375161,
+"date": "2026-11-09",
+"time": "16:13",
+"end": "16:18",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Your Routes, My Rules: Making Gateway API Work at Enterprise Scale"
+},
+{
+"id": 1374348,
+"date": "2026-11-09",
+"time": "16:20",
+"end": "16:25",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "KAI Scheduler: What's New & What's Next in AI Workload Orchestration"
+},
+{
+"id": 1374350,
+"date": "2026-11-09",
+"time": "16:27",
+"end": "16:32",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Stop Templating YAML: Build Configuration Supply Chains with kpt and Porch"
+},
+{
+"id": 1289971,
+"date": "2026-11-09",
+"time": "16:32",
+"end": "16:35",
+"roomId": "regency-ballroom-b-d",
+"room": "Regency Ballroom B-D",
+"title": "Project Lightning Talk Closing"
+},
+{
+"id": 1375964,
+"date": "2026-11-09",
+"time": "18:30",
+"end": "19:30",
+"roomId": "151",
+"room": "151",
+"title": "Documentary Premiere: The Linkerd Story: The People Behind the Service Mesh"
+},
+{
+"id": 1302801,
+"date": "2026-11-10",
+"time": "09:00",
+"end": "09:31",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Welcome + Opening Remarks"
+},
+{
+"id": 1367757,
+"date": "2026-11-10",
+"time": "09:33",
+"end": "09:40",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Agent Substrate: Open Layers for Agentic Systems"
+},
+{
+"id": 1301696,
+"date": "2026-11-10",
+"time": "09:42",
+"end": "09:47",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Engineering Kubernetes for the Next Era of Workloads"
+},
+{
+"id": 1363682,
+"date": "2026-11-10",
+"time": "09:49",
+"end": "09:56",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Building the Next Generation of AI with Open Source"
+},
+{
+"id": 1301749,
+"date": "2026-11-10",
+"time": "09:58",
+"end": "10:03",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Sandbox Your Agents"
+},
+{
+"id": 1349401,
+"date": "2026-11-10",
+"time": "10:05",
+"end": "10:13",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Pods in the Wild: Reinforcement Learning on Kubernetes with OpenRL"
+},
+{
+"id": 1295993,
+"date": "2026-11-10",
+"time": "10:15",
+"end": "10:20",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "The Harness Is the New Runtime"
+},
+{
+"id": 1362673,
+"date": "2026-11-10",
+"time": "10:22",
+"end": "10:27",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "One Kubernetes, Different Environments: Closing the Portability Gaps"
+},
+{
+"id": 1309267,
+"date": "2026-11-10",
+"time": "10:29",
+"end": "10:39",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "The Identity Crisis: Who is the AI Agent in Your Cluster?"
+},
+{
+"id": 1380168,
+"date": "2026-11-10",
+"time": "10:41",
+"end": "10:46",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "From Pod to Actuator: Physical AI and the Future of Kubernetes"
+},
+{
+"id": 1302802,
+"date": "2026-11-10",
+"time": "10:44",
+"end": "10:45",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Closing Remarks"
+},
+{
+"id": 1369670,
+"date": "2026-11-10",
+"time": "10:45",
+"end": "11:15",
+"roomId": "halls-a-c-halls-1-5",
+"room": "Halls A-C, Halls 1-5",
+"title": "Gold In-Booth Demos: Cloudsmith, Temporal"
+},
+{
+"id": 1373663,
+"date": "2026-11-10",
+"time": "10:45",
+"end": "14:30",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "Project Pavilion Kiosks | Tuesday Morning"
+},
+{
+"id": 1376186,
+"date": "2026-11-10",
+"time": "10:45",
+"end": "19:30",
+"roomId": "halls-a-c-halls-1-5",
+"room": "Halls A-C, Halls 1-5",
+"title": "Explore the Poster Showcase"
+},
+{
+"id": 1374035,
+"date": "2026-11-10",
+"time": "10:50",
+"end": "11:10",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: Agentic AI Needs Agentic Infrastructure: Autonomy on Kubernetes"
+},
+{
+"id": 1341032,
+"date": "2026-11-10",
+"time": "10:55",
+"end": "11:15",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "Project Pavilion Tour with Atulpriya Sharma, CNCF Ambassador"
+},
+{
+"id": 1333733,
+"date": "2026-11-10",
+"time": "11:00",
+"end": "11:02",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Welcome to Cloud Native University"
+},
+{
+"id": 1336486,
+"date": "2026-11-10",
+"time": "11:00",
+"end": "12:00",
+"roomId": "grand-ballroom-j",
+"room": "Grand Ballroom J",
+"title": "Women's Community Gathering"
+},
+{
+"id": 1369438,
+"date": "2026-11-10",
+"time": "11:00",
+"end": "11:20",
+"roomId": "network-nook",
+"room": "Network Nook",
+"title": "Network Nook Meetup: 1st Time Attendees"
+},
+{
+"id": 1371070,
+"date": "2026-11-10",
+"time": "11:00",
+"end": "11:15",
+"roomId": "starlight-summit-zone",
+"room": "Starlight Summit Zone",
+"title": "Cloud Native With a Chance of Tokens: Building the Skills for AI Inference"
+},
+{
+"id": 1382533,
+"date": "2026-11-10",
+"time": "11:02",
+"end": "11:14",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "KubeCon + CloudNativeCon Kickoff: Your Map for the Week"
+},
+{
+"id": 1361484,
+"date": "2026-11-10",
+"time": "11:15",
+"end": "11:35",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: Stop Running Mystery Meat in Production"
+},
+{
+"id": 1333734,
+"date": "2026-11-10",
+"time": "11:17",
+"end": "11:29",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "KubeSchool - Learn the Easiest Way Possible"
+},
+{
+"id": 1202489,
+"date": "2026-11-10",
+"time": "11:30",
+"end": "12:00",
+"roomId": "grand-ballroom-bdf",
+"room": "Grand Ballroom BDF",
+"title": "Securing Rural Colorado with Open Source: Running a Student-Led SOC on Kubernetes"
+},
+{
+"id": 1227395,
+"date": "2026-11-10",
+"time": "11:30",
+"end": "12:00",
+"roomId": "151",
+"room": "151",
+"title": "Why We Bet the Data Platform on Kubernetes - And How AI Is Changing How We Operate It"
+},
+{
+"id": 1233585,
+"date": "2026-11-10",
+"time": "11:30",
+"end": "12:00",
+"roomId": "255-bc",
+"room": "255 BC",
+"title": "Your Agent Needs a Platform: Cloud Native Infrastructure for Multi-Agent AI Systems"
+},
+{
+"id": 1244710,
+"date": "2026-11-10",
+"time": "11:30",
+"end": "12:00",
+"roomId": "255-ef",
+"room": "255 EF",
+"title": "Will Your Gateway Leave You High and Dry?"
+},
+{
+"id": 1246200,
+"date": "2026-11-10",
+"time": "11:30",
+"end": "12:00",
+"roomId": "grand-ballroom-h",
+"room": "Grand Ballroom H",
+"title": "Ask Your Platform: Putting AI to Work Where the Questions Live"
+},
+{
+"id": 1246765,
+"date": "2026-11-10",
+"time": "11:30",
+"end": "12:00",
+"roomId": "salt-lake-ballroom-c",
+"room": "Salt Lake Ballroom C",
+"title": "One Recipe, Five Clouds, One Query: Portable GPU Configuration with a Queryable Audit Layer"
+},
+{
+"id": 1247249,
+"date": "2026-11-10",
+"time": "11:30",
+"end": "12:00",
+"roomId": "salt-lake-ballroom-de",
+"room": "Salt Lake Ballroom DE",
+"title": "Mythos vs Maintainers: Drowning in the Vulnerability Tsunami"
+},
+{
+"id": 1249351,
+"date": "2026-11-10",
+"time": "11:30",
+"end": "12:00",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "Next Generation DevOps: Reshaping the Cloud Native DevOps Infinity Loop with AI"
+},
+{
+"id": 1249749,
+"date": "2026-11-10",
+"time": "11:30",
+"end": "12:00",
+"roomId": "grand-ballroom-gi",
+"room": "Grand Ballroom GI",
+"title": "So You Want to Build a Platform? You Probably Already Have One"
+},
+{
+"id": 1250326,
+"date": "2026-11-10",
+"time": "11:30",
+"end": "12:50",
+"roomId": "regency-ballroom-a",
+"room": "Regency Ballroom A",
+"title": "Autoscaling Reality Check: The Hands-On HTTP Optimization Challenge"
+},
+{
+"id": 1250350,
+"date": "2026-11-10",
+"time": "11:30",
+"end": "12:00",
+"roomId": "grand-ballroom-ace",
+"room": "Grand Ballroom ACE",
+"title": "Saturated by Design - Maximizing Cluster Allocation in On-Premises Kubernetes"
+},
+{
+"id": 1289694,
+"date": "2026-11-10",
+"time": "11:30",
+"end": "12:00",
+"roomId": "251-a-c",
+"room": "251 A-C",
+"title": "Steering the Ship: Ask the Kubernetes Steering Committee"
+},
+{
+"id": 1289709,
+"date": "2026-11-10",
+"time": "11:30",
+"end": "12:00",
+"roomId": "254",
+"room": "254",
+"title": "SIG Autoscaling Project Updates"
+},
+{
+"id": 1289716,
+"date": "2026-11-10",
+"time": "11:30",
+"end": "12:00",
+"roomId": "251-d-f",
+"room": "251 D-F",
+"title": "New Traffic, New Rules: Standardizing AI-Aware Networking in Kubernetes"
+},
+{
+"id": 1289730,
+"date": "2026-11-10",
+"time": "11:30",
+"end": "12:00",
+"roomId": "250-d-f",
+"room": "250 D-F",
+"title": "SIG Network Intro and Updates"
+},
+{
+"id": 1294764,
+"date": "2026-11-10",
+"time": "11:30",
+"end": "12:50",
+"roomId": "255-a",
+"room": "255 A",
+"title": "Harbor ContribFest"
+},
+{
+"id": 1294771,
+"date": "2026-11-10",
+"time": "11:30",
+"end": "12:50",
+"roomId": "255-d",
+"room": "255 D",
+"title": "OpenTelemetry Contribfest"
+},
+{
+"id": 1335605,
+"date": "2026-11-10",
+"time": "11:30",
+"end": "12:00",
+"roomId": "250-a-c",
+"room": "250 A-C",
+"title": "SIG Instrumentation Introduction and Deep Dive"
+},
+{
+"id": 1364870,
+"date": "2026-11-10",
+"time": "11:30",
+"end": "13:30",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "🚩 An Introduction to Capture The Flag"
+},
+{
+"id": 1333735,
+"date": "2026-11-10",
+"time": "11:32",
+"end": "11:44",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Cloud Native Operators and You"
+},
+{
+"id": 1378907,
+"date": "2026-11-10",
+"time": "11:40",
+"end": "12:00",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: DO NOT Give AI Agents Credentials!"
+},
+{
+"id": 1334785,
+"date": "2026-11-10",
+"time": "11:47",
+"end": "11:59",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "AI on Kubernetes Is Just a Pod With a GPU (and That's the Problem)"
+},
+{
+"id": 1334787,
+"date": "2026-11-10",
+"time": "12:02",
+"end": "12:14",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Supply Chain, Runtime and SDLC: A Cloud Native Security Overview"
+},
+{
+"id": 1361493,
+"date": "2026-11-10",
+"time": "12:05",
+"end": "12:25",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo: How Hertz Made Karpenter and standard EKS Smarter with autonomous AI-Driven Optimization"
+},
+{
+"id": 1334788,
+"date": "2026-11-10",
+"time": "12:17",
+"end": "12:29",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Cluster API in 15 Minutes. A Primer on Declarative Kubernetes Infrastructure"
+},
+{
+"id": 1202627,
+"date": "2026-11-10",
+"time": "12:20",
+"end": "12:50",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "I Packaged My Application in a Container Image, and Now What?"
+},
+{
+"id": 1241594,
+"date": "2026-11-10",
+"time": "12:20",
+"end": "12:50",
+"roomId": "255-ef",
+"room": "255 EF",
+"title": "No Network? No Problem: How We Designed for Kubernetes Nodes Running in Air-Gapped VPCs"
+},
+{
+"id": 1246033,
+"date": "2026-11-10",
+"time": "12:20",
+"end": "12:50",
+"roomId": "grand-ballroom-gi",
+"room": "Grand Ballroom GI",
+"title": "When Infrastructure Breaks in Production: How EarnIn Brought Testing to the Full CNCF Stack"
+},
+{
+"id": 1247300,
+"date": "2026-11-10",
+"time": "12:20",
+"end": "12:50",
+"roomId": "151",
+"room": "151",
+"title": "Signed, Sealed, Denied: Attestation-Driven Admission with Kyverno + CEL at AT&T"
+},
+{
+"id": 1248038,
+"date": "2026-11-10",
+"time": "12:20",
+"end": "12:50",
+"roomId": "255-bc",
+"room": "255 BC",
+"title": "LTS, EOL, CVEs: Solutions for Stress-Inducing Scenarios"
+},
+{
+"id": 1249819,
+"date": "2026-11-10",
+"time": "12:20",
+"end": "12:50",
+"roomId": "salt-lake-ballroom-c",
+"room": "Salt Lake Ballroom C",
+"title": "Platform Engineering after the AI Hype: Why IDPs Must Become Intent-Driven"
+},
+{
+"id": 1249997,
+"date": "2026-11-10",
+"time": "12:20",
+"end": "12:50",
+"roomId": "grand-ballroom-ace",
+"room": "Grand Ballroom ACE",
+"title": "Surviving the Churn: Read Replicas and Controllers for Busy Kubernetes Clusters"
+},
+{
+"id": 1250838,
+"date": "2026-11-10",
+"time": "12:20",
+"end": "12:50",
+"roomId": "salt-lake-ballroom-de",
+"room": "Salt Lake Ballroom DE",
+"title": "If It's Shared, It's Vulnerable: Is Kubernetes the Right Platform for Confidential Compute?"
+},
+{
+"id": 1250865,
+"date": "2026-11-10",
+"time": "12:20",
+"end": "12:50",
+"roomId": "grand-ballroom-h",
+"room": "Grand Ballroom H",
+"title": "What the Docs Don't Tell You: A Telecom's Year Operating Cache-Aware LLM Inference on Kubernetes"
+},
+{
+"id": 1251252,
+"date": "2026-11-10",
+"time": "12:20",
+"end": "12:50",
+"roomId": "grand-ballroom-bdf",
+"room": "Grand Ballroom BDF",
+"title": "Stop Explaining Kubernetes Like a Kubernetes Engineer"
+},
+{
+"id": 1289647,
+"date": "2026-11-10",
+"time": "12:20",
+"end": "12:50",
+"roomId": "254",
+"room": "254",
+"title": "The Next Generation of Kyverno — Unified Policy as Code at Scale"
+},
+{
+"id": 1289670,
+"date": "2026-11-10",
+"time": "12:20",
+"end": "12:50",
+"roomId": "250-a-c",
+"room": "250 A-C",
+"title": "Beyond Model Serving: Running Production LLMs on Kubernetes with KServe"
+},
+{
+"id": 1289675,
+"date": "2026-11-10",
+"time": "12:20",
+"end": "12:50",
+"roomId": "251-a-c",
+"room": "251 A-C",
+"title": "CRI-O: Plug It, Tune It, Share It — Extending and Accelerating Your Runtime"
+},
+{
+"id": 1289704,
+"date": "2026-11-10",
+"time": "12:20",
+"end": "12:50",
+"roomId": "250-d-f",
+"room": "250 D-F",
+"title": "The Latest in GPU, TPU, NIC and Other Device Support - WG Device Management"
+},
+{
+"id": 1289732,
+"date": "2026-11-10",
+"time": "12:20",
+"end": "12:50",
+"roomId": "251-d-f",
+"room": "251 D-F",
+"title": "One Platform for AuthN and AuthZ: Keycloak Meets AuthZEN"
+},
+{
+"id": 1336495,
+"date": "2026-11-10",
+"time": "12:30",
+"end": "13:30",
+"roomId": "grand-ballroom-j",
+"room": "Grand Ballroom J",
+"title": "Friends of Dorothy Community Gathering (LGBTQ+)"
+},
+{
+"id": 1361545,
+"date": "2026-11-10",
+"time": "12:30",
+"end": "12:50",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: All the Ways to Add OpenTelemetry Without Touching Your Code"
+},
+{
+"id": 1333738,
+"date": "2026-11-10",
+"time": "12:32",
+"end": "12:44",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "CNCF Bingo: Play, Learn, Win!!!!!!"
+},
+{
+"id": 1334804,
+"date": "2026-11-10",
+"time": "12:44",
+"end": "12:45",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Cloud Native University Closing Remarks"
+},
+{
+"id": 1362463,
+"date": "2026-11-10",
+"time": "12:55",
+"end": "13:15",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: Agent Observability: Evaluating and Guardrailing Responses in Real Time"
+},
+{
+"id": 1334791,
+"date": "2026-11-10",
+"time": "13:00",
+"end": "13:05",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "EnvoyCon Opening Remarks"
+},
+{
+"id": 1334794,
+"date": "2026-11-10",
+"time": "13:05",
+"end": "13:15",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Evolution of Agentic Networking Stack in Envoy"
+},
+{
+"id": 1369442,
+"date": "2026-11-10",
+"time": "13:15",
+"end": "14:15",
+"roomId": "network-nook",
+"room": "Network Nook",
+"title": "Network Nook Meetup: 1st Time Attendees"
+},
+{
+"id": 1369668,
+"date": "2026-11-10",
+"time": "13:15",
+"end": "13:45",
+"roomId": "halls-a-c-halls-1-5",
+"room": "Halls A-C, Halls 1-5",
+"title": "Gold In-Booth Demos: Komodor, Vultr"
+},
+{
+"id": 1371071,
+"date": "2026-11-10",
+"time": "13:15",
+"end": "13:30",
+"roomId": "starlight-summit-zone",
+"room": "Starlight Summit Zone",
+"title": "Your Cluster Is a Dataset: Indexing Kubernetes Objects in OpenSearch"
+},
+{
+"id": 1334795,
+"date": "2026-11-10",
+"time": "13:17",
+"end": "13:27",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Extending Envoy for Secure, Scalable Connectivity"
+},
+{
+"id": 1341034,
+"date": "2026-11-10",
+"time": "13:20",
+"end": "13:40",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "Project Pavilion Tour with Oscar Castillo, CNCF Ambassador"
+},
+{
+"id": 1362466,
+"date": "2026-11-10",
+"time": "13:20",
+"end": "13:40",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: Agentic Karpenter: Using kagent + Claude to Tune Your Autoscaling"
+},
+{
+"id": 1334796,
+"date": "2026-11-10",
+"time": "13:29",
+"end": "13:39",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Guardrails, Not Gatekeepers: Envoy Gateway in the Enterprise"
+},
+{
+"id": 1370500,
+"date": "2026-11-10",
+"time": "13:40",
+"end": "14:05",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "CNCF Project Demos"
+},
+{
+"id": 1334797,
+"date": "2026-11-10",
+"time": "13:41",
+"end": "13:51",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "ListenerSets: Ingress → Gateway API"
+},
+{
+"id": 1369612,
+"date": "2026-11-10",
+"time": "13:45",
+"end": "14:05",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: CSI won’t Save You - Why “CSI Support” Is Not a Storage Strategy"
+},
+{
+"id": 1369669,
+"date": "2026-11-10",
+"time": "13:45",
+"end": "14:15",
+"roomId": "halls-a-c-halls-1-5",
+"room": "Halls A-C, Halls 1-5",
+"title": "Gold In-Booth Demos: vCluster"
+},
+{
+"id": 1336019,
+"date": "2026-11-10",
+"time": "13:53",
+"end": "14:03",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "You don't have to migrate everything — Envoy is the Bridge Between Your Old World and Your New One."
+},
+{
+"id": 1368996,
+"date": "2026-11-10",
+"time": "14:00",
+"end": "16:00",
+"roomId": "north-grand-ballroom-foyer",
+"room": "North Grand Ballroom Foyer",
+"title": "Pet-a-Pup"
+},
+{
+"id": 1371074,
+"date": "2026-11-10",
+"time": "14:00",
+"end": "14:15",
+"roomId": "starlight-summit-zone",
+"room": "Starlight Summit Zone",
+"title": "CKA Under Pressure... A Better Way to Practice"
+},
+{
+"id": 1334800,
+"date": "2026-11-10",
+"time": "14:05",
+"end": "14:20",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "(Maintainer) From FIFO to Fair Share: Extensible Queuing"
+},
+{
+"id": 1362469,
+"date": "2026-11-10",
+"time": "14:10",
+"end": "14:30",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: Using Kubernetes to run distributed AI workloads across heterogeneous infrastructure"
+},
+{
+"id": 1369671,
+"date": "2026-11-10",
+"time": "14:15",
+"end": "14:45",
+"roomId": "halls-a-c-halls-1-5",
+"room": "Halls A-C, Halls 1-5",
+"title": "Gold In-Booth Demos: Couchbase, Tigera, Veeam Kasten"
+},
+{
+"id": 1370912,
+"date": "2026-11-10",
+"time": "14:15",
+"end": "14:40",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "Technical Oversight Committee: Ask the Experts"
+},
+{
+"id": 1334801,
+"date": "2026-11-10",
+"time": "14:23",
+"end": "14:33",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Keeping Envoy Boring in an eBPF Datapath (Cilium L7)"
+},
+{
+"id": 1336504,
+"date": "2026-11-10",
+"time": "14:30",
+"end": "15:30",
+"roomId": "grand-ballroom-j",
+"room": "Grand Ballroom J",
+"title": "Neurodiversity Community Gathering"
+},
+{
+"id": 1362546,
+"date": "2026-11-10",
+"time": "14:35",
+"end": "14:55",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: One Kubernetes API for VMs, without Rebuilding the Infrastructure Beneath It"
+},
+{
+"id": 1334803,
+"date": "2026-11-10",
+"time": "14:38",
+"end": "14:45",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "EnvoyCon Closing Remarks"
+},
+{
+"id": 1205589,
+"date": "2026-11-10",
+"time": "14:50",
+"end": "15:20",
+"roomId": "grand-ballroom-h",
+"room": "Grand Ballroom H",
+"title": "Turning Apple Silicon into Production GPU Nodes for LLM Inference on Kubernetes"
+},
+{
+"id": 1223002,
+"date": "2026-11-10",
+"time": "14:50",
+"end": "15:20",
+"roomId": "255-bc",
+"room": "255 BC",
+"title": "You Don’t Have to Choose: Argo and Flux Are Friends!"
+},
+{
+"id": 1236746,
+"date": "2026-11-10",
+"time": "14:50",
+"end": "15:20",
+"roomId": "salt-lake-ballroom-de",
+"room": "Salt Lake Ballroom DE",
+"title": "Gone in 60 Minutes: Effectively Close the Exploitable Window with Detection as Code"
+},
+{
+"id": 1239823,
+"date": "2026-11-10",
+"time": "14:50",
+"end": "15:20",
+"roomId": "grand-ballroom-ace",
+"room": "Grand Ballroom ACE",
+"title": "Tracing at Scale: Running a 16 Billion Spans/Hour Pipeline at Nubank"
+},
+{
+"id": 1243089,
+"date": "2026-11-10",
+"time": "14:50",
+"end": "15:20",
+"roomId": "salt-lake-ballroom-c",
+"room": "Salt Lake Ballroom C",
+"title": "The Prompt Layer: What Platform Engineering Has to Own Next"
+},
+{
+"id": 1246044,
+"date": "2026-11-10",
+"time": "14:50",
+"end": "15:20",
+"roomId": "regency-ballroom-b",
+"room": "Regency Ballroom B",
+"title": "I Built an AI Running Coach: A Personal kagent Agent in Production"
+},
+{
+"id": 1247277,
+"date": "2026-11-10",
+"time": "14:50",
+"end": "15:20",
+"roomId": "255-ef",
+"room": "255 EF",
+"title": "From Bytes to Traces: A Deep Dive into OpenTelemetry eBPF Instrumentation Internals"
+},
+{
+"id": 1247376,
+"date": "2026-11-10",
+"time": "14:50",
+"end": "15:20",
+"roomId": "151",
+"room": "151",
+"title": "The Operator Calls Are Coming from Inside the Namespace"
+},
+{
+"id": 1250324,
+"date": "2026-11-10",
+"time": "14:50",
+"end": "16:10",
+"roomId": "regency-ballroom-a",
+"room": "Regency Ballroom A",
+"title": "Beyond One Model per GPU: Agent-Driven Placement for Maximum GPU Utilization on Kubernetes"
+},
+{
+"id": 1250487,
+"date": "2026-11-10",
+"time": "14:50",
+"end": "15:20",
+"roomId": "grand-ballroom-gi",
+"room": "Grand Ballroom GI",
+"title": "The New Scaling Matrix: Balancing In-Place Resizing, VPA, HPA and Automation Solutions"
+},
+{
+"id": 1250961,
+"date": "2026-11-10",
+"time": "14:50",
+"end": "15:20",
+"roomId": "grand-ballroom-bdf",
+"room": "Grand Ballroom BDF",
+"title": "Zero to Maintainer in 45 Days: An AI-Assisted Migration of a CNCF Project's Legacy Frontend"
+},
+{
+"id": 1250980,
+"date": "2026-11-10",
+"time": "14:50",
+"end": "15:20",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "Feeding the GPU: Streaming Data into Training, Lakehouse, and Serving without the Serialization Tax"
+},
+{
+"id": 1289633,
+"date": "2026-11-10",
+"time": "14:50",
+"end": "15:20",
+"roomId": "251-a-c",
+"room": "251 A-C",
+"title": "AI Found a 0-Day in Metal3. What Happens Next?"
+},
+{
+"id": 1289634,
+"date": "2026-11-10",
+"time": "14:50",
+"end": "15:20",
+"roomId": "250-a-c",
+"room": "250 A-C",
+"title": "Building Better Integration Test Images with Buildpacks"
+},
+{
+"id": 1289635,
+"date": "2026-11-10",
+"time": "14:50",
+"end": "15:20",
+"roomId": "250-d-f",
+"room": "250 D-F",
+"title": "How Kubernetes Handles AI Generated Security Reports"
+},
+{
+"id": 1289636,
+"date": "2026-11-10",
+"time": "14:50",
+"end": "15:20",
+"roomId": "251-d-f",
+"room": "251 D-F",
+"title": "HAMi Levels up: Smarter Scheduling, Wider Hardware Reach and a DRA-Native Lightweight Future"
+},
+{
+"id": 1289637,
+"date": "2026-11-10",
+"time": "14:50",
+"end": "15:20",
+"roomId": "254",
+"room": "254",
+"title": "Emissary-Ingress: State of the Project"
+},
+{
+"id": 1294759,
+"date": "2026-11-10",
+"time": "14:50",
+"end": "16:10",
+"roomId": "255-d",
+"room": "255 D",
+"title": "Set Sail with Istio: Developing a Production Service Mesh"
+},
+{
+"id": 1294760,
+"date": "2026-11-10",
+"time": "14:50",
+"end": "16:10",
+"roomId": "255-a",
+"room": "255 A",
+"title": "Podman Contribfest"
+},
+{
+"id": 1306051,
+"date": "2026-11-10",
+"time": "14:50",
+"end": "15:20",
+"roomId": "capitol-reef",
+"room": "Capitol Reef",
+"title": "Becoming an Impactful CNCF Member"
+},
+{
+"id": 1370503,
+"date": "2026-11-10",
+"time": "14:50",
+"end": "16:25",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "CNCF Project Demos"
+},
+{
+"id": 1333748,
+"date": "2026-11-10",
+"time": "15:00",
+"end": "15:05",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "KyvernoCon Opening Remarks"
+},
+{
+"id": 1362558,
+"date": "2026-11-10",
+"time": "15:00",
+"end": "15:20",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: Agent Substrate: Secure, High-Density Sandboxing for AI Agents"
+},
+{
+"id": 1373665,
+"date": "2026-11-10",
+"time": "15:00",
+"end": "19:30",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "Project Pavilion Kiosks | Tuesday Afternoon"
+},
+{
+"id": 1334816,
+"date": "2026-11-10",
+"time": "15:15",
+"end": "15:40",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "After Admission: Kernel Enforcement for Agents Kyverno Let In"
+},
+{
+"id": 1362578,
+"date": "2026-11-10",
+"time": "15:25",
+"end": "15:45",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: Giving AI Agents an Identity: A Secure Runtime with Teleport Beams"
+},
+{
+"id": 1208416,
+"date": "2026-11-10",
+"time": "15:40",
+"end": "16:10",
+"roomId": "grand-ballroom-h",
+"room": "Grand Ballroom H",
+"title": "Transforming Retail with AI: From Automation to Autonomous Decisioning"
+},
+{
+"id": 1241330,
+"date": "2026-11-10",
+"time": "15:40",
+"end": "16:10",
+"roomId": "regency-ballroom-b",
+"room": "Regency Ballroom B",
+"title": "Just Keep Swimming: Benchmarking OSS Agent Memory on Kubernetes with OpenTelemetry"
+},
+{
+"id": 1243292,
+"date": "2026-11-10",
+"time": "15:40",
+"end": "16:10",
+"roomId": "255-ef",
+"room": "255 EF",
+"title": "From Traceroute to OTel Traces: Modeling Network Paths with OpenTelemetry"
+},
+{
+"id": 1243844,
+"date": "2026-11-10",
+"time": "15:40",
+"end": "16:10",
+"roomId": "grand-ballroom-gi",
+"room": "Grand Ballroom GI",
+"title": "Welcome to Health Check Hell: CRDs, Statuses and Missing Standards"
+},
+{
+"id": 1244963,
+"date": "2026-11-10",
+"time": "15:40",
+"end": "16:10",
+"roomId": "151",
+"room": "151",
+"title": "Triaging 4,700 Alerts/Month at $0.33 Each: Verkada's MCP Agent on Nine Production Clusters"
+},
+{
+"id": 1245768,
+"date": "2026-11-10",
+"time": "15:40",
+"end": "16:10",
+"roomId": "salt-lake-ballroom-de",
+"room": "Salt Lake Ballroom DE",
+"title": "From Disk to Defense: Kubernetes Admission Policies the API Can't Touch"
+},
+{
+"id": 1247098,
+"date": "2026-11-10",
+"time": "15:40",
+"end": "16:10",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "Your Peers Are Struggling With LLM Inference on Kubernetes Too. Here's What the Data Says."
+},
+{
+"id": 1247526,
+"date": "2026-11-10",
+"time": "15:40",
+"end": "16:10",
+"roomId": "grand-ballroom-bdf",
+"room": "Grand Ballroom BDF",
+"title": "Kubernetes Anonymous: Confessions of Kubernetes Cargo Cultists"
+},
+{
+"id": 1247815,
+"date": "2026-11-10",
+"time": "15:40",
+"end": "16:10",
+"roomId": "255-bc",
+"room": "255 BC",
+"title": "Why Quotas Are Hard in Kubernetes: Lessons from Building a Production-Grade Quota System"
+},
+{
+"id": 1247848,
+"date": "2026-11-10",
+"time": "15:40",
+"end": "16:10",
+"roomId": "salt-lake-ballroom-c",
+"room": "Salt Lake Ballroom C",
+"title": "N Clusters, One kubectl: Multi-Cluster That Just Works"
+},
+{
+"id": 1250770,
+"date": "2026-11-10",
+"time": "15:40",
+"end": "16:10",
+"roomId": "grand-ballroom-ace",
+"room": "Grand Ballroom ACE",
+"title": "The SRE Is Not Dead: What AI Taught Us about Missing Context in Kubernetes Incident Response"
+},
+{
+"id": 1289638,
+"date": "2026-11-10",
+"time": "15:40",
+"end": "16:10",
+"roomId": "250-d-f",
+"room": "250 D-F",
+"title": "Breaking up Is Hard, but the Future Is with Helm 4"
+},
+{
+"id": 1289639,
+"date": "2026-11-10",
+"time": "15:40",
+"end": "16:10",
+"roomId": "250-a-c",
+"room": "250 A-C",
+"title": "Kubernetes SIG ContribEx: Sub-Project and Governance Updates"
+},
+{
+"id": 1289640,
+"date": "2026-11-10",
+"time": "15:40",
+"end": "16:10",
+"roomId": "251-d-f",
+"room": "251 D-F",
+"title": "Volcano for the Agentic AI Era: Unified Scheduling Across Training, Inference, and Agents"
+},
+{
+"id": 1289641,
+"date": "2026-11-10",
+"time": "15:40",
+"end": "16:10",
+"roomId": "251-a-c",
+"room": "251 A-C",
+"title": "Cortex: Surviving High Cardinality Metrics"
+},
+{
+"id": 1289646,
+"date": "2026-11-10",
+"time": "15:40",
+"end": "16:10",
+"roomId": "254",
+"room": "254",
+"title": "In-Toto: Experiences a Few Million Attestations Later"
+},
+{
+"id": 1334817,
+"date": "2026-11-10",
+"time": "15:40",
+"end": "16:05",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Who's Governing the GPU Lane? Policy as Code for AI Inference Traffic in Kubernetes"
+},
+{
+"id": 1362584,
+"date": "2026-11-10",
+"time": "15:50",
+"end": "16:10",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: From Wide Open to Locked Down: Running AI Agents on Kubernetes"
+},
+{
+"id": 1336562,
+"date": "2026-11-10",
+"time": "16:00",
+"end": "17:00",
+"roomId": "grand-ballroom-j",
+"room": "Grand Ballroom J",
+"title": "Deep Roots Community Gathering (Black, Indigenous, and People of Color)"
+},
+{
+"id": 1334820,
+"date": "2026-11-10",
+"time": "16:05",
+"end": "16:30",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Agentic Ops: Building Guardrails for Autonomous AI with Policy-as-Code"
+},
+{
+"id": 1362597,
+"date": "2026-11-10",
+"time": "16:15",
+"end": "16:35",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: The Spin Sandbox: Secure Execution of AI-Generated Code with CNCF Spin and WASI"
+},
+{
+"id": 1341036,
+"date": "2026-11-10",
+"time": "16:20",
+"end": "16:40",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "Project Pavilion Tour with Faisal Afzal, CNCF Ambassador"
+},
+{
+"id": 1334821,
+"date": "2026-11-10",
+"time": "16:30",
+"end": "16:55",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Integrating Envoy AI Gateway and Kyverno Authz for Realtime Governance of LLM and MCP Traffic"
+},
+{
+"id": 1371075,
+"date": "2026-11-10",
+"time": "16:30",
+"end": "16:45",
+"roomId": "starlight-summit-zone",
+"room": "Starlight Summit Zone",
+"title": "Certify Your Curiosity: How to Keep Learning in the Open Source World"
+},
+{
+"id": 1370913,
+"date": "2026-11-10",
+"time": "16:35",
+"end": "17:00",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "End User Technical Advisory Board (TAB) Town Hall"
+},
+{
+"id": 1239772,
+"date": "2026-11-10",
+"time": "16:40",
+"end": "17:10",
+"roomId": "salt-lake-ballroom-de",
+"room": "Salt Lake Ballroom DE",
+"title": "Five Stages of Kubernetes Security Grief"
+},
+{
+"id": 1240912,
+"date": "2026-11-10",
+"time": "16:40",
+"end": "17:10",
+"roomId": "grand-ballroom-h",
+"room": "Grand Ballroom H",
+"title": "Zero-Gap GPU Execution: Building Secure, Pre-Warmed Pod Runtimes for High-Velocity AI Agents"
+},
+{
+"id": 1243199,
+"date": "2026-11-10",
+"time": "16:40",
+"end": "17:10",
+"roomId": "255-bc",
+"room": "255 BC",
+"title": "Why Are You Still Wasting Whole GPUs? Hardware-Level Sharing, Scheduled with DRA"
+},
+{
+"id": 1243723,
+"date": "2026-11-10",
+"time": "16:40",
+"end": "17:10",
+"roomId": "salt-lake-ballroom-c",
+"room": "Salt Lake Ballroom C",
+"title": "Multicluster AMA: The Community Answers"
+},
+{
+"id": 1246066,
+"date": "2026-11-10",
+"time": "16:40",
+"end": "17:10",
+"roomId": "151",
+"room": "151",
+"title": "AI-DDoS: How AI-Generated Contributions Are Breaching OSS Communities, and What We Can Do about It"
+},
+{
+"id": 1247858,
+"date": "2026-11-10",
+"time": "16:40",
+"end": "17:10",
+"roomId": "grand-ballroom-ace",
+"room": "Grand Ballroom ACE",
+"title": "The Promises We Keep at Scale: A Contract-Driven Guide to Platform SLOs"
+},
+{
+"id": 1247991,
+"date": "2026-11-10",
+"time": "16:40",
+"end": "17:10",
+"roomId": "255-ef",
+"room": "255 EF",
+"title": "Not All Memory Is Equal: How To Properly Observe Memory Usage"
+},
+{
+"id": 1248040,
+"date": "2026-11-10",
+"time": "16:40",
+"end": "17:10",
+"roomId": "regency-ballroom-b",
+"room": "Regency Ballroom B",
+"title": "Kubernetes Solutions for Agent-Shaped Problems"
+},
+{
+"id": 1248218,
+"date": "2026-11-10",
+"time": "16:40",
+"end": "17:10",
+"roomId": "grand-ballroom-gi",
+"room": "Grand Ballroom GI",
+"title": "Agents on the Platform: Four Perspectives on the Conversation We're Already Having in Private"
+},
+{
+"id": 1249724,
+"date": "2026-11-10",
+"time": "16:40",
+"end": "17:10",
+"roomId": "grand-ballroom-bdf",
+"room": "Grand Ballroom BDF",
+"title": "Ground Control to Major Tom: We Need your Public Cloud in our Private Cloud"
+},
+{
+"id": 1250974,
+"date": "2026-11-10",
+"time": "16:40",
+"end": "17:10",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "When the Clock Lies: How an 8-Minute Time Skew Locked Kubernetes cluster for a day"
+},
+{
+"id": 1250975,
+"date": "2026-11-10",
+"time": "16:40",
+"end": "18:00",
+"roomId": "regency-ballroom-a",
+"room": "Regency Ballroom A",
+"title": "Building a Cloud-Native RAG Pipeline from Scratch: Docling Operator, KFP, and OpenSearch"
+},
+{
+"id": 1289630,
+"date": "2026-11-10",
+"time": "16:40",
+"end": "17:10",
+"roomId": "251-d-f",
+"room": "251 D-F",
+"title": "GitOps Without You Writing YAML: How Flux Grounds AI Agents in Real APIs"
+},
+{
+"id": 1289643,
+"date": "2026-11-10",
+"time": "16:40",
+"end": "17:10",
+"roomId": "250-a-c",
+"room": "250 A-C",
+"title": "Verifiable Execution: Durable Workflows That Cryptographically Prove What They Did"
+},
+{
+"id": 1289644,
+"date": "2026-11-10",
+"time": "16:40",
+"end": "17:10",
+"roomId": "251-a-c",
+"room": "251 A-C",
+"title": "Your GPU Nodes Deserve Better: Flatcar Container Linux for AI Workloads"
+},
+{
+"id": 1289645,
+"date": "2026-11-10",
+"time": "16:40",
+"end": "17:10",
+"roomId": "250-d-f",
+"room": "250 D-F",
+"title": "Lima as the Universal AI Sandbox"
+},
+{
+"id": 1289735,
+"date": "2026-11-10",
+"time": "16:40",
+"end": "17:10",
+"roomId": "254",
+"room": "254",
+"title": "TAG DevEx State of the Union: What We're Shipping and Why It Matters"
+},
+{
+"id": 1294772,
+"date": "2026-11-10",
+"time": "16:40",
+"end": "18:00",
+"roomId": "255-a",
+"room": "255 A",
+"title": "Kubernetes 101: New Contributor Orientation"
+},
+{
+"id": 1294775,
+"date": "2026-11-10",
+"time": "16:40",
+"end": "18:00",
+"roomId": "255-d",
+"room": "255 D",
+"title": "GPU Virtualization: First Setup and Understanding the Device Plugin / DRA"
+},
+{
+"id": 1360373,
+"date": "2026-11-10",
+"time": "16:40",
+"end": "17:00",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: Allocated ≠ Utilized: Managing GPUs with IBM Kubecost"
+},
+{
+"id": 1362599,
+"date": "2026-11-10",
+"time": "17:05",
+"end": "17:25",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: YugabyteDB AMP: Agentic Multitenant PostgreSQL for the AI Era"
+},
+{
+"id": 1370893,
+"date": "2026-11-10",
+"time": "17:10",
+"end": "17:35",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "CNCF Project Demos"
+},
+{
+"id": 1336586,
+"date": "2026-11-10",
+"time": "17:15",
+"end": "18:00",
+"roomId": "grand-ballroom-j",
+"room": "Grand Ballroom J",
+"title": "Merge Forward: The Missing Dependency"
+},
+{
+"id": 1226654,
+"date": "2026-11-10",
+"time": "17:30",
+"end": "18:00",
+"roomId": "grand-ballroom-bdf",
+"room": "Grand Ballroom BDF",
+"title": "From Consumers to Contributors: How Growing Open Source Members Transformed Our ML Platform Team"
+},
+{
+"id": 1244695,
+"date": "2026-11-10",
+"time": "17:30",
+"end": "18:00",
+"roomId": "grand-ballroom-h",
+"room": "Grand Ballroom H",
+"title": "When the Agent Lost Its Patience: Securing Cloud-Native AI Workflows Against Identity Leakage"
+},
+{
+"id": 1246259,
+"date": "2026-11-10",
+"time": "17:30",
+"end": "18:00",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "How Far Are Open-Source LLMs from Running Real Kubernetes Operations? A 10-Scenario Benchmark"
+},
+{
+"id": 1247753,
+"date": "2026-11-10",
+"time": "17:30",
+"end": "18:00",
+"roomId": "regency-ballroom-b",
+"room": "Regency Ballroom B",
+"title": "Lessons Learned Sandboxing Agents with kagent"
+},
+{
+"id": 1247881,
+"date": "2026-11-10",
+"time": "17:30",
+"end": "18:00",
+"roomId": "salt-lake-ballroom-c",
+"room": "Salt Lake Ballroom C",
+"title": "From Pending Pod to Ready Node: Declarative Worker Images for Kubernetes Scale-Out"
+},
+{
+"id": 1248185,
+"date": "2026-11-10",
+"time": "17:30",
+"end": "18:00",
+"roomId": "255-ef",
+"room": "255 EF",
+"title": "Who Ran Up the Inference Bill? AI Traffic Control with KServe and Gateway API Inference Extensions"
+},
+{
+"id": 1248216,
+"date": "2026-11-10",
+"time": "17:30",
+"end": "18:00",
+"roomId": "grand-ballroom-ace",
+"room": "Grand Ballroom ACE",
+"title": "Two-Stage OTel Aggregation: Taming Istio Cardinality at 10k-Pod Scale"
+},
+{
+"id": 1250559,
+"date": "2026-11-10",
+"time": "17:30",
+"end": "18:00",
+"roomId": "255-bc",
+"room": "255 BC",
+"title": "GitOps Meltdown: How a Commit Triggered a Cascading Delete of 39 Clusters in Production"
+},
+{
+"id": 1250789,
+"date": "2026-11-10",
+"time": "17:30",
+"end": "18:00",
+"roomId": "grand-ballroom-gi",
+"room": "Grand Ballroom GI",
+"title": "Beyond the Cluster Boundary: Sharing GPUs at Scale"
+},
+{
+"id": 1289629,
+"date": "2026-11-10",
+"time": "17:30",
+"end": "18:00",
+"roomId": "254",
+"room": "254",
+"title": "TAG Operational Resilience: Shaping the Future Through Initiatives"
+},
+{
+"id": 1289642,
+"date": "2026-11-10",
+"time": "17:30",
+"end": "18:00",
+"roomId": "251-d-f",
+"room": "251 D-F",
+"title": "Cloud Native Infrastructure in the AI Era: A TAG Infrastructure Panel"
+},
+{
+"id": 1289648,
+"date": "2026-11-10",
+"time": "17:30",
+"end": "18:00",
+"roomId": "250-d-f",
+"room": "250 D-F",
+"title": "KubeVirt's Architectural Leap: Pluggability, AI Hardware, and Maturing Governance"
+},
+{
+"id": 1289677,
+"date": "2026-11-10",
+"time": "17:30",
+"end": "18:00",
+"roomId": "251-a-c",
+"room": "251 A-C",
+"title": "Authorized? It Depends."
+},
+{
+"id": 1289699,
+"date": "2026-11-10",
+"time": "17:30",
+"end": "18:00",
+"roomId": "250-a-c",
+"room": "250 A-C",
+"title": "Managing Data at Scale: Best Practices and Evolution of SIG-Apps"
+},
+{
+"id": 1378904,
+"date": "2026-11-10",
+"time": "17:30",
+"end": "17:50",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: Ready or not, your hybrid AI stack is here"
+},
+{
+"id": 1362609,
+"date": "2026-11-10",
+"time": "17:55",
+"end": "18:15",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: Beyond the Agent Trace: Understand and Trust AI Agents Across Cloud-Native Systems"
+},
+{
+"id": 1289736,
+"date": "2026-11-10",
+"time": "18:00",
+"end": "19:30",
+"roomId": "halls-a-c-halls-1-5",
+"room": "Halls A-C, Halls 1-5",
+"title": "🎉 #KubeCrawl + #CloudNativeFest"
+},
+{
+"id": 1364853,
+"date": "2026-11-10",
+"time": "18:00",
+"end": "19:15",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "CLBO: ClashLoopBackOff: Demo Night"
+},
+{
+"id": 1369672,
+"date": "2026-11-10",
+"time": "18:00",
+"end": "18:30",
+"roomId": "halls-a-c-halls-1-5",
+"room": "Halls A-C, Halls 1-5",
+"title": "Gold In-Booth Demos: Heroku"
+},
+{
+"id": 1378905,
+"date": "2026-11-10",
+"time": "18:20",
+"end": "18:40",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: One Terminal, The Entire Agentic SDLC"
+},
+{
+"id": 1371085,
+"date": "2026-11-10",
+"time": "18:30",
+"end": "18:45",
+"roomId": "starlight-summit-zone",
+"room": "Starlight Summit Zone",
+"title": "KubeCrawl Trivia"
+},
+{
+"id": 1362621,
+"date": "2026-11-10",
+"time": "18:45",
+"end": "19:05",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: The Ultimate Hot Dog Showdown: Scaling AI Inference on Kubernetes"
+},
+{
+"id": 1368973,
+"date": "2026-11-11",
+"time": "06:30",
+"end": "08:00",
+"roomId": "hyatt-regency-lobby",
+"room": "Hyatt Regency Lobby",
+"title": "Group Fun Run/Walk"
+},
+{
+"id": 1368998,
+"date": "2026-11-11",
+"time": "07:00",
+"end": "08:00",
+"roomId": "park-city",
+"room": "Park City",
+"title": "Puppy Yoga"
+},
+{
+"id": 1372841,
+"date": "2026-11-11",
+"time": "09:00",
+"end": "09:05",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Human Scale, Agent Scale"
+},
+{
+"id": 1302691,
+"date": "2026-11-11",
+"time": "09:07",
+"end": "09:12",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Beyond End User: CAP and the Evolution of Open Source at CVS Health"
+},
+{
+"id": 1294702,
+"date": "2026-11-11",
+"time": "09:14",
+"end": "09:24",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "The Flywheel Effect: Why Community Is the Ultimate End-User Advantage"
+},
+{
+"id": 1374982,
+"date": "2026-11-11",
+"time": "09:26",
+"end": "09:31",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Adyen Joins CNCF: Staying Independent with Open Source"
+},
+{
+"id": 1367917,
+"date": "2026-11-11",
+"time": "09:33",
+"end": "09:43",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "The Cloud Native Feedback Loop: How End Users and Developers Drive CNCF Projects Forward"
+},
+{
+"id": 1363905,
+"date": "2026-11-11",
+"time": "09:45",
+"end": "09:50",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "A Tribute to Open Source"
+},
+{
+"id": 1353217,
+"date": "2026-11-11",
+"time": "09:52",
+"end": "10:02",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Code, Containers, and Clusters: The Next Chapter of Apple's Container Framework"
+},
+{
+"id": 1301748,
+"date": "2026-11-11",
+"time": "10:04",
+"end": "10:09",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Context Unlocks Autonomous AI Infrastructure"
+},
+{
+"id": 1360829,
+"date": "2026-11-11",
+"time": "10:11",
+"end": "10:16",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "We Have GitOps at Home: How Meta Went from Terraform on Cron to GitOps for AI Infra"
+},
+{
+"id": 1295999,
+"date": "2026-11-11",
+"time": "10:18",
+"end": "10:23",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Production AI on Kubernetes: Built to Scale with Oracle Cloud"
+},
+{
+"id": 1294242,
+"date": "2026-11-11",
+"time": "10:25",
+"end": "10:30",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Sovereign AI Starts at the Traffic Layer"
+},
+{
+"id": 1369676,
+"date": "2026-11-11",
+"time": "10:30",
+"end": "11:00",
+"roomId": "halls-a-c-halls-1-5",
+"room": "Halls A-C, Halls 1-5",
+"title": "Gold In-Booth Demos: Octopus Deploy, Sysdig"
+},
+{
+"id": 1373666,
+"date": "2026-11-11",
+"time": "10:30",
+"end": "13:25",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "Project Pavilion Kiosks | Wednesday Morning"
+},
+{
+"id": 1368714,
+"date": "2026-11-11",
+"time": "10:32",
+"end": "10:35",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Built on Kubernetes. Proven at Uber Scale. Now Open Source."
+},
+{
+"id": 1362604,
+"date": "2026-11-11",
+"time": "10:35",
+"end": "10:55",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: AI already found your Java vulnerabilities. Has your scanner?"
+},
+{
+"id": 1341037,
+"date": "2026-11-11",
+"time": "10:40",
+"end": "11:00",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "Project Pavilion Tour with Hoon Jo, CNCF Ambassador"
+},
+{
+"id": 1334847,
+"date": "2026-11-11",
+"time": "10:45",
+"end": "10:50",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "KubeVirt Summit Opening Remarks"
+},
+{
+"id": 1371076,
+"date": "2026-11-11",
+"time": "10:45",
+"end": "11:00",
+"roomId": "starlight-summit-zone",
+"room": "Starlight Summit Zone",
+"title": "AI Runs on Open Source: Building Scalable, Secure AI Foundations"
+},
+{
+"id": 1302804,
+"date": "2026-11-11",
+"time": "10:47",
+"end": "10:48",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Closing Remarks"
+},
+{
+"id": 1334848,
+"date": "2026-11-11",
+"time": "10:50",
+"end": "11:10",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Two Drivers, One Topology: GPU:NIC Rail Alignment for RDMA VMs with KubeVirt DRA"
+},
+{
+"id": 1238630,
+"date": "2026-11-11",
+"time": "11:00",
+"end": "11:30",
+"roomId": "255-ef",
+"room": "255 EF",
+"title": "Verticalizing Platform Intelligence for Regulated Domains"
+},
+{
+"id": 1244501,
+"date": "2026-11-11",
+"time": "11:00",
+"end": "11:30",
+"roomId": "grand-ballroom-gi",
+"room": "Grand Ballroom GI",
+"title": "Inside the Inference Load Balancer: Proxy/Controller Patterns for LLM Serving on Kubernetes"
+},
+{
+"id": 1248118,
+"date": "2026-11-11",
+"time": "11:00",
+"end": "11:30",
+"roomId": "255-bc",
+"room": "255 BC",
+"title": "All Things DRA in One Place: DRA Example Driver Deep Dive"
+},
+{
+"id": 1248310,
+"date": "2026-11-11",
+"time": "11:00",
+"end": "11:30",
+"roomId": "grand-ballroom-h",
+"room": "Grand Ballroom H",
+"title": "Anatomy of an Outage: When Bursty ML Workloads Break the Kubernetes Scheduler"
+},
+{
+"id": 1248484,
+"date": "2026-11-11",
+"time": "11:00",
+"end": "11:30",
+"roomId": "salt-lake-ballroom-de",
+"room": "Salt Lake Ballroom DE",
+"title": "What Can Your AI Agents Actually Do? Cedar Analysis for MCP Servers"
+},
+{
+"id": 1249181,
+"date": "2026-11-11",
+"time": "11:00",
+"end": "11:30",
+"roomId": "grand-ballroom-bdf",
+"room": "Grand Ballroom BDF",
+"title": "Edging Closer to AI Assisted Troubleshooting - AI Assisted Dashboard Analysis"
+},
+{
+"id": 1249601,
+"date": "2026-11-11",
+"time": "11:00",
+"end": "11:30",
+"roomId": "151",
+"room": "151",
+"title": "Time to Learn New Tricks to Improve Performance on DRA-Managed Devices"
+},
+{
+"id": 1249846,
+"date": "2026-11-11",
+"time": "11:00",
+"end": "11:30",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "OTel Blueprints: Prescriptive Patterns for Enterprise Observability"
+},
+{
+"id": 1249896,
+"date": "2026-11-11",
+"time": "11:00",
+"end": "12:20",
+"roomId": "regency-ballroom-a",
+"room": "Regency Ballroom A",
+"title": "Filter, Transform, Route: Mastering OTTL in the OpenTelemetry Collector"
+},
+{
+"id": 1250427,
+"date": "2026-11-11",
+"time": "11:00",
+"end": "11:30",
+"roomId": "salt-lake-ballroom-c",
+"room": "Salt Lake Ballroom C",
+"title": "Cache Me If You Can: LLM Inference with llm-d (with fun drawings)"
+},
+{
+"id": 1250627,
+"date": "2026-11-11",
+"time": "11:00",
+"end": "11:30",
+"roomId": "grand-ballroom-ace",
+"room": "Grand Ballroom ACE",
+"title": "Going Cloud Native in Baseball"
+},
+{
+"id": 1289665,
+"date": "2026-11-11",
+"time": "11:00",
+"end": "11:30",
+"roomId": "250-a-c",
+"room": "250 A-C",
+"title": "Engineering High-Performance Telemetry Pipelines: Lessons from Fluent Bit"
+},
+{
+"id": 1289666,
+"date": "2026-11-11",
+"time": "11:00",
+"end": "11:30",
+"roomId": "250-d-f",
+"room": "250 D-F",
+"title": "OpenCost: What's New, What's Next, and How We're Scaling Kubernetes Cost Intelligence"
+},
+{
+"id": 1289668,
+"date": "2026-11-11",
+"time": "11:00",
+"end": "11:30",
+"roomId": "251-d-f",
+"room": "251 D-F",
+"title": "Horizontally Scale MySQL on Kubernetes"
+},
+{
+"id": 1289697,
+"date": "2026-11-11",
+"time": "11:00",
+"end": "11:30",
+"roomId": "251-a-c",
+"room": "251 A-C",
+"title": "Harbor Project - The Maintainers Session"
+},
+{
+"id": 1294765,
+"date": "2026-11-11",
+"time": "11:00",
+"end": "12:20",
+"roomId": "255-d",
+"room": "255 D",
+"title": "Crossplane Contribfest - Start Your Journey to Crossplane Function Maintainer"
+},
+{
+"id": 1294766,
+"date": "2026-11-11",
+"time": "11:00",
+"end": "12:20",
+"roomId": "255-a",
+"room": "255 A",
+"title": "etcd Contribfest"
+},
+{
+"id": 1336587,
+"date": "2026-11-11",
+"time": "11:00",
+"end": "11:30",
+"roomId": "grand-ballroom-j",
+"room": "Grand Ballroom J",
+"title": "Building a Developer Community That the Business Can’t Ignore"
+},
+{
+"id": 1345967,
+"date": "2026-11-11",
+"time": "11:00",
+"end": "11:30",
+"roomId": "254",
+"room": "254",
+"title": "KubeRay 101"
+},
+{
+"id": 1362606,
+"date": "2026-11-11",
+"time": "11:00",
+"end": "11:20",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: From Observability to Autonomous Infrastructure"
+},
+{
+"id": 1370908,
+"date": "2026-11-11",
+"time": "11:00",
+"end": "11:20",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "Build with Open Source AI hosted by MLH"
+},
+{
+"id": 1334849,
+"date": "2026-11-11",
+"time": "11:15",
+"end": "11:35",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "The Healthy Cluster, The Unhealthy VM:Why Infrastructure Metrics Are Only Half the Story in KubeVirt"
+},
+{
+"id": 1362623,
+"date": "2026-11-11",
+"time": "11:25",
+"end": "11:45",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: Agent Sandbox on EKS: Hardware-Isolated microVM Pods for AI Agents"
+},
+{
+"id": 1364875,
+"date": "2026-11-11",
+"time": "11:30",
+"end": "13:30",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "🚩Capture The Flag Experience"
+},
+{
+"id": 1334851,
+"date": "2026-11-11",
+"time": "11:40",
+"end": "12:00",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Plug and Play Volumes, hold the Pod"
+},
+{
+"id": 1238718,
+"date": "2026-11-11",
+"time": "11:50",
+"end": "12:20",
+"roomId": "255-bc",
+"room": "255 BC",
+"title": "Following the Evidence with HolmesGPT: Troubleshooting Kubernetes Apps and Underlying Infrastructure"
+},
+{
+"id": 1243680,
+"date": "2026-11-11",
+"time": "11:50",
+"end": "12:20",
+"roomId": "151",
+"room": "151",
+"title": "Legacy-Free, Zero-Maintenance Bare Metal Kubernetes Clusters With RISC-V and Immutable Linux"
+},
+{
+"id": 1246179,
+"date": "2026-11-11",
+"time": "11:50",
+"end": "12:20",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "Sample Smarter, Not Harder (Or Not At All!)"
+},
+{
+"id": 1246681,
+"date": "2026-11-11",
+"time": "11:50",
+"end": "12:20",
+"roomId": "255-ef",
+"room": "255 EF",
+"title": "Least-Privilege by Default: Standardizing Identity-Aware AI Agent Access into a Golden Path"
+},
+{
+"id": 1247159,
+"date": "2026-11-11",
+"time": "11:50",
+"end": "12:20",
+"roomId": "salt-lake-ballroom-de",
+"room": "Salt Lake Ballroom DE",
+"title": "Welcome to the Vulnpocalypse!"
+},
+{
+"id": 1247612,
+"date": "2026-11-11",
+"time": "11:50",
+"end": "12:20",
+"roomId": "grand-ballroom-h",
+"room": "Grand Ballroom H",
+"title": "How Anthropic Almost Melted GKE (And the PRs That Saved It)"
+},
+{
+"id": 1247840,
+"date": "2026-11-11",
+"time": "11:50",
+"end": "12:20",
+"roomId": "grand-ballroom-bdf",
+"room": "Grand Ballroom BDF",
+"title": "Ship Faster, Ship Safer: A K8s-Native Canary Pipeline for Critical Cluster Services"
+},
+{
+"id": 1250683,
+"date": "2026-11-11",
+"time": "11:50",
+"end": "12:20",
+"roomId": "salt-lake-ballroom-c",
+"room": "Salt Lake Ballroom C",
+"title": "Groundhog Pod: Scaling AI Inference with Kata Pod Snapshots"
+},
+{
+"id": 1250687,
+"date": "2026-11-11",
+"time": "11:50",
+"end": "12:20",
+"roomId": "grand-ballroom-gi",
+"room": "Grand Ballroom GI",
+"title": "How Podium Ships 30% of PRs with Autonomous K8s Coding Agents"
+},
+{
+"id": 1251004,
+"date": "2026-11-11",
+"time": "11:50",
+"end": "12:20",
+"roomId": "grand-ballroom-ace",
+"room": "Grand Ballroom ACE",
+"title": "Hardening Kubernetes for GovCloud: A 3-Year Journey to FedRAMP Moderate Authorization"
+},
+{
+"id": 1289672,
+"date": "2026-11-11",
+"time": "11:50",
+"end": "12:20",
+"roomId": "250-d-f",
+"room": "250 D-F",
+"title": "OpenFGA: Fine-Grained Authorization for Apps, APIs, and Agents"
+},
+{
+"id": 1289673,
+"date": "2026-11-11",
+"time": "11:50",
+"end": "12:20",
+"roomId": "251-d-f",
+"room": "251 D-F",
+"title": "SIG-Node: Intro and Deep Dive"
+},
+{
+"id": 1289674,
+"date": "2026-11-11",
+"time": "11:50",
+"end": "12:20",
+"roomId": "251-a-c",
+"room": "251 A-C",
+"title": "From ListenerSets to eBPF Plugins: Cilium's Evolution Across the Stack"
+},
+{
+"id": 1289700,
+"date": "2026-11-11",
+"time": "11:50",
+"end": "12:20",
+"roomId": "250-a-c",
+"room": "250 A-C",
+"title": "From Cloud Outages to AI Security Challenges: Building Resilient DNS Infrastructure at Scale"
+},
+{
+"id": 1356649,
+"date": "2026-11-11",
+"time": "11:50",
+"end": "12:20",
+"roomId": "254",
+"room": "254",
+"title": "BoF | Let’s Discuss: The Future of Apple Containers with Cloud Native Tooling"
+},
+{
+"id": 1362628,
+"date": "2026-11-11",
+"time": "11:50",
+"end": "12:10",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: KubeHound: Identifying Attack Paths in Kubernetes Clusters at Scale"
+},
+{
+"id": 1336509,
+"date": "2026-11-11",
+"time": "12:00",
+"end": "12:30",
+"roomId": "grand-ballroom-j",
+"room": "Grand Ballroom J",
+"title": "Neurodivergent Minds with Wings: Engineering Independence at Work"
+},
+{
+"id": 1334855,
+"date": "2026-11-11",
+"time": "12:05",
+"end": "12:25",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Optimized Switchover Timing for Live Migration of Memory-Intensive Workloads"
+},
+{
+"id": 1362631,
+"date": "2026-11-11",
+"time": "12:15",
+"end": "12:35",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: ClickHouse Observability: Full-fidelity observability for AI agents and SREs"
+},
+{
+"id": 1342434,
+"date": "2026-11-11",
+"time": "12:20",
+"end": "14:20",
+"roomId": "upper-mezzanine",
+"room": "Upper Mezzanine",
+"title": "Kubernetes Meet + Greet"
+},
+{
+"id": 1334856,
+"date": "2026-11-11",
+"time": "12:25",
+"end": "12:30",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "KubeVirt Summit Closing Remarks"
+},
+{
+"id": 1362635,
+"date": "2026-11-11",
+"time": "12:40",
+"end": "13:00",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: Unifying Kubernetes and Datacenter Networking with Isovalent and Cisco Nexus One"
+},
+{
+"id": 1333702,
+"date": "2026-11-11",
+"time": "12:45",
+"end": "12:50",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Kubeflow Summit Opening Remarks"
+},
+{
+"id": 1369445,
+"date": "2026-11-11",
+"time": "12:45",
+"end": "13:45",
+"roomId": "network-nook",
+"room": "Network Nook",
+"title": "Network Nook Meetup: Conference Buddies"
+},
+{
+"id": 1333705,
+"date": "2026-11-11",
+"time": "12:50",
+"end": "13:10",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "The Missing Front-Door to Your AI Supercomputer – Kubeflow Workspaces"
+},
+{
+"id": 1341038,
+"date": "2026-11-11",
+"time": "12:50",
+"end": "13:10",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "Project Pavilion Tour with Rafael Brito, CNCF Ambassador"
+},
+{
+"id": 1371077,
+"date": "2026-11-11",
+"time": "13:00",
+"end": "13:15",
+"roomId": "starlight-summit-zone",
+"room": "Starlight Summit Zone",
+"title": "A Hundred Agent Sessions on One Box: Tips for Running Coding Agents Remotely"
+},
+{
+"id": 1362638,
+"date": "2026-11-11",
+"time": "13:05",
+"end": "13:25",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: The World's Smallest and Largest Kubernetes Clusters"
+},
+{
+"id": 1333708,
+"date": "2026-11-11",
+"time": "13:15",
+"end": "13:35",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "OptimizationJob: Hyperparameter Optimization at Scale with Kubeflow Trainer"
+},
+{
+"id": 1369673,
+"date": "2026-11-11",
+"time": "13:15",
+"end": "13:45",
+"roomId": "halls-a-c-halls-1-5",
+"room": "Halls A-C, Halls 1-5",
+"title": "Gold In-Booth Demos: Tailscale"
+},
+{
+"id": 1204401,
+"date": "2026-11-11",
+"time": "13:20",
+"end": "14:20",
+"roomId": "halls-a-c-halls-1-5",
+"room": "Halls A-C, Halls 1-5",
+"title": "2,000+ Customer Calls About AI In Production - Here's What You Need To Know"
+},
+{
+"id": 1230983,
+"date": "2026-11-11",
+"time": "13:20",
+"end": "14:20",
+"roomId": "halls-a-c-halls-1-5",
+"room": "Halls A-C, Halls 1-5",
+"title": "Many Agents, One Platform: Production Multi-Agent Apps on K8s with CNCF Building Blocks"
+},
+{
+"id": 1239786,
+"date": "2026-11-11",
+"time": "13:20",
+"end": "14:20",
+"roomId": "halls-a-c-halls-1-5",
+"room": "Halls A-C, Halls 1-5",
+"title": "Beyond QEMU/KVM: Re-Architecting KubeVirt for Heterogeneous Virtualization Backends"
+},
+{
+"id": 1241128,
+"date": "2026-11-11",
+"time": "13:20",
+"end": "14:20",
+"roomId": "halls-a-c-halls-1-5",
+"room": "Halls A-C, Halls 1-5",
+"title": "GitOps for AI Infrastructure: The Operational Gaps Nobody Talks About"
+},
+{
+"id": 1242966,
+"date": "2026-11-11",
+"time": "13:20",
+"end": "14:20",
+"roomId": "halls-a-c-halls-1-5",
+"room": "Halls A-C, Halls 1-5",
+"title": "Beyond Harnesses and Sandboxes: Runtime Protection for AI Agents with eBPF"
+},
+{
+"id": 1244682,
+"date": "2026-11-11",
+"time": "13:20",
+"end": "14:20",
+"roomId": "halls-a-c-halls-1-5",
+"room": "Halls A-C, Halls 1-5",
+"title": "Your GPU Dashboard Is Lying: Per-Tenant Blind Spots in MIG, MPS, and HAMi"
+},
+{
+"id": 1245933,
+"date": "2026-11-11",
+"time": "13:20",
+"end": "14:20",
+"roomId": "halls-a-c-halls-1-5",
+"room": "Halls A-C, Halls 1-5",
+"title": "Developing Cloud-Native Infrastructure in the Age of AI"
+},
+{
+"id": 1246812,
+"date": "2026-11-11",
+"time": "13:20",
+"end": "14:20",
+"roomId": "halls-a-c-halls-1-5",
+"room": "Halls A-C, Halls 1-5",
+"title": "Beyond HPA: An Explainable, Agentic Autoscaler for Kubernetes"
+},
+{
+"id": 1249358,
+"date": "2026-11-11",
+"time": "13:20",
+"end": "14:20",
+"roomId": "halls-a-c-halls-1-5",
+"room": "Halls A-C, Halls 1-5",
+"title": "Extending NetworkPolicy to RDMA: Hardware-Enforced Tenant Isolation for AI Clusters"
+},
+{
+"id": 1250944,
+"date": "2026-11-11",
+"time": "13:20",
+"end": "14:20",
+"roomId": "halls-a-c-halls-1-5",
+"room": "Halls A-C, Halls 1-5",
+"title": "Snapshot, Replay, Verify: A KWOK CI Pattern for Kubernetes Platform Operators"
+},
+{
+"id": 1336610,
+"date": "2026-11-11",
+"time": "13:30",
+"end": "14:30",
+"roomId": "grand-ballroom-j",
+"room": "Grand Ballroom J",
+"title": "Sign Language Crash Course"
+},
+{
+"id": 1362663,
+"date": "2026-11-11",
+"time": "13:30",
+"end": "13:50",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: Agent Sandboxing with OpenShell on OpenShift"
+},
+{
+"id": 1333709,
+"date": "2026-11-11",
+"time": "13:40",
+"end": "13:53",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Building Reproducible AgentOps Pipelines with Kubeflow and MLflow"
+},
+{
+"id": 1370896,
+"date": "2026-11-11",
+"time": "13:40",
+"end": "15:15",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "CNCF Project Demos"
+},
+{
+"id": 1369675,
+"date": "2026-11-11",
+"time": "13:45",
+"end": "14:15",
+"roomId": "halls-a-c-halls-1-5",
+"room": "Halls A-C, Halls 1-5",
+"title": "Gold In-Booth Demos: ControlTheory, New Relic, OpenObserve"
+},
+{
+"id": 1371079,
+"date": "2026-11-11",
+"time": "13:45",
+"end": "14:00",
+"roomId": "starlight-summit-zone",
+"room": "Starlight Summit Zone",
+"title": "From Cloud Native to Agent Native with MCP"
+},
+{
+"id": 1362669,
+"date": "2026-11-11",
+"time": "13:55",
+"end": "14:15",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: Do you trust your AI agent? Pod Sandboxing on OKE"
+},
+{
+"id": 1373667,
+"date": "2026-11-11",
+"time": "13:55",
+"end": "17:00",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "Project Pavilion Kiosks | Wednesday Afternoon"
+},
+{
+"id": 1333710,
+"date": "2026-11-11",
+"time": "13:58",
+"end": "14:03",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Stop AI Agents from Guessing SQL with Semantic Operator on Kubernetes"
+},
+{
+"id": 1333711,
+"date": "2026-11-11",
+"time": "14:08",
+"end": "14:28",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "End-User Panel – KubeFlow Enterprise Use Cases-Solutions"
+},
+{
+"id": 1203350,
+"date": "2026-11-11",
+"time": "14:20",
+"end": "14:50",
+"roomId": "salt-lake-ballroom-de",
+"room": "Salt Lake Ballroom DE",
+"title": "Why Your Monitoring Stack is a Security Risk"
+},
+{
+"id": 1229671,
+"date": "2026-11-11",
+"time": "14:20",
+"end": "14:50",
+"roomId": "151",
+"room": "151",
+"title": "When GPUs Become NUMA Nodes: Challenges Running Kubernetes with Memory-Coherent Hardware"
+},
+{
+"id": 1240105,
+"date": "2026-11-11",
+"time": "14:20",
+"end": "15:40",
+"roomId": "regency-ballroom-a",
+"room": "Regency Ballroom A",
+"title": "Minting Your Own Tokens: The Server Side of the Token Economy"
+},
+{
+"id": 1247684,
+"date": "2026-11-11",
+"time": "14:20",
+"end": "14:50",
+"roomId": "grand-ballroom-ace",
+"room": "Grand Ballroom ACE",
+"title": "How We Are Enabling Feature Flagging At Scale"
+},
+{
+"id": 1249844,
+"date": "2026-11-11",
+"time": "14:20",
+"end": "14:50",
+"roomId": "grand-ballroom-gi",
+"room": "Grand Ballroom GI",
+"title": "Kubernetes The Hard Way - Live"
+},
+{
+"id": 1250532,
+"date": "2026-11-11",
+"time": "14:20",
+"end": "14:50",
+"roomId": "salt-lake-ballroom-c",
+"room": "Salt Lake Ballroom C",
+"title": "Pods Are Not Enough for AI Agents, Meet Agent-substrate"
+},
+{
+"id": 1250567,
+"date": "2026-11-11",
+"time": "14:20",
+"end": "14:50",
+"roomId": "255-bc",
+"room": "255 BC",
+"title": "Death by a Thousand Patches: How Pod Status Updates Exhaust etcd and What to Do About It"
+},
+{
+"id": 1250728,
+"date": "2026-11-11",
+"time": "14:20",
+"end": "14:50",
+"roomId": "grand-ballroom-h",
+"room": "Grand Ballroom H",
+"title": "Hidden Pod Startup Latency: Container Image Pull"
+},
+{
+"id": 1250982,
+"date": "2026-11-11",
+"time": "14:20",
+"end": "14:50",
+"roomId": "grand-ballroom-bdf",
+"room": "Grand Ballroom BDF",
+"title": "Progressive Delivery for Trust: How Agents Earn the Right to Merge"
+},
+{
+"id": 1251031,
+"date": "2026-11-11",
+"time": "14:20",
+"end": "14:50",
+"roomId": "255-ef",
+"room": "255 EF",
+"title": "Introducing go-yaml's New Plugin System"
+},
+{
+"id": 1251049,
+"date": "2026-11-11",
+"time": "14:20",
+"end": "14:50",
+"roomId": "regency-ballroom-b",
+"room": "Regency Ballroom B",
+"title": "In-Place Pod Resizing Like I'm 5: Scaling Without Restarts"
+},
+{
+"id": 1289692,
+"date": "2026-11-11",
+"time": "14:20",
+"end": "14:50",
+"roomId": "251-a-c",
+"room": "251 A-C",
+"title": "Linkerd, The Service Mesh for Everyone: gRPC Load Balancing & More"
+},
+{
+"id": 1289693,
+"date": "2026-11-11",
+"time": "14:20",
+"end": "14:50",
+"roomId": "251-d-f",
+"room": "251 D-F",
+"title": "etcd from 3.7 to 3.8 and Beyond"
+},
+{
+"id": 1289696,
+"date": "2026-11-11",
+"time": "14:20",
+"end": "14:50",
+"roomId": "250-a-c",
+"room": "250 A-C",
+"title": "Crossplane - The Cloud Native Framework for Platform Engineering"
+},
+{
+"id": 1289725,
+"date": "2026-11-11",
+"time": "14:20",
+"end": "14:50",
+"roomId": "250-d-f",
+"room": "250 D-F",
+"title": "Kubernetes Localization in the AI Era: Contributors Still Matter"
+},
+{
+"id": 1294751,
+"date": "2026-11-11",
+"time": "14:20",
+"end": "15:40",
+"roomId": "255-d",
+"room": "255 D",
+"title": "Cadence Workflow ContribFest: Build Durable AI Agent Examples"
+},
+{
+"id": 1294761,
+"date": "2026-11-11",
+"time": "14:20",
+"end": "15:40",
+"roomId": "255-a",
+"room": "255 A",
+"title": "Building the Future of Unified Policy-as-Code with Kyverno"
+},
+{
+"id": 1360833,
+"date": "2026-11-11",
+"time": "14:20",
+"end": "14:45",
+"roomId": "254",
+"room": "254",
+"title": "Git, APIs, and Kubernetes: Where Should Platform Configuration Live"
+},
+{
+"id": 1362678,
+"date": "2026-11-11",
+"time": "14:20",
+"end": "14:40",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: Building an Agent-Centric Cloud Platform: Lessons from Nutanix"
+},
+{
+"id": 1233132,
+"date": "2026-11-11",
+"time": "14:25",
+"end": "14:30",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "Open Source Has a Human Deficit. Here's How We Fix It."
+},
+{
+"id": 1333714,
+"date": "2026-11-11",
+"time": "14:28",
+"end": "14:30",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Kubeflow Summit Closing Remarks"
+},
+{
+"id": 1234985,
+"date": "2026-11-11",
+"time": "14:34",
+"end": "14:39",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "Topograph - Your AI Cluster's Missing Live Transit Map"
+},
+{
+"id": 1246398,
+"date": "2026-11-11",
+"time": "14:41",
+"end": "14:46",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "Your Quickstart is Broken – AI Agents as Synthetic New Users"
+},
+{
+"id": 1336093,
+"date": "2026-11-11",
+"time": "14:45",
+"end": "14:50",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Istio Day Opening Remarks"
+},
+{
+"id": 1362683,
+"date": "2026-11-11",
+"time": "14:45",
+"end": "15:05",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: Universal Mesh: One Model for Ingress, Gateway API, and Multi-Cloud"
+},
+{
+"id": 1247134,
+"date": "2026-11-11",
+"time": "14:48",
+"end": "14:53",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "Kubernetes Secrets Were a Bad Idea. Now What?"
+},
+{
+"id": 1336094,
+"date": "2026-11-11",
+"time": "14:50",
+"end": "15:05",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Istio at Scale: Lessons, Pitfalls, and Observability"
+},
+{
+"id": 1247641,
+"date": "2026-11-11",
+"time": "14:55",
+"end": "15:00",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "5,000 Nodes in Minutes, Twice in a Week: A Pattern for Fleet-Wide Node Changes"
+},
+{
+"id": 1337450,
+"date": "2026-11-11",
+"time": "15:00",
+"end": "15:30",
+"roomId": "grand-ballroom-j",
+"room": "Grand Ballroom J",
+"title": "Let Me Finish: Rethinking How We Listen"
+},
+{
+"id": 1250015,
+"date": "2026-11-11",
+"time": "15:02",
+"end": "15:07",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "Allocating Kubernetes Idle Per-Instance — Letting Scale Do What Fairness Rules Couldn't"
+},
+{
+"id": 1336095,
+"date": "2026-11-11",
+"time": "15:07",
+"end": "15:12",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Unblocking Istio: Living Traffic Management Live!"
+},
+{
+"id": 1250299,
+"date": "2026-11-11",
+"time": "15:09",
+"end": "15:14",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "Dashboards-as-Code: Easy to Ship, Easy to Get Wrong"
+},
+{
+"id": 1229970,
+"date": "2026-11-11",
+"time": "15:10",
+"end": "15:40",
+"roomId": "grand-ballroom-gi",
+"room": "Grand Ballroom GI",
+"title": "No RAG, No Regrets: Letting an LLM Drive 30 EKS Clusters in Production"
+},
+{
+"id": 1244576,
+"date": "2026-11-11",
+"time": "15:10",
+"end": "15:40",
+"roomId": "151",
+"room": "151",
+"title": "GPU Observability with eBPF: From Kernel Hooks to Kubernetes Metrics"
+},
+{
+"id": 1247283,
+"date": "2026-11-11",
+"time": "15:10",
+"end": "15:40",
+"roomId": "255-bc",
+"room": "255 BC",
+"title": "Green Dashboards, Broken Clusters: Taming Stale Watches in Kubernetes Operators"
+},
+{
+"id": 1247552,
+"date": "2026-11-11",
+"time": "15:10",
+"end": "15:40",
+"roomId": "regency-ballroom-b",
+"room": "Regency Ballroom B",
+"title": "From Pod Creation to First Packet"
+},
+{
+"id": 1248924,
+"date": "2026-11-11",
+"time": "15:10",
+"end": "15:40",
+"roomId": "salt-lake-ballroom-de",
+"room": "Salt Lake Ballroom DE",
+"title": "Your CI's Mistaken Identity"
+},
+{
+"id": 1249814,
+"date": "2026-11-11",
+"time": "15:10",
+"end": "15:40",
+"roomId": "salt-lake-ballroom-c",
+"room": "Salt Lake Ballroom C",
+"title": "Free Tokens for Everyone"
+},
+{
+"id": 1249894,
+"date": "2026-11-11",
+"time": "15:10",
+"end": "15:40",
+"roomId": "grand-ballroom-bdf",
+"room": "Grand Ballroom BDF",
+"title": "Many Clusters, One GPU Pool: Locality-Aware Scheduling and Data Delivery With Kueue and Dragonfly"
+},
+{
+"id": 1250470,
+"date": "2026-11-11",
+"time": "15:10",
+"end": "15:40",
+"roomId": "grand-ballroom-h",
+"room": "Grand Ballroom H",
+"title": "Look Before You Leap: Preventing In-Motion K8s Updates in Fleet Robotics"
+},
+{
+"id": 1250750,
+"date": "2026-11-11",
+"time": "15:10",
+"end": "15:40",
+"roomId": "grand-ballroom-ace",
+"room": "Grand Ballroom ACE",
+"title": "Millions of Events, One Right Order: Financial Data Processing at Intuit"
+},
+{
+"id": 1289667,
+"date": "2026-11-11",
+"time": "15:10",
+"end": "15:40",
+"roomId": "251-a-c",
+"room": "251 A-C",
+"title": "Achieving Cross-Cloud Portability with the Kubernetes Resource Orchestrator"
+},
+{
+"id": 1289671,
+"date": "2026-11-11",
+"time": "15:10",
+"end": "15:40",
+"roomId": "250-a-c",
+"room": "250 A-C",
+"title": "A Decade of AI on Kubernetes: Kubeflow’s Journey to CNCF Graduation"
+},
+{
+"id": 1289695,
+"date": "2026-11-11",
+"time": "15:10",
+"end": "15:40",
+"roomId": "250-d-f",
+"room": "250 D-F",
+"title": "Gateway API Project Update: – Building the Future of Traffic"
+},
+{
+"id": 1289698,
+"date": "2026-11-11",
+"time": "15:10",
+"end": "15:40",
+"roomId": "251-d-f",
+"room": "251 D-F",
+"title": "What's New with Kubectl and Kustomize … and How You Can Help!"
+},
+{
+"id": 1362684,
+"date": "2026-11-11",
+"time": "15:10",
+"end": "15:30",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: The Distroless Trap: Live-Busting Container Myths with Rocks"
+},
+{
+"id": 1367762,
+"date": "2026-11-11",
+"time": "15:10",
+"end": "15:40",
+"roomId": "254",
+"room": "254",
+"title": "Dockerfiles Made Software Reproducible. What Makes an Agent Reproducible?"
+},
+{
+"id": 1336097,
+"date": "2026-11-11",
+"time": "15:14",
+"end": "15:29",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "AI-Aware Traffic Management: Scaling Inference with Istio Ambient Mesh"
+},
+{
+"id": 1250962,
+"date": "2026-11-11",
+"time": "15:16",
+"end": "15:21",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "Two Newcomers, One Cloud Native Future: Learning Kubernetes In The AI Era"
+},
+{
+"id": 1364856,
+"date": "2026-11-11",
+"time": "15:25",
+"end": "16:25",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "CLBO: ClashLoopBackOff: Attendee Edition"
+},
+{
+"id": 1336098,
+"date": "2026-11-11",
+"time": "15:31",
+"end": "15:46",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Two Namespaces, One Mesh: Zero-Downtime Releases for an Always-On Aviation Platform"
+},
+{
+"id": 1362685,
+"date": "2026-11-11",
+"time": "15:35",
+"end": "15:55",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: Why Your Kubernetes Autoscalers Keep Fighting (and How to End the Thrash)"
+},
+{
+"id": 1371581,
+"date": "2026-11-11",
+"time": "15:40",
+"end": "16:10",
+"roomId": "network-nook",
+"room": "Network Nook",
+"title": "Network Nook Meetup: A Platform Approach to Achieving AI ROI, Sponsored by CDW"
+},
+{
+"id": 1374337,
+"date": "2026-11-11",
+"time": "15:40",
+"end": "16:10",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "Celebration of Newly Graduated Projects + Project Birthdays 🎉"
+},
+{
+"id": 1371080,
+"date": "2026-11-11",
+"time": "15:45",
+"end": "16:00",
+"roomId": "starlight-summit-zone",
+"room": "Starlight Summit Zone",
+"title": "From Skills Gaps to Skills Growth: Aligning Teams Around Learning"
+},
+{
+"id": 1336100,
+"date": "2026-11-11",
+"time": "15:48",
+"end": "15:53",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "The Sidecar-to-Ambient Migration Nobody Warned Us About (AI Edition)"
+},
+{
+"id": 1336101,
+"date": "2026-11-11",
+"time": "15:55",
+"end": "16:10",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Breaking the O(n²) Wall: Pub/Sub Federation for Istio Multicluster Service Discovery"
+},
+{
+"id": 1336567,
+"date": "2026-11-11",
+"time": "16:00",
+"end": "16:30",
+"roomId": "grand-ballroom-j",
+"room": "Grand Ballroom J",
+"title": "Allyship Isn't a Mindset (It's a Habit)"
+},
+{
+"id": 1374040,
+"date": "2026-11-11",
+"time": "16:00",
+"end": "16:20",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: The Software Factory of Factories with Port.io"
+},
+{
+"id": 1230227,
+"date": "2026-11-11",
+"time": "16:10",
+"end": "16:40",
+"roomId": "salt-lake-ballroom-de",
+"room": "Salt Lake Ballroom DE",
+"title": "Zero-Trust Telemetry: Stopping AI-Powered Poisoning Attacks on Observability Pipelines"
+},
+{
+"id": 1234729,
+"date": "2026-11-11",
+"time": "16:10",
+"end": "16:40",
+"roomId": "salt-lake-ballroom-c",
+"room": "Salt Lake Ballroom C",
+"title": "Governing and Scaling Agents in Heterogeneous Environments"
+},
+{
+"id": 1236394,
+"date": "2026-11-11",
+"time": "16:10",
+"end": "16:40",
+"roomId": "grand-ballroom-gi",
+"room": "Grand Ballroom GI",
+"title": "Quota Isn't Enough: Topology Aware Scheduling on Modern GPU Clusters"
+},
+{
+"id": 1237600,
+"date": "2026-11-11",
+"time": "16:10",
+"end": "16:40",
+"roomId": "regency-ballroom-b",
+"room": "Regency Ballroom B",
+"title": "Choose Your Own Adventure: The Saga of Serving LLM Inference"
+},
+{
+"id": 1245965,
+"date": "2026-11-11",
+"time": "16:10",
+"end": "17:30",
+"roomId": "regency-ballroom-a",
+"room": "Regency Ballroom A",
+"title": "Sandboxing on Kubernetes with WebAssembly: A Hands-on Tutorial"
+},
+{
+"id": 1248120,
+"date": "2026-11-11",
+"time": "16:10",
+"end": "16:40",
+"roomId": "grand-ballroom-bdf",
+"room": "Grand Ballroom BDF",
+"title": "RBAC as a Platform Capability: Applying Platform Engineering to Kubernetes Access"
+},
+{
+"id": 1248888,
+"date": "2026-11-11",
+"time": "16:10",
+"end": "16:40",
+"roomId": "255-ef",
+"room": "255 EF",
+"title": "Goodbye Webhooks, Hello CEL: Using Native Validating and Mutating Admission Policies in Kubernetes"
+},
+{
+"id": 1249409,
+"date": "2026-11-11",
+"time": "16:10",
+"end": "16:40",
+"roomId": "255-bc",
+"room": "255 BC",
+"title": "Battle-tested Autoscaling Paradigms with KEDA"
+},
+{
+"id": 1249812,
+"date": "2026-11-11",
+"time": "16:10",
+"end": "16:40",
+"roomId": "151",
+"room": "151",
+"title": "Fine-Tuning a Vision Language Model Across Hundreds of GPUs on Kubernetes"
+},
+{
+"id": 1250275,
+"date": "2026-11-11",
+"time": "16:10",
+"end": "16:40",
+"roomId": "grand-ballroom-ace",
+"room": "Grand Ballroom ACE",
+"title": "Observability for LLM Inference on Kubernetes"
+},
+{
+"id": 1250513,
+"date": "2026-11-11",
+"time": "16:10",
+"end": "16:40",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "OpenTelemetry in Your Pocket"
+},
+{
+"id": 1251217,
+"date": "2026-11-11",
+"time": "16:10",
+"end": "16:40",
+"roomId": "grand-ballroom-h",
+"room": "Grand Ballroom H",
+"title": "Binary Version Is Not Behavior: Skip-Level Kubernetes Control Plane Upgrades With KEP-4330"
+},
+{
+"id": 1289664,
+"date": "2026-11-11",
+"time": "16:10",
+"end": "16:40",
+"roomId": "250-a-c",
+"room": "250 A-C",
+"title": "Fighting Fire with Fire: Scaling KubeEdge Vulnerability Management in the New AI Era"
+},
+{
+"id": 1289676,
+"date": "2026-11-11",
+"time": "16:10",
+"end": "16:40",
+"roomId": "250-d-f",
+"room": "250 D-F",
+"title": "The Next Era of Kubernetes Operator Lifecycle Management"
+},
+{
+"id": 1289702,
+"date": "2026-11-11",
+"time": "16:10",
+"end": "16:40",
+"roomId": "251-a-c",
+"room": "251 A-C",
+"title": "Multi-Cluster Orchestration System: Karmada Updates and Use Cases"
+},
+{
+"id": 1289703,
+"date": "2026-11-11",
+"time": "16:10",
+"end": "16:40",
+"roomId": "251-d-f",
+"room": "251 D-F",
+"title": "Scaling AI Model Distribution with Dragonfly: From HuggingFace to Production GPU Clusters"
+},
+{
+"id": 1294763,
+"date": "2026-11-11",
+"time": "16:10",
+"end": "17:30",
+"roomId": "255-a",
+"room": "255 A",
+"title": "Contribfest: Zero to Published Gadget - eBPF for Everyone with Inspektor Gadget"
+},
+{
+"id": 1294770,
+"date": "2026-11-11",
+"time": "16:10",
+"end": "17:30",
+"roomId": "255-d",
+"room": "255 D",
+"title": "From Curious to Contributor: Ship Your First Backstage PR"
+},
+{
+"id": 1363966,
+"date": "2026-11-11",
+"time": "16:10",
+"end": "16:40",
+"roomId": "254",
+"room": "254",
+"title": "Exploring Telemetry Quality"
+},
+{
+"id": 1336102,
+"date": "2026-11-11",
+"time": "16:12",
+"end": "16:17",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "ServiceEntry Visibility: Tomorrow's ServiceEntry, Today"
+},
+{
+"id": 1336104,
+"date": "2026-11-11",
+"time": "16:19",
+"end": "16:24",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Translating Mesh Identity into MCP Impersonation: Governing AI Agent Identities with Istio"
+},
+{
+"id": 1336105,
+"date": "2026-11-11",
+"time": "16:25",
+"end": "16:30",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Istio Day Closing Remarks"
+},
+{
+"id": 1362689,
+"date": "2026-11-11",
+"time": "16:25",
+"end": "16:45",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: Day 2 for Stateful Kubernetes: Data Services You Can See"
+},
+{
+"id": 1370902,
+"date": "2026-11-11",
+"time": "16:35",
+"end": "17:00",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "CNCF Project Demos"
+},
+{
+"id": 1238395,
+"date": "2026-11-11",
+"time": "17:00",
+"end": "17:30",
+"roomId": "255-ef",
+"room": "255 EF",
+"title": "From Zero to GPU Cloud: 12 months building Mistral Compute on top of Open Source"
+},
+{
+"id": 1243852,
+"date": "2026-11-11",
+"time": "17:00",
+"end": "17:30",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "Clueless About The Cost of AI Model Usage? OpenCost+llm-d = first of a kind inference cost tracking"
+},
+{
+"id": 1247455,
+"date": "2026-11-11",
+"time": "17:00",
+"end": "17:30",
+"roomId": "grand-ballroom-bdf",
+"room": "Grand Ballroom BDF",
+"title": "Robust CI as a Safety Net: Moving Fast at Scale with AI-Generated GitOps"
+},
+{
+"id": 1247513,
+"date": "2026-11-11",
+"time": "17:00",
+"end": "17:30",
+"roomId": "255-bc",
+"room": "255 BC",
+"title": "Composing Inference on Kubernetes: Gateway, Schedule, Serve, Observe"
+},
+{
+"id": 1247666,
+"date": "2026-11-11",
+"time": "17:00",
+"end": "17:30",
+"roomId": "grand-ballroom-gi",
+"room": "Grand Ballroom GI",
+"title": "Running Secure Agents at Scale"
+},
+{
+"id": 1248368,
+"date": "2026-11-11",
+"time": "17:00",
+"end": "17:30",
+"roomId": "salt-lake-ballroom-c",
+"room": "Salt Lake Ballroom C",
+"title": "Reduce vLLM Pod Cold Starts with KServe Kernel Caching"
+},
+{
+"id": 1248422,
+"date": "2026-11-11",
+"time": "17:00",
+"end": "17:30",
+"roomId": "151",
+"room": "151",
+"title": "CoHDI: Bridging Kubernetes and Disaggregated Memory for Memory-Aware LLM Inference"
+},
+{
+"id": 1250239,
+"date": "2026-11-11",
+"time": "17:00",
+"end": "17:30",
+"roomId": "grand-ballroom-ace",
+"room": "Grand Ballroom ACE",
+"title": "One Workload to Rule Them All: Workload Aware Scheduling for Distributed AI Training on Kubernetes"
+},
+{
+"id": 1250522,
+"date": "2026-11-11",
+"time": "17:00",
+"end": "17:30",
+"roomId": "grand-ballroom-h",
+"room": "Grand Ballroom H",
+"title": "Pushing Beyond the Breaking Point: Linked Runners and TEEs for Frontier AI"
+},
+{
+"id": 1250972,
+"date": "2026-11-11",
+"time": "17:00",
+"end": "17:30",
+"roomId": "salt-lake-ballroom-de",
+"room": "Salt Lake Ballroom DE",
+"title": "Stop Writing Secrets Into YAML: A Rotation-First Identity Pattern for Kubernetes"
+},
+{
+"id": 1251218,
+"date": "2026-11-11",
+"time": "17:00",
+"end": "17:30",
+"roomId": "regency-ballroom-b",
+"room": "Regency Ballroom B",
+"title": "Feeling Lost? A Newcomer's Guide to the Gateway API"
+},
+{
+"id": 1289660,
+"date": "2026-11-11",
+"time": "17:00",
+"end": "17:30",
+"roomId": "251-a-c",
+"room": "251 A-C",
+"title": "The Future of Kubernetes Eviction and Node Lifecycle"
+},
+{
+"id": 1289661,
+"date": "2026-11-11",
+"time": "17:00",
+"end": "17:30",
+"roomId": "251-d-f",
+"room": "251 D-F",
+"title": "Beyond Provisioning: Multi-Tenancy, Rack Awareness, and Declarative Networking in Metal3"
+},
+{
+"id": 1289663,
+"date": "2026-11-11",
+"time": "17:00",
+"end": "17:30",
+"roomId": "250-d-f",
+"room": "250 D-F",
+"title": "Demystifying Upgrades for Stateful, Dormant AI Agents: Unleashing Seamless Updates in Dynamic Sand"
+},
+{
+"id": 1289705,
+"date": "2026-11-11",
+"time": "17:00",
+"end": "17:30",
+"roomId": "250-a-c",
+"room": "250 A-C",
+"title": "Kubernetes SIG Architecture Intro and Updates"
+},
+{
+"id": 1374991,
+"date": "2026-11-11",
+"time": "17:00",
+"end": "17:30",
+"roomId": "254",
+"room": "254",
+"title": "Validating Kubernetes Workloads: Checklists and Best Practices"
+},
+{
+"id": 1340051,
+"date": "2026-11-11",
+"time": "19:00",
+"end": "00:00",
+"roomId": "off-site-location",
+"room": "Off-Site Location",
+"title": "🧩 Save Phippy: The Cloud Native Escape Room Hosted by Teleport | SEPARATE REGISTRATION REQUIRED"
+},
+{
+"id": 1363972,
+"date": "2026-11-12",
+"time": "09:00",
+"end": "09:10",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Cloud Native: Built by Humans, Engineered to Evolve"
+},
+{
+"id": 1352067,
+"date": "2026-11-12",
+"time": "09:12",
+"end": "09:17",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Kubeflow Graduation: Powering the Next Era of Cloud Native AI With an Open Community"
+},
+{
+"id": 1353351,
+"date": "2026-11-12",
+"time": "09:19",
+"end": "09:30",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Celebrating the People Who Make Cloud Native Possible"
+},
+{
+"id": 1337241,
+"date": "2026-11-12",
+"time": "09:32",
+"end": "09:37",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Scaling Multi-Modal Models and Computer-Use Agents on Kubernetes"
+},
+{
+"id": 1293929,
+"date": "2026-11-12",
+"time": "09:39",
+"end": "09:44",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Standardized Yet Adaptable: How Nutanix is Evolving Cluster API with CAREN"
+},
+{
+"id": 1367923,
+"date": "2026-11-12",
+"time": "09:46",
+"end": "09:49",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Salesforce Runs on Heroku: How We Empower Every Builder at Cloud Native Scale"
+},
+{
+"id": 1368936,
+"date": "2026-11-12",
+"time": "09:51",
+"end": "09:54",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "The Storage Bottleneck AI Didn't See Coming: Inside StepFun’s Multimodal Production Stack"
+},
+{
+"id": 1301727,
+"date": "2026-11-12",
+"time": "09:56",
+"end": "10:01",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Kubernetes with Conviction: How Customization is Shaping the OSS AI Ecosystem's Future"
+},
+{
+"id": 1293369,
+"date": "2026-11-12",
+"time": "10:03",
+"end": "10:08",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Agentic AI, Assembled in the Open"
+},
+{
+"id": 1294245,
+"date": "2026-11-12",
+"time": "10:10",
+"end": "10:20",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Cloud Native Without Limits: What Can AI Agents Do for Us?"
+},
+{
+"id": 1302806,
+"date": "2026-11-12",
+"time": "10:22",
+"end": "10:30",
+"roomId": "hall-de",
+"room": "Hall DE",
+"title": "Closing Remarks"
+},
+{
+"id": 1373668,
+"date": "2026-11-12",
+"time": "10:30",
+"end": "11:55",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "Project Pavilion Kiosks | Thursday Morning"
+},
+{
+"id": 1362633,
+"date": "2026-11-12",
+"time": "10:35",
+"end": "10:55",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: Introducing Traversal: The AI SRE for the Enterprise"
+},
+{
+"id": 1334861,
+"date": "2026-11-12",
+"time": "10:45",
+"end": "10:50",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "llm-d Opening Remarks"
+},
+{
+"id": 1370918,
+"date": "2026-11-12",
+"time": "10:45",
+"end": "11:10",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "Security Slam Awards Ceremony"
+},
+{
+"id": 1371081,
+"date": "2026-11-12",
+"time": "10:45",
+"end": "11:00",
+"roomId": "starlight-summit-zone",
+"room": "Starlight Summit Zone",
+"title": "How Your Agent Assists Attackers: CVEs and Security Best Practices"
+},
+{
+"id": 1334864,
+"date": "2026-11-12",
+"time": "10:50",
+"end": "11:15",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "llm-d 1.0 Production-Grade Inference for Cloud-Native AI"
+},
+{
+"id": 1230488,
+"date": "2026-11-12",
+"time": "11:00",
+"end": "11:30",
+"roomId": "grand-ballroom-bdf",
+"room": "Grand Ballroom BDF",
+"title": "Beyond Dashboards: A Semantic Layer for AI-Driven Observability in Kubernetes"
+},
+{
+"id": 1242417,
+"date": "2026-11-12",
+"time": "11:00",
+"end": "11:30",
+"roomId": "salt-lake-ballroom-c",
+"room": "Salt Lake Ballroom C",
+"title": "Debugging the Invisible: Standardizing Kubernetes Networking Expertise"
+},
+{
+"id": 1243227,
+"date": "2026-11-12",
+"time": "11:00",
+"end": "12:20",
+"roomId": "regency-ballroom-a",
+"room": "Regency Ballroom A",
+"title": "The Most Boring Talk at KubeCon - And the One That Will Save Your Job"
+},
+{
+"id": 1244941,
+"date": "2026-11-12",
+"time": "11:00",
+"end": "11:30",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "PKI Done Easy with Pod Certificates and Cluster Trust Bundles"
+},
+{
+"id": 1245273,
+"date": "2026-11-12",
+"time": "11:00",
+"end": "11:30",
+"roomId": "255-ef",
+"room": "255 EF",
+"title": "From Laptop to Cluster: The Agentic AI Inner Loop on Kubernetes"
+},
+{
+"id": 1247103,
+"date": "2026-11-12",
+"time": "11:00",
+"end": "11:30",
+"roomId": "grand-ballroom-gi",
+"room": "Grand Ballroom GI",
+"title": "Autoscaling at Scale with KEDA"
+},
+{
+"id": 1247970,
+"date": "2026-11-12",
+"time": "11:00",
+"end": "11:30",
+"roomId": "grand-ballroom-ace",
+"room": "Grand Ballroom ACE",
+"title": "Managing Network Security in Multi-Tenant Environments with Istio and Cilium"
+},
+{
+"id": 1248305,
+"date": "2026-11-12",
+"time": "11:00",
+"end": "11:30",
+"roomId": "grand-ballroom-h",
+"room": "Grand Ballroom H",
+"title": "What monday.com's 500+ Engineers and AI Agents Have in Common"
+},
+{
+"id": 1248788,
+"date": "2026-11-12",
+"time": "11:00",
+"end": "11:30",
+"roomId": "salt-lake-ballroom-de",
+"room": "Salt Lake Ballroom DE",
+"title": "1000 Clusters, 1 Smarter Brain: The Next Evolution of AIOps at Salesforce"
+},
+{
+"id": 1250494,
+"date": "2026-11-12",
+"time": "11:00",
+"end": "11:30",
+"roomId": "151",
+"room": "151",
+"title": "Catching Ghosts in the Machine: Hallucination Detection for Observability Agents"
+},
+{
+"id": 1251205,
+"date": "2026-11-12",
+"time": "11:00",
+"end": "11:30",
+"roomId": "255-bc",
+"room": "255 BC",
+"title": "Four Resources, One Object: Surviving Gateway API After Ingress NGINX"
+},
+{
+"id": 1289710,
+"date": "2026-11-12",
+"time": "11:00",
+"end": "11:30",
+"roomId": "250-a-c",
+"room": "250 A-C",
+"title": "WG-Workload Aware Scheduling: An Introduction"
+},
+{
+"id": 1289711,
+"date": "2026-11-12",
+"time": "11:00",
+"end": "11:30",
+"roomId": "251-d-f",
+"room": "251 D-F",
+"title": "Every Kubernetes Object Deserves an Identity: The SPIFFE Broker API"
+},
+{
+"id": 1289714,
+"date": "2026-11-12",
+"time": "11:00",
+"end": "11:30",
+"roomId": "251-a-c",
+"room": "251 A-C",
+"title": "Containerd: Project Update and Deep Dive"
+},
+{
+"id": 1289727,
+"date": "2026-11-12",
+"time": "11:00",
+"end": "11:30",
+"roomId": "250-d-f",
+"room": "250 D-F",
+"title": "SIG Storage Intro and Deep Dive"
+},
+{
+"id": 1294756,
+"date": "2026-11-12",
+"time": "11:00",
+"end": "12:20",
+"roomId": "255-d",
+"room": "255 D",
+"title": "Tell Us How You’re Using Argo CD: A Community ContribFest Session"
+},
+{
+"id": 1294782,
+"date": "2026-11-12",
+"time": "11:00",
+"end": "12:20",
+"roomId": "255-a",
+"room": "255 A",
+"title": "Agentic + Cloud Native: Getting Started Contributing to Kagent"
+},
+{
+"id": 1340074,
+"date": "2026-11-12",
+"time": "11:00",
+"end": "12:00",
+"roomId": "grand-ballroom-j",
+"room": "Grand Ballroom J",
+"title": "Your Voice on Stage: The Delivery + Storytelling Lab"
+},
+{
+"id": 1370430,
+"date": "2026-11-12",
+"time": "11:00",
+"end": "11:20",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: From YOLO to Golden Paths: Building Trusted Environments for AI Agents"
+},
+{
+"id": 1374958,
+"date": "2026-11-12",
+"time": "11:00",
+"end": "11:30",
+"roomId": "254",
+"room": "254",
+"title": "Public Sector User Group Meetup: Cloud Native in the Public Sector"
+},
+{
+"id": 1334866,
+"date": "2026-11-12",
+"time": "11:15",
+"end": "11:35",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "From GPU to Fleet. The llm-d KV Cache Hierarchy"
+},
+{
+"id": 1362642,
+"date": "2026-11-12",
+"time": "11:25",
+"end": "11:45",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: HTTP 200, Tool Failed: Taming MCP Agent Traffic with NGINX"
+},
+{
+"id": 1334868,
+"date": "2026-11-12",
+"time": "11:35",
+"end": "11:55",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Agentic Inference at Scale"
+},
+{
+"id": 1247749,
+"date": "2026-11-12",
+"time": "11:50",
+"end": "12:20",
+"roomId": "grand-ballroom-bdf",
+"room": "Grand Ballroom BDF",
+"title": "From Packets to Paychecks: eBPF-Based Network Cost Attribution at Scale"
+},
+{
+"id": 1247981,
+"date": "2026-11-12",
+"time": "11:50",
+"end": "12:20",
+"roomId": "salt-lake-ballroom-de",
+"room": "Salt Lake Ballroom DE",
+"title": "Deep Dive Into the DRA Driver for NVIDIA GPUs: What Works Today, What’s Coming and Why It Matters"
+},
+{
+"id": 1248779,
+"date": "2026-11-12",
+"time": "11:50",
+"end": "12:20",
+"roomId": "salt-lake-ballroom-c",
+"room": "Salt Lake Ballroom C",
+"title": "From Load Balancer Sprawl to Multicluster Service Discovery"
+},
+{
+"id": 1250076,
+"date": "2026-11-12",
+"time": "11:50",
+"end": "12:20",
+"roomId": "255-ef",
+"room": "255 EF",
+"title": "Hope Is Not a Rollout Strategy: Balancing (AI) Quality, Cost, and Risk Through Experimentation"
+},
+{
+"id": 1250086,
+"date": "2026-11-12",
+"time": "11:50",
+"end": "12:20",
+"roomId": "grand-ballroom-ace",
+"room": "Grand Ballroom ACE",
+"title": "From Bearer Tokens to Mesh-Native mTLS: Modernizing Service Identity at Coinbase"
+},
+{
+"id": 1250150,
+"date": "2026-11-12",
+"time": "11:50",
+"end": "12:20",
+"roomId": "grand-ballroom-h",
+"room": "Grand Ballroom H",
+"title": "The Scheduling Stack: Real-World Lessons from Anthropic, Anyscale, Google, and CERN"
+},
+{
+"id": 1250351,
+"date": "2026-11-12",
+"time": "11:50",
+"end": "12:20",
+"roomId": "151",
+"room": "151",
+"title": "Running Stateful Analytics on Kubernetes: Lessons from Building a Distributed DuckDB Platform"
+},
+{
+"id": 1250736,
+"date": "2026-11-12",
+"time": "11:50",
+"end": "12:20",
+"roomId": "255-bc",
+"room": "255 BC",
+"title": "From Citadel to Contract: Migrating a Monolith with 500+ Services to Kubernetes"
+},
+{
+"id": 1250882,
+"date": "2026-11-12",
+"time": "11:50",
+"end": "12:20",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "MCP Was the Easy Half, The Rest Was a Skill Issue"
+},
+{
+"id": 1250973,
+"date": "2026-11-12",
+"time": "11:50",
+"end": "12:20",
+"roomId": "grand-ballroom-gi",
+"room": "Grand Ballroom GI",
+"title": "Follow the GPUs: How a Regulated Fortune 100 Serves Customers When No Single Cloud Has Enough"
+},
+{
+"id": 1289712,
+"date": "2026-11-12",
+"time": "11:50",
+"end": "12:20",
+"roomId": "251-d-f",
+"room": "251 D-F",
+"title": "SIG-Multicluster Intro and Deep Dive"
+},
+{
+"id": 1289717,
+"date": "2026-11-12",
+"time": "11:50",
+"end": "12:20",
+"roomId": "251-a-c",
+"room": "251 A-C",
+"title": "Rook: Intro and Deep Dive with Ceph Storage"
+},
+{
+"id": 1289718,
+"date": "2026-11-12",
+"time": "11:50",
+"end": "12:20",
+"roomId": "250-a-c",
+"room": "250 A-C",
+"title": "SIG Scheduling Update: Multi-Level and Topology-Aware Workload Scheduling"
+},
+{
+"id": 1289724,
+"date": "2026-11-12",
+"time": "11:50",
+"end": "12:20",
+"roomId": "250-d-f",
+"room": "250 D-F",
+"title": "WG-Batch Updates: What’s New and What Is Next?"
+},
+{
+"id": 1370905,
+"date": "2026-11-12",
+"time": "11:50",
+"end": "14:00",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "CNCF Project Demos"
+},
+{
+"id": 1374960,
+"date": "2026-11-12",
+"time": "11:50",
+"end": "12:20",
+"roomId": "254",
+"room": "254",
+"title": "Public Sector User Group BoF: Roadmap, White Papers, Our Group"
+},
+{
+"id": 1336060,
+"date": "2026-11-12",
+"time": "11:55",
+"end": "12:10",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "Seeing Inside LLM Inference: Observability and Cost Visibility for llm-d on Kubernetes"
+},
+{
+"id": 1336061,
+"date": "2026-11-12",
+"time": "12:10",
+"end": "12:30",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "DisaggregatedSet Meets Multi-EPP: Coordinating llm-d at Scale in production"
+},
+{
+"id": 1337454,
+"date": "2026-11-12",
+"time": "12:15",
+"end": "12:45",
+"roomId": "grand-ballroom-j",
+"room": "Grand Ballroom J",
+"title": "You’re Underrepresented. Okay, That’s Your Superpower"
+},
+{
+"id": 1373669,
+"date": "2026-11-12",
+"time": "12:25",
+"end": "14:00",
+"roomId": "project-pavilion",
+"room": "Project Pavilion",
+"title": "Project Pavilion Kiosks | Thursday Afternoon"
+},
+{
+"id": 1334872,
+"date": "2026-11-12",
+"time": "12:30",
+"end": "12:32",
+"roomId": "cloud-native-theater",
+"room": "Cloud Native Theater",
+"title": "llm-d Closing Remarks"
+},
+{
+"id": 1369446,
+"date": "2026-11-12",
+"time": "12:30",
+"end": "13:30",
+"roomId": "network-nook",
+"room": "Network Nook",
+"title": "Network Nook Meetup: Share + Continue the Conversation"
+},
+{
+"id": 1362649,
+"date": "2026-11-12",
+"time": "12:40",
+"end": "13:00",
+"roomId": "demo-theater",
+"room": "Demo Theater",
+"title": "Demo Theater: When Should Your Cluster Fix a Failing GPU?"
+},
+{
+"id": 1371083,
+"date": "2026-11-12",
+"time": "12:45",
+"end": "13:00",
+"roomId": "starlight-summit-zone",
+"room": "Starlight Summit Zone",
+"title": "Build Your Kubernetes Networking Edge: Skills to Certification"
+},
+{
+"id": 1371084,
+"date": "2026-11-12",
+"time": "13:30",
+"end": "13:45",
+"roomId": "starlight-summit-zone",
+"room": "Starlight Summit Zone",
+"title": "Build a SkillCred to Help Your Community Develop and Demonstrate Real-world Skills"
+},
+{
+"id": 1228453,
+"date": "2026-11-12",
+"time": "13:50",
+"end": "14:20",
+"roomId": "grand-ballroom-ace",
+"room": "Grand Ballroom ACE",
+"title": "Anthropic’s Kubernetes Scheduler for Frontier AI: What Worked, What Broke"
+},
+{
+"id": 1241974,
+"date": "2026-11-12",
+"time": "13:50",
+"end": "14:20",
+"roomId": "salt-lake-ballroom-de",
+"room": "Salt Lake Ballroom DE",
+"title": "Fixing GPU Time-Slicing on Kubernetes: Dynamic, Memory-Safe Sharing for AI Inference"
+},
+{
+"id": 1246166,
+"date": "2026-11-12",
+"time": "13:50",
+"end": "14:20",
+"roomId": "salt-lake-ballroom-c",
+"room": "Salt Lake Ballroom C",
+"title": "The Race to Standardize AI Observability"
+},
+{
+"id": 1246170,
+"date": "2026-11-12",
+"time": "13:50",
+"end": "14:20",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "From Maintenance Chaos to Steady Uptime: GitOps-Driven Scheduling across GPU Fleets"
+},
+{
+"id": 1247326,
+"date": "2026-11-12",
+"time": "13:50",
+"end": "14:20",
+"roomId": "grand-ballroom-h",
+"room": "Grand Ballroom H",
+"title": "Frameworkless ML Serving: Scaling to Thousands of Models with KEDA, Pub/Sub, and Native K8s"
+},
+{
+"id": 1247804,
+"date": "2026-11-12",
+"time": "13:50",
+"end": "15:10",
+"roomId": "regency-ballroom-a",
+"room": "Regency Ballroom A",
+"title": "Untrusted Code on Secure Runtimes: Agent Sandboxes on Kubernetes"
+},
+{
+"id": 1248035,
+"date": "2026-11-12",
+"time": "13:50",
+"end": "14:20",
+"roomId": "255-bc",
+"room": "255 BC",
+"title": "The Seams Are the Trap: Agent Fleets from CNCF Parts You Already Have"
+},
+{
+"id": 1249027,
+"date": "2026-11-12",
+"time": "13:50",
+"end": "14:20",
+"roomId": "grand-ballroom-gi",
+"room": "Grand Ballroom GI",
+"title": "Beyond Stateless vs Stateful: A Unified Workload API for Multi-Cluster Kubernetes"
+},
+{
+"id": 1249553,
+"date": "2026-11-12",
+"time": "13:50",
+"end": "14:20",
+"roomId": "grand-ballroom-bdf",
+"room": "Grand Ballroom BDF",
+"title": "BurritoBot Said Let's Dance, the Platform Said No"
+},
+{
+"id": 1250303,
+"date": "2026-11-12",
+"time": "13:50",
+"end": "14:20",
+"roomId": "255-ef",
+"room": "255 EF",
+"title": "Not Just for Infrastructure: Rebuilding an OSS Product with Kubernetes-Style Architecture"
+},
+{
+"id": 1289721,
+"date": "2026-11-12",
+"time": "13:50",
+"end": "14:20",
+"roomId": "250-a-c",
+"room": "250 A-C",
+"title": "Built for What’s Next: Backstage’s Role in AI-Assisted Development"
+},
+{
+"id": 1289723,
+"date": "2026-11-12",
+"time": "13:50",
+"end": "14:20",
+"roomId": "251-a-c",
+"room": "251 A-C",
+"title": "Explore TAG Workloads Foundation: Core Runtime, Batch Scheduling, and Moar"
+},
+{
+"id": 1289731,
+"date": "2026-11-12",
+"time": "13:50",
+"end": "14:20",
+"roomId": "251-d-f",
+"room": "251 D-F",
+"title": "OpenFeature Update from the Maintainers"
+},
+{
+"id": 1294774,
+"date": "2026-11-12",
+"time": "13:50",
+"end": "15:10",
+"roomId": "255-a",
+"room": "255 A",
+"title": "Agentic Helm Hackathon"
+},
+{
+"id": 1307005,
+"date": "2026-11-12",
+"time": "13:50",
+"end": "15:10",
+"roomId": "255-d",
+"room": "255 D",
+"title": "Meshery Contribfest: Ship Your First PR to a CNCF Cloud Native Manager"
+},
+{
+"id": 1337210,
+"date": "2026-11-12",
+"time": "13:50",
+"end": "14:20",
+"roomId": "250-d-f",
+"room": "250 D-F",
+"title": "The Ultimate Kubestronaut Trivia Challenge!"
+},
+{
+"id": 1346926,
+"date": "2026-11-12",
+"time": "13:50",
+"end": "14:20",
+"roomId": "151",
+"room": "151",
+"title": "AI Gateways in Practice: Model Routing, Inference Scheduling, and MCP on Kubernetes"
+},
+{
+"id": 1374950,
+"date": "2026-11-12",
+"time": "13:50",
+"end": "14:20",
+"roomId": "254",
+"room": "254",
+"title": "Agentic AI: Let’s Build a Reference Architecture, Live? Or at Least Try!"
+},
+{
+"id": 1339172,
+"date": "2026-11-12",
+"time": "14:00",
+"end": "14:30",
+"roomId": "grand-ballroom-j",
+"room": "Grand Ballroom J",
+"title": "You Don't Have to Know Everything: Career Lessons"
+},
+{
+"id": 1237843,
+"date": "2026-11-12",
+"time": "14:40",
+"end": "15:10",
+"roomId": "grand-ballroom-h",
+"room": "Grand Ballroom H",
+"title": "From Black-Box to Auditable AI-Grid: A Deterministic Governance Layer with Hybrid Cloud"
+},
+{
+"id": 1238002,
+"date": "2026-11-12",
+"time": "14:40",
+"end": "15:10",
+"roomId": "grand-ballroom-ace",
+"room": "Grand Ballroom ACE",
+"title": "Agents Fail. Workflows Recover. Durable Agent Orchestration with Cadence"
+},
+{
+"id": 1246342,
+"date": "2026-11-12",
+"time": "14:40",
+"end": "15:10",
+"roomId": "255-bc",
+"room": "255 BC",
+"title": "Securing the Agentic Future: Distributing LLM Weights and Sandboxed AI Agents via Harbor"
+},
+{
+"id": 1247294,
+"date": "2026-11-12",
+"time": "14:40",
+"end": "15:10",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "Fencing Tokens and the Three-Party Contract: What Most Distributed Locks Get Wrong"
+},
+{
+"id": 1247392,
+"date": "2026-11-12",
+"time": "14:40",
+"end": "15:10",
+"roomId": "255-ef",
+"room": "255 EF",
+"title": "Fake It Until You Make It: Mocking NVML to Test the Kubernetes GPU Stack on Zero GPUs"
+},
+{
+"id": 1247932,
+"date": "2026-11-12",
+"time": "14:40",
+"end": "15:10",
+"roomId": "grand-ballroom-bdf",
+"room": "Grand Ballroom BDF",
+"title": "From Fine-Tuning to Production: Scaling Agentic AI at Shopify via Inference Perf"
+},
+{
+"id": 1249224,
+"date": "2026-11-12",
+"time": "14:40",
+"end": "15:10",
+"roomId": "salt-lake-ballroom-c",
+"room": "Salt Lake Ballroom C",
+"title": "When Training Dies at 3 AM: Correlating Kubernetes Events with AI-Framework Failures"
+},
+{
+"id": 1249410,
+"date": "2026-11-12",
+"time": "14:40",
+"end": "15:10",
+"roomId": "salt-lake-ballroom-de",
+"room": "Salt Lake Ballroom DE",
+"title": "Dropping LLM Inference Cost by Two-Thirds with Open Weights and Kubernetes"
+},
+{
+"id": 1250985,
+"date": "2026-11-12",
+"time": "14:40",
+"end": "15:10",
+"roomId": "151",
+"room": "151",
+"title": "The Local AI Renaissance"
+},
+{
+"id": 1251145,
+"date": "2026-11-12",
+"time": "14:40",
+"end": "15:10",
+"roomId": "grand-ballroom-gi",
+"room": "Grand Ballroom GI",
+"title": "From Platform Catalog to Conversational Agent: Wiring AI Into Your Internal Developer Platform"
+},
+{
+"id": 1289713,
+"date": "2026-11-12",
+"time": "14:40",
+"end": "15:10",
+"roomId": "250-d-f",
+"room": "250 D-F",
+"title": "Open Policy Agent. (OPA) Intro & Deep Dive"
+},
+{
+"id": 1289719,
+"date": "2026-11-12",
+"time": "14:40",
+"end": "15:10",
+"roomId": "251-d-f",
+"room": "251 D-F",
+"title": "Falco Never Flies Alone: Runtime Security as an Ecosystem"
+},
+{
+"id": 1289720,
+"date": "2026-11-12",
+"time": "14:40",
+"end": "15:10",
+"roomId": "251-a-c",
+"room": "251 A-C",
+"title": "10 Years of Minikube and the Future of Millions of Users"
+},
+{
+"id": 1289726,
+"date": "2026-11-12",
+"time": "14:40",
+"end": "15:10",
+"roomId": "250-a-c",
+"room": "250 A-C",
+"title": "Kubernetes Data Protection WG Intro & Deep Dive"
+},
+{
+"id": 1375122,
+"date": "2026-11-12",
+"time": "14:40",
+"end": "15:10",
+"roomId": "254",
+"room": "254",
+"title": "Platform Engineering User Group BoF"
+},
+{
+"id": 1339180,
+"date": "2026-11-12",
+"time": "15:00",
+"end": "16:00",
+"roomId": "grand-ballroom-j",
+"room": "Grand Ballroom J",
+"title": "Peer Group Mentoring"
+},
+{
+"id": 1240796,
+"date": "2026-11-12",
+"time": "15:30",
+"end": "16:00",
+"roomId": "regency-ballroom-a",
+"room": "Regency Ballroom A",
+"title": "The Agent Has Entered the Cluster: AI Auth 101 for Kubernetes"
+},
+{
+"id": 1244000,
+"date": "2026-11-12",
+"time": "15:30",
+"end": "16:00",
+"roomId": "255-ef",
+"room": "255 EF",
+"title": "Here be DRAgons: Bringing native zero-copy networking to Pods with Cilium and netkit"
+},
+{
+"id": 1245937,
+"date": "2026-11-12",
+"time": "15:30",
+"end": "16:00",
+"roomId": "151",
+"room": "151",
+"title": "Simulate, Evolve, Validate, Ship: AI-Discovered Algorithms for LLM Serving Stacks"
+},
+{
+"id": 1245970,
+"date": "2026-11-12",
+"time": "15:30",
+"end": "16:00",
+"roomId": "salt-lake-ballroom-c",
+"room": "Salt Lake Ballroom C",
+"title": "Fast and Furious: OTel Drift"
+},
+{
+"id": 1246551,
+"date": "2026-11-12",
+"time": "15:30",
+"end": "16:00",
+"roomId": "regency-ballroom-cd",
+"room": "Regency Ballroom CD",
+"title": "OpenFeature as a Control Plane for OpenTelemetry"
+},
+{
+"id": 1247100,
+"date": "2026-11-12",
+"time": "15:30",
+"end": "16:00",
+"roomId": "grand-ballroom-bdf",
+"room": "Grand Ballroom BDF",
+"title": "Splitting the Monolith at Cloudera - Building Fault-Tolerant Workflows with Cadence"
+},
+{
+"id": 1249842,
+"date": "2026-11-12",
+"time": "15:30",
+"end": "16:00",
+"roomId": "salt-lake-ballroom-de",
+"room": "Salt Lake Ballroom DE",
+"title": "Running MCP Servers at Scale: Sandboxed Tool Execution on Kubernetes"
+},
+{
+"id": 1250888,
+"date": "2026-11-12",
+"time": "15:30",
+"end": "16:00",
+"roomId": "grand-ballroom-h",
+"room": "Grand Ballroom H",
+"title": "From Proxy to Platform: Building a Multi-Tenant AI Gateway"
+},
+{
+"id": 1251009,
+"date": "2026-11-12",
+"time": "15:30",
+"end": "16:00",
+"roomId": "255-bc",
+"room": "255 BC",
+"title": "Platform-First AI Agent Security: Zero-Trust Patterns for Kubernetes"
+},
+{
+"id": 1251069,
+"date": "2026-11-12",
+"time": "15:30",
+"end": "16:00",
+"roomId": "grand-ballroom-gi",
+"room": "Grand Ballroom GI",
+"title": "From Vibe to Live: Building for the Real World"
+},
+{
+"id": 1251249,
+"date": "2026-11-12",
+"time": "15:30",
+"end": "16:00",
+"roomId": "grand-ballroom-ace",
+"room": "Grand Ballroom ACE",
+"title": "Spark on Kubernetes: The Gap Between “It Works” and “It Works Well”"
+},
+{
+"id": 1289715,
+"date": "2026-11-12",
+"time": "15:30",
+"end": "16:00",
+"roomId": "251-d-f",
+"room": "251 D-F",
+"title": "Life After Strimzi 1.0.0"
+},
+{
+"id": 1289722,
+"date": "2026-11-12",
+"time": "15:30",
+"end": "16:00",
+"roomId": "250-d-f",
+"room": "250 D-F",
+"title": "Longhorn: Intro, Deep Dive and Q&A"
+},
+{
+"id": 1289733,
+"date": "2026-11-12",
+"time": "15:30",
+"end": "16:00",
+"roomId": "251-a-c",
+"room": "251 A-C",
+"title": "Breaking Things Safely, Finding Bugs Before They Find You: Fuzzing Metal³ Through Controlled Chaos"
+},
+{
+"id": 1289734,
+"date": "2026-11-12",
+"time": "15:30",
+"end": "16:00",
+"roomId": "250-a-c",
+"room": "250 A-C",
+"title": "SIG API Machinery in the Era of AI: Updates"
+},
+{
+"id": 1375121,
+"date": "2026-11-12",
+"time": "15:30",
+"end": "16:00",
+"roomId": "254",
+"room": "254",
+"title": "The CNCF Platform Engineering User Group & Platform Factors"
+}
+]

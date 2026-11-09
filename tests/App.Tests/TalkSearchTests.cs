@@ -37,7 +37,7 @@ public class ElasticTalkSearchTests
         var ids = await Search(OneHit).SearchAsync("cheaper clusters", CancellationToken.None);
 
         var (path, body) = _requests.Single();
-        Assert.Equal("/headroom-talks/_search", path);
+        Assert.Equal("/livevision-talks/_search", path);
         Assert.Contains("\"rrf\"", body);
         Assert.Contains("\"multi_match\"", body);
         Assert.Contains("\"semantic\"", body);
@@ -69,16 +69,42 @@ public class ElasticTalkSearchTests
         Assert.Contains("must_not", _requests.Single().Body);
     }
 
+    private static readonly Session[] OneTalk =
+    [
+        new(1, new DateOnly(2026, 11, 10), "10:00", "11:00", "hall-de", "Hall DE", "A talk"),
+    ];
+
     [Fact]
     public async Task Indexing_writes_every_talk_with_stable_ids()
     {
-        await Search("""{"errors":false,"items":[]}""").IndexAllAsync(Schedule.Sessions, CancellationToken.None);
+        await Search("""{"errors":false,"items":[]}""").IndexAllAsync(OneTalk, CancellationToken.None);
 
-        Assert.Equal("/headroom-talks", _requests[0].Path);
+        Assert.Equal("/livevision-talks", _requests[0].Path);
         Assert.Contains("semantic_text", _requests[0].Body);
-        Assert.Equal("/headroom-talks/_bulk", _requests[1].Path);
-        Assert.Contains("""{"index":{"_id":"1"}}""", _requests[1].Body);
-        Assert.Contains("semantic_content", _requests[1].Body);
+        Assert.Equal("/livevision-talks/_count", _requests[1].Path);
+        Assert.Equal("/livevision-talks/_bulk", _requests[2].Path);
+        Assert.Contains("""{"index":{"_id":"1"}}""", _requests[2].Body);
+        Assert.Contains("semantic_content", _requests[2].Body);
+    }
+
+    [Fact]
+    public async Task An_index_that_is_already_complete_is_not_rewritten()
+    {
+        await Search("""{"count":1}""").IndexAllAsync(OneTalk, CancellationToken.None);
+
+        Assert.DoesNotContain(_requests, request => request.Path.EndsWith("/_bulk"));
+    }
+
+    [Fact]
+    public async Task Talks_are_written_in_batches()
+    {
+        var many = Enumerable.Range(1, 120)
+            .Select(id => new Session(id, new DateOnly(2026, 11, 10), "10:00", "11:00", "hall-de", "Hall DE", $"Talk {id}"))
+            .ToList();
+
+        await Search("""{"errors":false,"items":[]}""").IndexAllAsync(many, CancellationToken.None);
+
+        Assert.Equal(3, _requests.Count(request => request.Path.EndsWith("/_bulk")));
     }
 
     [Fact]
@@ -91,6 +117,11 @@ public class ElasticTalkSearchTests
 
 public class TalkFinderTests
 {
+    private static readonly Session Known = Schedule.Sessions[3];
+
+    // A real title, for tests of the keyword fallback.
+    private static readonly string Keyword = Schedule.Sessions[0].Title;
+
     private sealed class BrokenSearch : ITalkSearch
     {
         public int Calls { get; private set; }
@@ -112,7 +143,7 @@ public class TalkFinderTests
         public Task<IReadOnlyList<int>> SearchAsync(string query, CancellationToken cancellationToken)
         {
             Calls++;
-            return Task.FromResult<IReadOnlyList<int>>([4, 999]);
+            return Task.FromResult<IReadOnlyList<int>>([Known.Id, 999]);
         }
 
         public Task<IReadOnlyList<int>> SimilarAsync(Session session, CancellationToken cancellationToken) =>
@@ -134,12 +165,12 @@ public class TalkFinderTests
         var search = new EmptyThenFilledSearch();
         var finder = Finder(search);
 
-        var whileIndexing = await finder.SearchAsync("Panel", CancellationToken.None);
-        search.Hits = [4];
-        var afterIndexing = await finder.SearchAsync("Panel", CancellationToken.None);
+        var whileIndexing = await finder.SearchAsync(Keyword, CancellationToken.None);
+        search.Hits = [Known.Id];
+        var afterIndexing = await finder.SearchAsync(Keyword, CancellationToken.None);
 
-        Assert.Equal("Panel", Assert.Single(whileIndexing).Title);
-        Assert.Equal(4, Assert.Single(afterIndexing).Id);
+        Assert.Contains(whileIndexing, session => session.Title == Keyword);
+        Assert.Equal(Known.Id, Assert.Single(afterIndexing).Id);
     }
 
     [Fact]
@@ -149,9 +180,9 @@ public class TalkFinderTests
         var finder = Finder(search);
 
         Assert.Empty(await finder.SimilarAsync(Schedule.Sessions[0], CancellationToken.None));
-        search.Hits = [4];
+        search.Hits = [Known.Id];
 
-        Assert.Equal(4, Assert.Single(await finder.SimilarAsync(Schedule.Sessions[0], CancellationToken.None)).Id);
+        Assert.Equal(Known.Id, Assert.Single(await finder.SimilarAsync(Schedule.Sessions[0], CancellationToken.None)).Id);
     }
 
     private static TalkFinder Finder(ITalkSearch search) => new(
@@ -163,9 +194,9 @@ public class TalkFinderTests
     [Fact]
     public async Task A_search_outage_falls_back_to_keywords()
     {
-        var results = await Finder(new BrokenSearch()).SearchAsync("panel", CancellationToken.None);
+        var results = await Finder(new BrokenSearch()).SearchAsync(Keyword, CancellationToken.None);
 
-        Assert.Equal("Panel", Assert.Single(results).Title);
+        Assert.Contains(results, session => session.Title == Keyword);
     }
 
     [Fact]
@@ -184,7 +215,7 @@ public class TalkFinderTests
         var results = await finder.SearchAsync("tracing ", CancellationToken.None);
 
         Assert.Equal(1, search.Calls);
-        Assert.Equal(4, Assert.Single(results).Id);
+        Assert.Equal(Known.Id, Assert.Single(results).Id);
     }
 
     [Fact]
@@ -207,7 +238,19 @@ public class TalkSuggestionTests
 
     private static RoomStatus Room(string id, int? people) => new(id, id, null, 10, people, null, Area);
 
-    private static Session Talk(int id) => Schedule.Sessions.Single(session => session.Id == id);
+    private static readonly Session[] Talks =
+    [
+        Fixture(4, "13:00", "14:00", "room-102", "Tracing without tears"),
+        Fixture(5, "14:00", "15:00", "room-101", "GitOps in practice"),
+        Fixture(6, "14:00", "15:00", "room-102", "Logs, metrics and sanity"),
+        Fixture(7, "14:00", "15:00", "main-hall", "Panel"),
+        Fixture(12, "16:00", "17:00", "room-102", "Agents in production"),
+    ];
+
+    private static Session Fixture(int id, string time, string end, string room, string title) =>
+        new(id, new DateOnly(2026, 11, 9), time, end, room, room, title);
+
+    private static Session Talk(int id) => Talks.Single(session => session.Id == id);
 
     [Fact]
     public void Suggests_the_closest_running_talk_with_space()
@@ -248,5 +291,31 @@ public class TalkSuggestionTests
         Assert.Equal([6, 5, 4], results.Select(result => result.Session.Id));
         Assert.Equal("Full · 100%", results[1].Status);
         Assert.Equal("Ended", results[2].Status);
+    }
+
+    [Fact]
+    public void A_room_matches_talks_by_its_current_name()
+    {
+        var renamed = new RoomStatus("main-hall", "Room 102", null, 10, 3, null, Area);
+        RoomStatus[] rooms = [Room("room-101", 10), renamed];
+
+        var pick = TalkSuggestions.Pick(rooms[0], [Talk(6)], rooms, Now);
+
+        Assert.Equal("main-hall", pick?.RoomId);
+    }
+
+    [Fact]
+    public void The_schedule_list_shows_what_is_next_not_the_whole_week()
+    {
+        var many = Enumerable.Range(101, 40)
+            .Select(id => new Session(id, new DateOnly(2026, 11, 10), "10:00", "11:00", "x", "X", $"Talk {id}"))
+            .Append(Talk(4))
+            .ToList();
+        var board = new Board([], [], IsSample: false);
+
+        var results = TalkSuggestions.ForDisplay(many, board, Now);
+
+        Assert.Equal(30, results.Count);
+        Assert.DoesNotContain(results, result => result.Session.Id == 4);
     }
 }

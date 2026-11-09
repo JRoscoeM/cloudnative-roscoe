@@ -2,10 +2,9 @@
 @foreach (var result in Model)
 {
     <li class="level-@result.StatusLevel">
-        <span class="schedule-time">@result.Session.Time</span>
+        <span class="schedule-time">@result.Session.Date.ToString("ddd") @result.Session.Time</span>
         <span class="schedule-body">
             <span class="schedule-title">@result.Session.Title</span>
-            <span class="schedule-abstract">@result.Session.Abstract</span>
         </span>
         <span class="schedule-meta">
             <span class="schedule-room">@result.RoomName</span>

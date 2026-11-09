@@ -3,7 +3,7 @@
 # by hand.
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: team-__TEAM__
+namespace: team-roscoe
 resources:
   - deployment.yaml
   - service.yaml

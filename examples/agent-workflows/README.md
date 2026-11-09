@@ -2,7 +2,7 @@
 
 Use these patterns when your project needs them. They are not judging requirements.
 This team has its own virtual cluster (vcluster), with cluster-admin access inside it.
-Replace `team-__TEAM__` with your app namespace. On Radar Cloud, call `list_clusters`,
+Replace `team-roscoe` with your app namespace. On Radar Cloud, call `list_clusters`,
 select the entry whose `name` exactly matches your team name, and pass its `id` as
 `cluster` on every subsequent tool call below. Never select `cnh` or another team.
 Use your app namespace unless deliberately working in another namespace in your cluster.
@@ -46,7 +46,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: app-import-001
-  namespace: team-__TEAM__
+  namespace: team-roscoe
 spec:
   backoffLimit: 0
   activeDeadlineSeconds: 300
@@ -91,7 +91,7 @@ quota before choosing requests; your dependency shares the team's quota with the
 
 Your team's AppProject allows any source repository, namespaces in your virtual
 cluster, and cluster-scoped resources. A chart can be managed by an Argo CD
-Application in namespace `team-__TEAM__`, project `team-__TEAM__`. Use an exact chart
+Application in namespace `team-roscoe`, project `team-roscoe`. Use an exact chart
 version and check its rendered resources first. Operators, CRDs, cluster-wide
 Roles/Bindings and additional namespaces are allowed inside your team's cluster.
 They still share its total budget and cannot bypass the host's restrictions on
@@ -198,7 +198,7 @@ is sufficient—do not ask again for the same authorized work.
 - Get `cluster` from the `list_clusters` entry whose `name` exactly matches your team, then use `get_resource` to verify the exact target. Missing or mistyped targets can still consume allowance.
 - If a start response was lost, you lost the run ID, or the person started it in the UI, use `list_investigations` for that cluster before starting again. It returns your own runs in `result.runs`; select the intended target/run, use its `id` as `run_id`, and continue with `get_investigation` instead of starting again. A completed run started again can consume allowance again. If listing is unavailable, recover the existing run in Cloud instead of assuming another start is needed.
 - Call `start_investigation` with, for example,
-  `{"cluster":"clu_example","group":"apps","kind":"Deployment","namespace":"team-__TEAM__","name":"app"}`.
+  `{"cluster":"clu_example","group":"apps","kind":"Deployment","namespace":"team-roscoe","name":"app"}`.
   When coming from a Radar issue, add its ID as `issue_id`; the Hub validates its target
   and can associate the same counted issue episode. Do not invent an issue ID.
 - Save `structuredContent.result.id` as `run_id`. Call `get_investigation` with

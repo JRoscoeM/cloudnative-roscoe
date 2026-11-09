@@ -5,16 +5,16 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: app
-  namespace: team-__TEAM__
+  namespace: team-roscoe
 spec:
-  project: team-__TEAM__
+  project: team-roscoe
   source:
-    repoURL: https://github.com/OWNER/REPO.git
+    repoURL: https://github.com/JRoscoeM/cloudnative-roscoe.git
     targetRevision: main
     path: deploy
   destination:
     server: https://kubernetes.default.svc
-    namespace: team-__TEAM__
+    namespace: team-roscoe
   syncPolicy:
     automated:
       prune: true

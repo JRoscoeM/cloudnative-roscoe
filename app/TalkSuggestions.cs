@@ -45,6 +45,7 @@ public static class TalkSuggestions
     public static IReadOnlyList<TalkResult> ForSearch(IEnumerable<Session> sessions, Board board, DateTimeOffset now) =>
         sessions
             .OrderBy(session => session.Ends <= now ? 2 : RoomFor(session, board.Rooms)?.Level == Busyness.Full ? 1 : 0)
+            .Take(ScheduleListLength) // The keyword fallback can match most of the schedule.
             .Select(session => Describe(session, board, now))
             .ToList();
 

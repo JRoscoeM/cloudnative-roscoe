@@ -305,6 +305,16 @@ public class TalkSuggestionTests
     }
 
     [Fact]
+    public void Search_results_are_capped()
+    {
+        var many = Enumerable.Range(101, 200)
+            .Select(id => new Session(id, new DateOnly(2026, 11, 10), "10:00", "11:00", "x", "X", $"Talk {id}"));
+        var board = new Board([], [], IsSample: false);
+
+        Assert.Equal(30, TalkSuggestions.ForSearch(many, board, Now).Count);
+    }
+
+    [Fact]
     public void The_schedule_list_shows_what_is_next_not_the_whole_week()
     {
         var many = Enumerable.Range(101, 40)

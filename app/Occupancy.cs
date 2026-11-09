@@ -66,6 +66,9 @@ public sealed record RoomStatus(
 
     public string PercentText => HasReading ? $"{Percent}%" : "–";
 
+    // Half-width tiles only fit about 18 characters at the map's type size.
+    public string MapName => Area.Width < 200 && Name.Length > 18 ? $"{Name[..17]}…" : Name;
+
     public string TalkText => NowShowing ?? "No session right now";
 }
 
@@ -95,7 +98,8 @@ public sealed record Board(
     IReadOnlyList<RoomStatus> Rooms,
     IReadOnlyList<QueueStatus> Queues,
     bool IsSample,
-    bool DataUnavailable = false)
+    bool DataUnavailable = false,
+    int MapHeight = 400)
 {
     // Rooms with no reading sort last: they can't be recommended yet.
     public IEnumerable<RoomStatus> RoomsWithMostSpaceFirst => Rooms

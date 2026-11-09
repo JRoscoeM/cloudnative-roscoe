@@ -25,6 +25,20 @@ if (backends.OpenAI is { } openAi)
         new OpenAiSnapshotAnalyzer(openAi, builder.Configuration["OPENAI_MODEL"] ?? "gpt-5-mini"));
 }
 
+builder.Services.AddSingleton<IVenueStore>(_ => backends.Elasticsearch is { } venueClient
+    ? new ElasticVenueStore(venueClient)
+    : new LocalVenueStore());
+builder.Services.AddSingleton<VenueService>();
+builder.Services.AddSingleton(services => new OrganizerAuth(
+    builder.Configuration["ORGANIZER_KEY"] is { Length: > 0 } organizerKey ? organizerKey : builder.Configuration["SENSOR_KEY"],
+    services.GetRequiredService<TimeProvider>()));
+builder.Services.AddSingleton<SiteHealthService>();
+builder.Services.AddHttpClient<PrometheusClient>(client =>
+{
+    client.BaseAddress = new Uri(builder.Configuration["PROMETHEUS_URL"] ?? "http://prometheus-server.monitoring.svc.cluster.local");
+    client.Timeout = TimeSpan.FromSeconds(3);
+});
+
 builder.Services.AddSingleton<SearchBudget>();
 builder.Services.AddSingleton<TalkFinder>();
 if (backends.Elasticsearch is { } talksClient)
@@ -67,6 +81,7 @@ app.UseStaticFiles(new StaticFileOptions
 app.UseRateLimiter();
 app.MapRazorPages();
 app.MapOccupancyApi();
+app.MapOrganizerApi();
 
 // Kubernetes probes. Deliberately independent of Elasticsearch and OpenAI: an
 // outage at a provider should show as errors, not as pods being restarted.

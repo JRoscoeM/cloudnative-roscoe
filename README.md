@@ -12,7 +12,10 @@ Start here if your team has its own cluster at the hackathon: a virtual Kubernet
 - **Fill forecast:** a straight-line trend over recent sensor readings, adjusted for when talks end.
 - **Live map:** a floor plan colored by fullness, refreshed every 5 seconds.
 
-Rooms, capacities and talks in `app/Venue.cs` and `app/Schedule.cs` are placeholders.
+- **Talk search:** hybrid keyword and semantic search in Elasticsearch, and "try instead" suggestions when a room is packed.
+- **Organizer dashboard:** `/organizer` edits rooms and lines, creates sensor links, and shows site health from the cluster's Prometheus.
+
+Rooms and lines start from `app/Venue.cs` and are then managed from the dashboard. Talks in `app/Schedule.cs` are placeholders.
 
 | Part | Choice |
 |---|---|
@@ -61,6 +64,8 @@ stringData:
 Restart the app after creating or changing the Secret, because it's read when a pod starts.
 
 `SENSOR_KEY` is the setup key you enter once on each sensor phone. The phone exchanges it for a token that can only report for the space it watches.
+
+The organizer dashboard uses `SENSOR_KEY` too, unless you also set `ORGANIZER_KEY`. Set it if people who run sensors shouldn't be able to edit the venue.
 
 ### Use of AI tools
 

@@ -25,7 +25,9 @@ public interface ITalkSearch
 public sealed class ElasticTalkSearch(ElasticsearchClient client) : ITalkSearch
 {
     public const string IndexName = "headroom-talks";
-    private const int ResultCount = 8;
+    // Few talks in the index, so a longer list would just be weak matches.
+    private const int SearchResultCount = 5;
+    private const int SimilarResultCount = 8;
 
     private const string Mapping = """
         {
@@ -76,7 +78,7 @@ public sealed class ElasticTalkSearch(ElasticsearchClient client) : ITalkSearch
         // Keywords catch exact names like "Argo"; the semantic half catches meaning.
         return SearchIdsAsync($$"""
             {
-              "size": {{ResultCount}},
+              "size": {{SearchResultCount}},
               "_source": ["sessionId"],
               "retriever": {
                 "rrf": {
@@ -97,7 +99,7 @@ public sealed class ElasticTalkSearch(ElasticsearchClient client) : ITalkSearch
 
         return SearchIdsAsync($$"""
             {
-              "size": {{ResultCount}},
+              "size": {{SimilarResultCount}},
               "_source": ["sessionId"],
               "query": {
                 "bool": {

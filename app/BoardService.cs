@@ -4,6 +4,7 @@ namespace App;
 
 public sealed class BoardService(
     IReadingStore store,
+    VenueService venues,
     TalkFinder talks,
     IMemoryCache cache,
     TimeProvider time,
@@ -24,15 +25,16 @@ public sealed class BoardService(
     private async Task<Board> BuildAsync(CancellationToken cancellationToken)
     {
         var now = time.GetUtcNow();
+        var venue = await venues.GetAsync(cancellationToken);
         try
         {
             var readings = await store.SinceAsync(now - OccupancyEstimator.SnapshotLifetime, cancellationToken);
-            return await WithAlternativesAsync(BoardBuilder.Build(readings, now, store.IsSample), now, cancellationToken);
+            return await WithAlternativesAsync(BoardBuilder.Build(venue, readings, now, store.IsSample), now, cancellationToken);
         }
         catch (Exception e) when (e is ReadingStoreException or HttpRequestException or Elastic.Transport.TransportException)
         {
             logger.LogError(e, "Couldn't load readings for the board");
-            return BoardBuilder.Build([], now, store.IsSample, dataUnavailable: true);
+            return BoardBuilder.Build(venue, [], now, store.IsSample, dataUnavailable: true);
         }
     }
 

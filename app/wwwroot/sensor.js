@@ -334,4 +334,20 @@ $('test-photo').addEventListener('change', async (event) => {
 
 window.addEventListener('resize', draw);
 
+// Organizers share links with the space and token in the fragment.
+function applySetupLink() {
+  const params = new URLSearchParams(location.hash.slice(1));
+  const id = params.get('target');
+  const token = params.get('token');
+  if (!id || !token) {
+    return;
+  }
+
+  store(tokenKey(id), token);
+  target.value = id;
+  target.dispatchEvent(new Event('change'));
+  history.replaceState(null, '', location.pathname);
+}
+
+applySetupLink();
 loadDetector();

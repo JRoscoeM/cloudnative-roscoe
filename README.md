@@ -4,7 +4,7 @@ Start here if your team has its own cluster at the hackathon: a virtual Kubernet
 
 ## This project
 
-**Headroom** shows how busy a conference is and where to go next, at `https://roscoe.cnh.radarhq.io`. It's a .NET 10 web app built for the Cloud Native Hackathon.
+**Conference LiveVision** shows how busy a conference is and where to go next, at `https://roscoe.cnh.radarhq.io`. It's a .NET 10 web app built for the Cloud Native Hackathon.
 
 - **Person count:** a phone on `/sensor` runs a person detector on the device and posts only the number. Video never leaves the phone.
 - **Photo reports:** an attendee photographs a room on `/snapshot`. OpenAI estimates how full it is, and the photo is discarded.

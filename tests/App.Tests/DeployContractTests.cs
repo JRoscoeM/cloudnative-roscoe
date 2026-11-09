@@ -84,6 +84,23 @@ public class DeployContractTests : IClassFixture<WebApplicationFactory<Program>>
     }
 
     [Fact]
+    public async Task Home_page_labels_sample_data()
+    {
+        var html = await _client.GetStringAsync("/");
+
+        Assert.Contains("Sample data.", html);
+    }
+
+    [Fact]
+    public async Task Live_section_returns_a_fragment_for_htmx()
+    {
+        var html = await _client.GetStringAsync("/?handler=Live");
+
+        Assert.Contains("<svg", html);
+        Assert.DoesNotContain("<html", html);
+    }
+
+    [Fact]
     public async Task Search_returns_a_fragment_for_htmx()
     {
         var html = await _client.GetStringAsync("/?handler=Results&q=panel");

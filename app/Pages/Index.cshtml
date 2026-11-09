@@ -1,23 +1,32 @@
 @page
 @model IndexModel
 @{
-    ViewData["Title"] = Model.Info.Team;
+    ViewData["Title"] = "Headroom";
 }
 
-<h1>@Model.Info.Team</h1>
-<p>version @Model.Info.Version</p>
+<header class="intro">
+    <h1>Where to go next</h1>
+    <p>See which rooms have space and how long the lines are before you walk over.</p>
+    <a class="button" href="/snapshot">Report a room with a photo</a>
+</header>
 
-<label for="q">Search sessions</label>
-<input id="q" name="q" type="search" autocomplete="off"
-       hx-get="/?handler=Results" hx-trigger="input changed delay:200ms, search" hx-target="#results">
+@* Polling pauses while the tab is hidden, so idle phones don't load the pods. *@
+<div id="live" hx-get="/?handler=Live" hx-trigger="every 5s [document.visibilityState === 'visible']" hx-swap="innerHTML">
+    <partial name="_Live" model="Model.Board" />
+</div>
 
-<ul id="results">
-    <partial name="_Results" model="Model.Results" />
-</ul>
+<section id="schedule" aria-labelledby="schedule-title">
+    <h2 id="schedule-title">Schedule</h2>
+    <label for="q">Search sessions</label>
+    <input id="q" name="q" type="search" autocomplete="off" placeholder="Try &quot;panel&quot;"
+           hx-get="/?handler=Results" hx-trigger="input changed delay:200ms, search" hx-target="#results">
+    <ul id="results" class="schedule">
+        <partial name="_Results" model="Model.Results" />
+    </ul>
+</section>
 
-<h2>Integrations</h2>
-<ul>
-    <li>Elasticsearch: @(Model.Backends.Elasticsearch is null ? "not configured" : "configured")</li>
-    <li>OpenAI: @(Model.Backends.OpenAI is null ? "not configured" : "configured")</li>
-    <li>Dash0: @(Model.Backends.TelemetryExportEnabled ? "configured" : "not configured")</li>
-</ul>
+<footer class="page-foot">
+    <span>version @Model.Info.Version</span>
+    <span>team @Model.Info.Team</span>
+    <a href="/sensor">Set up a sensor</a>
+</footer>

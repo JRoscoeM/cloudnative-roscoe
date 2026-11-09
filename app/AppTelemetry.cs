@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Diagnostics.Metrics;
 using OpenTelemetry;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
@@ -10,6 +11,14 @@ public static class AppTelemetry
 {
     /// <summary>Start custom spans here, such as one around each OpenAI call.</summary>
     public static readonly ActivitySource Source = new("App");
+
+    private static readonly Meter Meter = new("App");
+
+    /// <summary>Readings saved, by source: sensor or snapshot.</summary>
+    public static readonly Counter<long> Readings = Meter.CreateCounter<long>("headroom.readings");
+
+    /// <summary>Photos analyzed, by outcome: counted, low_confidence or failed.</summary>
+    public static readonly Counter<long> Snapshots = Meter.CreateCounter<long>("headroom.snapshots");
 
     public static bool ExportConfigured(IConfiguration configuration) =>
         !string.IsNullOrWhiteSpace(configuration["OTEL_EXPORTER_OTLP_ENDPOINT"]);
@@ -27,6 +36,7 @@ public static class AppTelemetry
                 .AddAspNetCoreInstrumentation(options => options.Filter = context => !IsOperationalPath(context.Request.Path))
                 .AddHttpClientInstrumentation())
             .WithMetrics(metrics => metrics
+                .AddMeter(Meter.Name)
                 .AddAspNetCoreInstrumentation()
                 .AddHttpClientInstrumentation()
                 .AddRuntimeInstrumentation()

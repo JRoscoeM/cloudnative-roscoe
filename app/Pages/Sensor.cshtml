@@ -1,0 +1,67 @@
+@page "/sensor"
+@{
+    ViewData["Title"] = "Sensor · Headroom";
+}
+
+<header class="intro">
+    <h1>Sensor</h1>
+    <p>Prop this phone up facing the space. It counts people on the device and sends only the number.</p>
+</header>
+
+<p class="privacy panel">
+    Video never leaves this phone. Get the organizers' permission before pointing a camera at people.
+</p>
+
+<form id="sensor-form" class="panel">
+    <label for="target">What is this phone watching?</label>
+    <select id="target" required>
+        <option value="">Choose a space</option>
+        <optgroup label="Rooms">
+            @foreach (var room in Venue.Rooms)
+            {
+                <option value="@room.Id">@room.Name</option>
+            }
+        </optgroup>
+        <optgroup label="Lines">
+            @foreach (var queue in Venue.Queues)
+            {
+                <option value="@queue.Id">@queue.Name</option>
+            }
+        </optgroup>
+    </select>
+
+    <label for="setup-key">Setup key</label>
+    <input id="setup-key" type="password" autocomplete="off" placeholder="Not needed if this phone is already set up">
+
+    <div class="actions">
+        <button id="start" class="button" type="submit" disabled>Start counting</button>
+        <button id="stop" class="button button-quiet" type="button" hidden>Stop</button>
+    </div>
+    <p id="sensor-status" class="status" role="status">Loading the detector…</p>
+</form>
+
+<section class="panel" aria-labelledby="view-title">
+    <h2 id="view-title">Camera view</h2>
+    <p class="hint">To count only part of the view, such as a line, drag a box over it.</p>
+    <div id="stage" class="stage">
+        <video id="video" playsinline muted hidden></video>
+        <img id="test-image" alt="Your test photo" hidden>
+        <canvas id="overlay"></canvas>
+    </div>
+    <p class="sensor-figures">
+        <span>People counted: <strong id="count">–</strong></span>
+        <span>Last sent: <strong id="last-sent">–</strong></span>
+    </p>
+    <button id="clear-region" class="button button-quiet" type="button" hidden>Clear box</button>
+</section>
+
+<section class="panel" aria-labelledby="test-title">
+    <h2 id="test-title">Test accuracy with a photo</h2>
+    <p class="hint">Runs the same detector on a picture from this device. Nothing is sent or saved.</p>
+    <label for="test-photo">Test photo</label>
+    <input id="test-photo" type="file" accept="image/*">
+</section>
+
+@section Scripts {
+    <script type="module" src="/sensor.js"></script>
+}

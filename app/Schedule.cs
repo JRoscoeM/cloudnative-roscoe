@@ -1,20 +1,80 @@
 namespace App;
 
-public sealed record Session(int Id, string Time, string Room, string Title);
+public sealed record Session(int Id, string Time, string End, string RoomId, string Room, string Title)
+{
+    public DateTimeOffset StartsOn(DateOnly day) => Schedule.At(day, Time);
 
-/// <summary>Placeholder data until the real data lives in Elasticsearch.</summary>
+    public DateTimeOffset EndsOn(DateOnly day) => Schedule.At(day, End);
+}
+
+/// <summary>
+/// Placeholder talks until the real schedule is available. Times are local to the venue.
+/// </summary>
 public static class Schedule
 {
+    // A room counts as still in use if its next talk starts within this gap.
+    private static readonly TimeSpan ChangeoverGap = TimeSpan.FromMinutes(15);
+
     public static readonly IReadOnlyList<Session> Sessions =
     [
-        new(1, "10:00", "Main", "Kickoff and sponsor talks"),
-        new(2, "11:00", "Everywhere", "Build"),
-        new(3, "14:00", "Main", "Panel"),
-        new(4, "17:30", "Main", "Submissions close"),
+        new(1, "10:00", "11:00", "main-hall", "Main Hall", "Kickoff and sponsor talks"),
+        new(2, "11:00", "14:00", "main-hall", "Main Hall", "Build"),
+        new(3, "13:00", "15:30", "room-101", "Room 101", "Kubernetes on a budget"),
+        new(4, "13:00", "15:30", "room-102", "Room 102", "Tracing without tears"),
+        new(5, "13:00", "15:30", "room-201", "Room 201", "GitOps in practice"),
+        new(6, "13:00", "15:30", "room-202", "Room 202", "Search that understands you"),
+        new(7, "14:00", "15:00", "main-hall", "Main Hall", "Panel"),
+        new(8, "15:00", "17:30", "main-hall", "Main Hall", "Build, continued"),
+        new(9, "15:30", "18:00", "room-101", "Room 101", "Rollouts you can trust"),
+        new(10, "15:30", "18:00", "room-102", "Room 102", "Logs, metrics and sanity"),
+        new(11, "15:30", "18:00", "room-201", "Room 201", "Securing your cluster"),
+        new(12, "15:30", "18:00", "room-202", "Room 202", "Agents in production"),
+        new(13, "17:30", "18:30", "main-hall", "Main Hall", "Submissions close"),
     ];
 
     public static IReadOnlyList<Session> Filter(string? query) =>
         string.IsNullOrWhiteSpace(query)
             ? Sessions
             : Sessions.Where(s => s.Title.Contains(query.Trim(), StringComparison.OrdinalIgnoreCase)).ToList();
+
+    public static DateOnly VenueDay(DateTimeOffset now) => DateOnly.FromDateTime(now.ToOffset(Venue.UtcOffset).DateTime);
+
+    public static DateTimeOffset At(DateOnly day, string time) =>
+        new(day.ToDateTime(TimeOnly.Parse(time)), Venue.UtcOffset);
+
+    public static Session? Current(string roomId, DateTimeOffset now)
+    {
+        var day = VenueDay(now);
+        return Sessions.LastOrDefault(s => s.RoomId == roomId && s.StartsOn(day) <= now && now < s.EndsOn(day));
+    }
+
+    public static Session? Next(string roomId, DateTimeOffset now)
+    {
+        var day = VenueDay(now);
+        return Sessions.Where(s => s.RoomId == roomId && s.StartsOn(day) > now).MinBy(s => s.StartsOn(day));
+    }
+
+    /// <summary>
+    /// When the room is next expected to empty, following back-to-back talks.
+    /// Null when no talk is running there.
+    /// </summary>
+    public static DateTimeOffset? InUseUntil(string roomId, DateTimeOffset now)
+    {
+        var day = VenueDay(now);
+        if (Current(roomId, now) is not { } session)
+        {
+            return null;
+        }
+
+        var end = session.EndsOn(day);
+        foreach (var next in Sessions.Where(s => s.RoomId == roomId).OrderBy(s => s.StartsOn(day)))
+        {
+            if (next.StartsOn(day) >= session.StartsOn(day) && next.StartsOn(day) <= end + ChangeoverGap && next.EndsOn(day) > end)
+            {
+                end = next.EndsOn(day);
+            }
+        }
+
+        return end;
+    }
 }

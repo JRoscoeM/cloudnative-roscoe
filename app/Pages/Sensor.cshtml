@@ -1,4 +1,5 @@
 @page "/sensor"
+@model SensorModel
 @{
     ViewData["Title"] = "Sensor · Headroom";
 }
@@ -17,13 +18,13 @@
     <select id="target" required>
         <option value="">Choose a space</option>
         <optgroup label="Rooms">
-            @foreach (var room in Venue.Rooms)
+            @foreach (var room in Model.Venue.Rooms)
             {
                 <option value="@room.Id">@room.Name</option>
             }
         </optgroup>
         <optgroup label="Lines">
-            @foreach (var queue in Venue.Queues)
+            @foreach (var queue in Model.Venue.Queues)
             {
                 <option value="@queue.Id">@queue.Name</option>
             }

@@ -1,12 +1,12 @@
 @model Board
 
-<svg class="map" viewBox="0 0 360 400" role="group" aria-label="Floor plan of the venue">
+<svg class="map" viewBox="0 0 360 @Model.MapHeight" role="group" aria-label="Floor plan of the venue">
     @foreach (var room in Model.Rooms)
     {
         <a href="#room-@room.Id" class="map-room level-@room.Level.ToString().ToLowerInvariant()"
            aria-label="@room.Name, @(room.HasReading ? $"{room.Percent} percent full" : "no reading"), @room.Outlook">
             <rect x="@room.Area.X" y="@room.Area.Y" width="@room.Area.Width" height="@room.Area.Height" rx="10" />
-            <text x="@(room.Area.X + 12)" y="@(room.Area.Y + 24)" class="map-name">@room.Name</text>
+            <text x="@(room.Area.X + 12)" y="@(room.Area.Y + 24)" class="map-name">@room.MapName</text>
             <text x="@(room.Area.X + 12)" y="@(room.Area.Y + 58)" class="map-percent">@room.PercentText</text>
             <text x="@(room.Area.X + 12)" y="@(room.Area.Y + 82)" class="map-note">@room.Outlook</text>
         </a>

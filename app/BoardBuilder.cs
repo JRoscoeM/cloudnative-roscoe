@@ -5,17 +5,23 @@ public static class BoardBuilder
 {
     private static readonly TimeSpan NextTalkHorizon = TimeSpan.FromMinutes(15);
 
-    public static Board Build(IReadOnlyList<Reading> readings, DateTimeOffset now, bool isSample, bool dataUnavailable = false)
+    public static Board Build(
+        VenueSnapshot venue,
+        IReadOnlyList<Reading> readings,
+        DateTimeOffset now,
+        bool isSample,
+        bool dataUnavailable = false)
     {
         var byTarget = readings.ToLookup(reading => reading.Target);
+        var layout = FloorPlan.Compute(venue);
 
-        var rooms = Venue.Rooms.Select(room => BuildRoom(room, byTarget[room.Id].ToList(), now)).ToList();
-        var queues = Venue.Queues.Select(queue => BuildQueue(queue, byTarget[queue.Id], now)).ToList();
+        var rooms = venue.Rooms.Select(room => BuildRoom(room, byTarget[room.Id].ToList(), layout.Areas[room.Id], now)).ToList();
+        var queues = venue.Queues.Select(queue => BuildQueue(queue, byTarget[queue.Id], layout.Areas[queue.Id], now)).ToList();
 
-        return new Board(rooms, queues, isSample, dataUnavailable);
+        return new Board(rooms, queues, isSample, dataUnavailable, layout.Height);
     }
 
-    private static RoomStatus BuildRoom(RoomDefinition room, List<Reading> readings, DateTimeOffset now)
+    private static RoomStatus BuildRoom(RoomDefinition room, List<Reading> readings, MapArea area, DateTimeOffset now)
     {
         var estimate = OccupancyEstimator.Estimate(readings, now);
         var minutesToFull = estimate is null
@@ -29,12 +35,12 @@ public static class BoardBuilder
             room.Capacity,
             estimate?.People,
             minutesToFull,
-            room.Area,
+            area,
             NextUpText(room.Id, now),
             estimate is null ? null : OccupancyEstimator.Describe(estimate, now));
     }
 
-    private static QueueStatus BuildQueue(QueueDefinition queue, IEnumerable<Reading> readings, DateTimeOffset now)
+    private static QueueStatus BuildQueue(QueueDefinition queue, IEnumerable<Reading> readings, MapArea marker, DateTimeOffset now)
     {
         var estimate = OccupancyEstimator.Estimate(readings, now);
 
@@ -44,7 +50,7 @@ public static class BoardBuilder
             queue.ShortName,
             estimate?.People,
             queue.SecondsPerPerson,
-            queue.Marker,
+            marker,
             estimate is null ? null : OccupancyEstimator.Describe(estimate, now));
     }
 

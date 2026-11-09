@@ -3,7 +3,7 @@ namespace App;
 public sealed record TalkAlternative(string Title, string RoomId, string RoomName, int Percent);
 
 /// <summary>A talk as shown in search results, with how busy its room is.</summary>
-public sealed record TalkResult(Session Session, string? Status, string StatusLevel);
+public sealed record TalkResult(Session Session, string RoomName, string? Status, string StatusLevel);
 
 public static class TalkSuggestions
 {
@@ -52,14 +52,17 @@ public static class TalkSuggestions
 
     private static TalkResult Describe(Session session, Board board, DateTimeOffset now)
     {
+        // Organizers can rename rooms, so prefer the current name.
+        var room = board.Rooms.FirstOrDefault(candidate => candidate.Id == session.RoomId);
+        var roomName = room?.Name ?? session.Room;
+
         if (session.EndsOn(Schedule.VenueDay(now)) <= now)
         {
-            return new TalkResult(session, "Ended", "unknown");
+            return new TalkResult(session, roomName, "Ended", "unknown");
         }
 
-        var room = board.Rooms.FirstOrDefault(candidate => candidate.Id == session.RoomId);
         return room is { HasReading: true }
-            ? new TalkResult(session, $"{room.Level} · {room.Percent}%", room.Level.ToString().ToLowerInvariant())
-            : new TalkResult(session, null, "unknown");
+            ? new TalkResult(session, roomName, $"{room.Level} · {room.Percent}%", room.Level.ToString().ToLowerInvariant())
+            : new TalkResult(session, roomName, null, "unknown");
     }
 }

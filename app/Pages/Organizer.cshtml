@@ -1,0 +1,61 @@
+@page "/organizer"
+@{
+    ViewData["Title"] = "Organizers · Headroom";
+}
+
+<header class="intro">
+    <h1>Organizers</h1>
+    <p>Manage the venue, set up sensors and check that the site is healthy.</p>
+</header>
+
+<form id="sign-in" class="panel" hidden>
+    <label for="organizer-key">Organizer key</label>
+    <input id="organizer-key" type="password" autocomplete="off" required>
+    <div class="actions">
+        <button class="button" type="submit">Sign in</button>
+    </div>
+    <p id="sign-in-status" class="status" role="status"></p>
+</form>
+
+<div id="dashboard" hidden>
+    <p id="sample-notice" class="notice" hidden><strong>Sample data.</strong> No database is connected, so changes only last until the app restarts.</p>
+
+    <section aria-labelledby="health-title">
+        <div class="section-head">
+            <h2 id="health-title">Site health</h2>
+            <span id="overall" class="pill"></span>
+            <a class="section-link" href="https://app.dash0.com" target="_blank" rel="noopener">Open Dash0</a>
+        </div>
+        <p id="metrics-notice" class="notice" hidden>Live metrics are unavailable right now. Service checks below still work.</p>
+        <div id="tiles" class="tiles"></div>
+        <div id="charts" class="charts"></div>
+        <ul id="dependencies" class="dependencies"></ul>
+    </section>
+
+    <section aria-labelledby="rooms-admin-title">
+        <h2 id="rooms-admin-title">Rooms</h2>
+        <div id="room-rows" class="space-rows"></div>
+        <form id="add-room" class="add-space">
+            <label>Room name <input name="name" maxlength="40" required></label>
+            <label>Capacity <input name="capacity" type="number" min="1" max="100000" required></label>
+            <button class="button" type="submit">Add room</button>
+        </form>
+    </section>
+
+    <section aria-labelledby="queues-admin-title">
+        <h2 id="queues-admin-title">Lines</h2>
+        <div id="queue-rows" class="space-rows"></div>
+        <form id="add-queue" class="add-space">
+            <label>Line name <input name="name" maxlength="40" required></label>
+            <label>Seconds per person <input name="seconds" type="number" min="1" max="3600" required></label>
+            <button class="button" type="submit">Add line</button>
+        </form>
+    </section>
+
+    <p id="dashboard-status" class="status" role="status"></p>
+    <p><button id="sign-out" class="button button-quiet" type="button">Sign out</button></p>
+</div>
+
+@section Scripts {
+    <script type="module" src="/organizer.js"></script>
+}

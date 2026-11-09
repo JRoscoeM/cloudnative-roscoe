@@ -13,7 +13,7 @@
     <label for="room">Room</label>
     <select id="room" name="room" required>
         <option value="">Choose a room</option>
-        @foreach (var room in Venue.Rooms)
+        @foreach (var room in Model.Venue.Rooms)
         {
             <option value="@room.Id" selected="@(room.Id == Model.Room)">@room.Name</option>
         }

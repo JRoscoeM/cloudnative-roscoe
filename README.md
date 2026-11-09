@@ -2,6 +2,57 @@
 
 Start here if your team has its own cluster at the hackathon: a virtual Kubernetes cluster (vcluster) where you're cluster-admin. You get a small app that `git push` deploys through Argo CD, and notes your coding agent reads so it ships through [Radar](https://radarhq.io)'s MCP server. Below is a menu of what Radar can do: pick what your project needs.
 
+## This project
+
+A .NET 10 web app for the Cloud Native Hackathon, deployed at `https://roscoe.cnh.radarhq.io`.
+
+| Part | Choice |
+|---|---|
+| App | ASP.NET Core in `app/`: Razor Pages and htmx, with Minimal APIs for JSON |
+| Data | Elasticsearch |
+| AI | OpenAI |
+| Telemetry | OpenTelemetry to Dash0 over OTLP, and `/metrics` for the cluster's Prometheus |
+| Delivery | Pull requests reviewed by Gitar, then GitHub Actions, Argo CD and Radar |
+
+### Run it locally
+
+You need the .NET 10 SDK.
+
+```bash
+dotnet test App.slnx
+```
+
+```bash
+dotnet run --project app
+```
+
+The app runs without credentials, and `/api/status` shows which providers are configured. To connect a provider locally, set the variables from the next section in your shell.
+
+### Provider credentials
+
+Create Secret `app-credentials` in namespace `team-roscoe` yourself, in Radar Cloud under **Resources** > **Secrets**, and never commit it. Include only the providers you have keys for:
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: app-credentials
+  namespace: team-roscoe
+type: Opaque
+stringData:
+  ELASTICSEARCH_URL: <your Elasticsearch endpoint>
+  ELASTICSEARCH_API_KEY: <your Elasticsearch API key>
+  OPENAI_API_KEY: <your OpenAI key>
+  OTEL_EXPORTER_OTLP_ENDPOINT: <your Dash0 OTLP endpoint>
+  OTEL_EXPORTER_OTLP_HEADERS: Authorization=Bearer <your Dash0 token>
+```
+
+Restart the app after creating or changing the Secret, because it's read when a pod starts.
+
+### Use of AI tools
+
+This project was built with Claude Code, Anthropic's coding agent, which helped write the application scaffold, tests and configuration.
+
 ## The day
 
 - 11:00: before you write any code, get your cluster, open it in Radar Cloud, and connect your agent to Radar (steps below).
@@ -98,7 +149,7 @@ Pick what your project needs. None of it is required, and more doesn't score hig
 
 For credentials, one-off Jobs, dependencies and checking the running app, see [the optional agent workflows](examples/agent-workflows/README.md).
 
-Replace `app/` with your own project whenever you like. Keep it listening on `$PORT` (8080) with `/healthz` and `/readyz`, or update the probes in `deploy/`. The Dockerfile installs the dependencies in `app/package.json`; for another language, change the Dockerfile too.
+`app/` is a .NET project. Keep it listening on port 8080 with `/healthz` and `/readyz`, or update the probes in `deploy/`. The Dockerfile builds `app/App.csproj`.
 
 ## What the judges look for
 

@@ -15,6 +15,9 @@ spec:
     metadata:
       labels:
         app: app
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8080"
     spec:
       containers:
         - name: app
@@ -25,6 +28,14 @@ spec:
           env:
             - name: TEAM_NAME
               value: "roscoe"
+            - name: OTEL_EXPORTER_OTLP_PROTOCOL
+              value: http/protobuf
+          # Provider credentials, created outside git (see the README). Optional,
+          # so the app still starts before the Secret exists.
+          envFrom:
+            - secretRef:
+                name: app-credentials
+                optional: true
           resources:
             requests:
               cpu: 100m

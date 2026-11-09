@@ -6,6 +6,9 @@
 *.pem
 *.key
 
+bin/
+obj/
+.idea/
 node_modules/
 npm-debug.log*
 .DS_Store

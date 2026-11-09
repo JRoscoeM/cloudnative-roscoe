@@ -228,6 +228,13 @@ public sealed class TalkFinder(
         try
         {
             var sessions = Resolve(await search.SearchAsync(text, cancellationToken));
+
+            // No hits usually means the index is still being written, so don't cache it.
+            if (sessions.Count == 0)
+            {
+                return Schedule.Filter(text);
+            }
+
             cache.Set(key, sessions, SearchCacheFor);
             return sessions;
         }
@@ -249,7 +256,11 @@ public sealed class TalkFinder(
         try
         {
             var sessions = Resolve(await search.SimilarAsync(session, cancellationToken));
-            cache.Set(key, sessions, SimilarCacheFor);
+            if (sessions.Count > 0)
+            {
+                cache.Set(key, sessions, SimilarCacheFor);
+            }
+
             return sessions;
         }
         catch (Exception e) when (IsSearchFailure(e))

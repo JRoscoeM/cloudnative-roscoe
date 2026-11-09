@@ -119,6 +119,41 @@ public class TalkFinderTests
             Task.FromResult<IReadOnlyList<int>>([]);
     }
 
+    private sealed class EmptyThenFilledSearch : ITalkSearch
+    {
+        public IReadOnlyList<int> Hits { get; set; } = [];
+
+        public Task<IReadOnlyList<int>> SearchAsync(string query, CancellationToken cancellationToken) => Task.FromResult(Hits);
+
+        public Task<IReadOnlyList<int>> SimilarAsync(Session session, CancellationToken cancellationToken) => Task.FromResult(Hits);
+    }
+
+    [Fact]
+    public async Task An_empty_index_falls_back_to_keywords_and_is_not_cached()
+    {
+        var search = new EmptyThenFilledSearch();
+        var finder = Finder(search);
+
+        var whileIndexing = await finder.SearchAsync("Panel", CancellationToken.None);
+        search.Hits = [4];
+        var afterIndexing = await finder.SearchAsync("Panel", CancellationToken.None);
+
+        Assert.Equal("Panel", Assert.Single(whileIndexing).Title);
+        Assert.Equal(4, Assert.Single(afterIndexing).Id);
+    }
+
+    [Fact]
+    public async Task No_similar_talks_are_not_cached()
+    {
+        var search = new EmptyThenFilledSearch();
+        var finder = Finder(search);
+
+        Assert.Empty(await finder.SimilarAsync(Schedule.Sessions[0], CancellationToken.None));
+        search.Hits = [4];
+
+        Assert.Equal(4, Assert.Single(await finder.SimilarAsync(Schedule.Sessions[0], CancellationToken.None)).Id);
+    }
+
     private static TalkFinder Finder(ITalkSearch search) => new(
         search,
         new SearchBudget(),

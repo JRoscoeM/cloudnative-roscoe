@@ -475,6 +475,21 @@ input[type="search"] {
   border-top: 1px solid var(--line);
 }
 
+.schedule-body, .schedule-meta { display: flex; flex-direction: column; }
+.schedule-meta { align-items: flex-end; gap: 0.25rem; }
+.schedule-title { font-weight: 600; }
+.schedule-abstract { color: var(--muted); font-size: 0.875rem; }
+
+.room-alternative {
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.625rem;
+  background: var(--bg);
+  border-radius: 8px;
+  font-size: 0.9375rem;
+}
+
+.room-alternative a { color: var(--accent); font-weight: 700; }
+
 .schedule li:first-child { border-top: 0; }
 .schedule-time { font-weight: 700; }
 .schedule-room { color: var(--muted); font-size: 0.875rem; }

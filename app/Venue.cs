@@ -22,11 +22,9 @@ public static class Venue
 
     public static readonly IReadOnlyList<RoomDefinition> Rooms =
     [
-        new("main-hall", "Main Hall", 800, new(8, 8, 344, 112)),
-        new("room-101", "Room 101", 120, new(8, 128, 168, 96)),
-        new("room-102", "Room 102", 80, new(184, 128, 168, 96)),
-        new("room-201", "Room 201", 60, new(8, 296, 168, 96)),
-        new("room-202", "Room 202", 150, new(184, 296, 168, 96)),
+        new("main-hall", "Main Hall", 20, new(8, 8, 344, 112)),
+        new("room-101", "Room 101", 5, new(8, 128, 168, 96)),
+        new("room-102", "Room 102", 10, new(184, 128, 168, 96)),
     ];
 
     public static readonly IReadOnlyList<QueueDefinition> Queues =

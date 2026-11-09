@@ -243,19 +243,34 @@ public class FillForecastTests
 
 public class ScheduleTests
 {
-    // 14:30 at the venue, in Mountain Standard Time.
+    private static readonly DateOnly Monday = new(2026, 11, 9);
     private static readonly DateTimeOffset Afternoon = new(2026, 11, 9, 14, 30, 0, Venue.UtcOffset);
+
+    private static readonly Session[] Talks =
+    [
+        new(1, Monday, "14:00", "15:00", "hall-de", "Hall DE", "Panel"),
+        new(2, Monday, "15:05", "16:00", "hall-de", "Hall DE", "Next door"),
+        new(3, Monday.AddDays(1), "14:00", "15:00", "hall-de", "Hall DE", "Tomorrow"),
+    ];
 
     [Fact]
     public void Finds_the_talk_running_in_a_room()
     {
-        Assert.Equal("Panel", Schedule.Current("main-hall", Afternoon)?.Title);
+        Assert.Equal("Panel", Schedule.Current("hall-de", Afternoon, Talks)?.Title);
+    }
+
+    [Fact]
+    public void A_talk_only_runs_on_its_own_day()
+    {
+        var tuesdayEvening = new DateTimeOffset(2026, 11, 10, 20, 0, 0, Venue.UtcOffset);
+
+        Assert.Null(Schedule.Current("hall-de", tuesdayEvening, Talks));
     }
 
     [Fact]
     public void Back_to_back_talks_keep_a_room_in_use()
     {
-        Assert.Equal(new DateTimeOffset(2026, 11, 9, 18, 30, 0, Venue.UtcOffset), Schedule.InUseUntil("main-hall", Afternoon));
+        Assert.Equal(new DateTimeOffset(2026, 11, 9, 16, 0, 0, Venue.UtcOffset), Schedule.InUseUntil("hall-de", Afternoon, Talks));
     }
 
     [Fact]
@@ -263,16 +278,38 @@ public class ScheduleTests
     {
         var early = new DateTimeOffset(2026, 11, 9, 8, 0, 0, Venue.UtcOffset);
 
-        Assert.Null(Schedule.Current("room-101", early));
-        Assert.Null(Schedule.InUseUntil("room-101", early));
+        Assert.Null(Schedule.Current("hall-de", early, Talks));
+        Assert.Null(Schedule.InUseUntil("hall-de", early, Talks));
     }
 
     [Fact]
-    public void The_venue_day_uses_local_time_not_utc()
+    public void The_next_talk_can_be_on_a_later_day()
     {
-        var eveningAtTheVenue = new DateTimeOffset(2026, 11, 10, 2, 0, 0, TimeSpan.Zero);
+        var evening = new DateTimeOffset(2026, 11, 9, 20, 0, 0, Venue.UtcOffset);
 
-        Assert.Equal(new DateOnly(2026, 11, 9), Schedule.VenueDay(eveningAtTheVenue));
+        Assert.Equal("Tomorrow", Schedule.Next("hall-de", evening, Talks)?.Title);
+    }
+
+    [Fact]
+    public void The_real_schedule_loads_with_sensible_dates()
+    {
+        Assert.True(Schedule.Sessions.Count > 500);
+        Assert.Equal(Schedule.Sessions.Count, Schedule.Sessions.Select(session => session.Id).Distinct().Count());
+        Assert.All(Schedule.Sessions, session =>
+        {
+            Assert.InRange(session.Date, new DateOnly(2026, 11, 8), new DateOnly(2026, 11, 12));
+            Assert.True(session.Ends > session.Starts, session.Title);
+            Assert.False(string.IsNullOrWhiteSpace(session.Title));
+        });
+    }
+
+    [Theory]
+    [InlineData("Hall DE", "hall-de")]
+    [InlineData("250 A-C", "250-a-c")]
+    [InlineData("Halls A-C, Halls 1-5", "halls-a-c-halls-1-5")]
+    public void Room_names_match_the_ids_on_the_schedule(string name, string expected)
+    {
+        Assert.Equal(expected, VenueIds.Slug(name));
     }
 }
 

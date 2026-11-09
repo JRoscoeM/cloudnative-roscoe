@@ -66,6 +66,9 @@ public sealed record RoomStatus(
 
     public string PercentText => HasReading ? $"{Percent}%" : "–";
 
+    // Rooms match talks by name, so renaming a room connects it to the real schedule.
+    public string ScheduleKey => VenueIds.Slug(Name);
+
     // Half-width tiles only fit about 18 characters at the map's type size.
     public string MapName => Area.Width < 200 && Name.Length > 18 ? $"{Name[..17]}…" : Name;
 

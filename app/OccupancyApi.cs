@@ -19,23 +19,49 @@ public static class OccupancyApi
     private const string SensorPolicy = "sensor";
     private const string SnapshotPolicy = "snapshot";
 
-    /// <summary>Limits are per pod. The snapshot limit is what protects the OpenAI credits.</summary>
-    public static void AddOccupancyRateLimits(this IServiceCollection services) =>
+    /// <summary>
+    /// Each caller gets its own window, so nobody can use up another caller's
+    /// limit. These run before token checks. <see cref="SnapshotBudget"/> is the
+    /// separate cap that protects the OpenAI credits.
+    /// </summary>
+    public static void AddOccupancyRateLimits(this IServiceCollection services)
+    {
+        services.AddSingleton<SnapshotBudget>();
         services.AddRateLimiter(options =>
         {
             options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
-            AddWindow(options, SetupPolicy, permitsPerMinute: 10);
-            AddWindow(options, SensorPolicy, permitsPerMinute: 300);
-            AddWindow(options, SnapshotPolicy, permitsPerMinute: 10);
+            AddWindow(options, SetupPolicy, permitsPerMinute: 10, ClientKey);
+            AddWindow(options, SensorPolicy, permitsPerMinute: 30, SensorKey);
+            AddWindow(options, SnapshotPolicy, permitsPerMinute: 3, ClientKey);
         });
+    }
 
-    private static void AddWindow(RateLimiterOptions options, string name, int permitsPerMinute) =>
-        options.AddFixedWindowLimiter(name, window =>
-        {
-            window.PermitLimit = permitsPerMinute;
-            window.Window = TimeSpan.FromMinutes(1);
-            window.QueueLimit = 0;
-        });
+    private static void AddWindow(
+        RateLimiterOptions options,
+        string name,
+        int permitsPerMinute,
+        Func<HttpContext, string> partitionKey) =>
+        options.AddPolicy(name, context => RateLimitPartition.GetFixedWindowLimiter(
+            partitionKey(context),
+            _ => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = permitsPerMinute,
+                Window = TimeSpan.FromMinutes(1),
+                QueueLimit = 0,
+            }));
+
+    // A phone's own token, so requests without it can't reach that phone's limit.
+    private static string SensorKey(HttpContext context) =>
+        BearerToken(context) ?? ClientKey(context);
+
+    // Behind the platform's proxy every connection has the same address, so use
+    // the original client from the forwarded header. A caller can fake this to
+    // get more attempts, which is why SnapshotBudget doesn't depend on it.
+    private static string ClientKey(HttpContext context)
+    {
+        var forwarded = context.Request.Headers["X-Forwarded-For"].ToString().Split(',')[0].Trim();
+        return forwarded.Length > 0 ? forwarded : context.Connection.RemoteIpAddress?.ToString() ?? "unknown";
+    }
 
     public static void MapOccupancyApi(this IEndpointRouteBuilder app)
     {
@@ -101,6 +127,7 @@ public static class OccupancyApi
         [FromForm] string? room,
         IFormFile? photo,
         [FromServices] ISnapshotAnalyzer? analyzer,
+        SnapshotBudget budget,
         IReadingStore store,
         TimeProvider time,
         CancellationToken cancellationToken)
@@ -129,6 +156,12 @@ public static class OccupancyApi
         if (!LooksLikeJpeg(jpeg))
         {
             return Error(StatusCodes.Status415UnsupportedMediaType, "The photo must be a JPEG.");
+        }
+
+        // Taken last, so requests that would never reach OpenAI don't spend it.
+        if (!budget.TryAcquire())
+        {
+            return Error(StatusCodes.Status429TooManyRequests, "Lots of photos right now. Please try again in a minute.");
         }
 
         SnapshotEstimate estimate;

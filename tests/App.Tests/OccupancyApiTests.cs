@@ -202,15 +202,84 @@ public class OccupancyApiTests(WebApplicationFactory<Program> factory) : IClassF
         Assert.Equal(HttpStatusCode.UnsupportedMediaType, response.StatusCode);
     }
 
+    private static Task<HttpResponseMessage> SendPhotoAsync(HttpClient client, string caller, byte[] bytes)
+    {
+        var request = new HttpRequestMessage(HttpMethod.Post, "/api/snapshots") { Content = Photo("room-101", bytes) };
+        request.Headers.Add("X-Forwarded-For", caller);
+        return client.SendAsync(request);
+    }
+
     [Fact]
-    public async Task Snapshots_are_rate_limited()
+    public async Task One_caller_cannot_use_up_the_photo_limit_for_others()
     {
         var client = HostWithAnalyzer(new SnapshotEstimate(30, 50, 40, 0.9)).CreateClient();
 
-        HttpStatusCode last = default;
-        for (var attempt = 0; attempt < 11; attempt++)
+        for (var attempt = 0; attempt < 3; attempt++)
         {
-            last = (await client.PostAsync("/api/snapshots", Photo("room-101", Jpeg))).StatusCode;
+            (await SendPhotoAsync(client, "203.0.113.1", Jpeg)).EnsureSuccessStatusCode();
+        }
+
+        var blocked = await SendPhotoAsync(client, "203.0.113.1", Jpeg);
+        var someoneElse = await SendPhotoAsync(client, "203.0.113.2", Jpeg);
+
+        Assert.Equal(HttpStatusCode.TooManyRequests, blocked.StatusCode);
+        someoneElse.EnsureSuccessStatusCode();
+    }
+
+    [Fact]
+    public async Task Faked_callers_still_hit_the_openai_budget()
+    {
+        var client = HostWithAnalyzer(new SnapshotEstimate(30, 50, 40, 0.9)).CreateClient();
+
+        for (var caller = 0; caller < SnapshotBudget.CallsPerMinute; caller++)
+        {
+            (await SendPhotoAsync(client, $"203.0.113.{caller}", Jpeg)).EnsureSuccessStatusCode();
+        }
+
+        var overBudget = await SendPhotoAsync(client, "198.51.100.1", Jpeg);
+
+        Assert.Equal(HttpStatusCode.TooManyRequests, overBudget.StatusCode);
+    }
+
+    [Fact]
+    public async Task Rejected_photos_do_not_spend_the_openai_budget()
+    {
+        var client = HostWithAnalyzer(new SnapshotEstimate(30, 50, 40, 0.9)).CreateClient();
+
+        for (var caller = 0; caller < SnapshotBudget.CallsPerMinute + 2; caller++)
+        {
+            await SendPhotoAsync(client, $"203.0.113.{caller}", [1, 2, 3, 4]);
+        }
+
+        (await SendPhotoAsync(client, "198.51.100.1", Jpeg)).EnsureSuccessStatusCode();
+    }
+
+    [Fact]
+    public async Task Requests_without_a_token_cannot_block_a_real_sensor()
+    {
+        var client = Host().CreateClient();
+        var token = await TokenAsync(client, "room-101");
+
+        for (var attempt = 0; attempt < 40; attempt++)
+        {
+            await ReportAsync(client, "room-101", 1, token: null);
+        }
+
+        var response = await ReportAsync(client, "room-101", 42, token);
+
+        Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task A_sensor_token_is_rate_limited()
+    {
+        var client = Host().CreateClient();
+        var token = await TokenAsync(client, "room-101");
+
+        HttpStatusCode last = default;
+        for (var attempt = 0; attempt < 31; attempt++)
+        {
+            last = (await ReportAsync(client, "room-101", 1, token)).StatusCode;
         }
 
         Assert.Equal(HttpStatusCode.TooManyRequests, last);

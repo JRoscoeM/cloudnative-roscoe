@@ -9,6 +9,8 @@ public sealed record SnapshotEstimate(int PeopleVisible, int FullnessPercent, in
 
 public sealed class SnapshotFailedException(string message) : Exception(message);
 
+public sealed class SnapshotTimedOutException : Exception;
+
 public interface ISnapshotAnalyzer
 {
     Task<SnapshotEstimate> AnalyzeAsync(byte[] jpeg, RoomDefinition room, CancellationToken cancellationToken);
@@ -17,6 +19,9 @@ public interface ISnapshotAnalyzer
 /// <summary>Sends one photo to OpenAI and keeps only the numbers it returns.</summary>
 public sealed class OpenAiSnapshotAnalyzer(OpenAIClient client, string model) : ISnapshotAnalyzer
 {
+    // Connections to the app close at about 15 seconds, so give up first and say why.
+    private static readonly TimeSpan TimeLimit = TimeSpan.FromSeconds(12);
+
     private const string Instructions =
         "You estimate how full a conference room is from one attendee's photo. " +
         "Report the people you can see, how full the seating and standing space looks, " +
@@ -57,13 +62,29 @@ public sealed class OpenAiSnapshotAnalyzer(OpenAIClient client, string model) : 
             MaxOutputTokenCount = 2000,
         };
 
+        // Estimating a crowd doesn't need long reasoning, and only these models accept the setting.
+        if (model.StartsWith("gpt-5", StringComparison.OrdinalIgnoreCase))
+        {
+#pragma warning disable OPENAI001 // Marked experimental, and the SDK version is pinned.
+            options.ReasoningEffortLevel = ChatReasoningEffortLevel.Minimal;
+#pragma warning restore OPENAI001
+        }
+
+        using var timeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+        timeout.CancelAfter(TimeLimit);
+
         try
         {
-            var completion = (await client.GetChatClient(model).CompleteChatAsync(messages, options, cancellationToken)).Value;
+            var completion = (await client.GetChatClient(model).CompleteChatAsync(messages, options, timeout.Token)).Value;
             activity?.SetTag("gen_ai.usage.input_tokens", completion.Usage.InputTokenCount);
             activity?.SetTag("gen_ai.usage.output_tokens", completion.Usage.OutputTokenCount);
 
             return Parse(completion.Content.Single().Text);
+        }
+        catch (OperationCanceledException) when (timeout.IsCancellationRequested && !cancellationToken.IsCancellationRequested)
+        {
+            activity?.SetStatus(ActivityStatusCode.Error, "timeout");
+            throw new SnapshotTimedOutException();
         }
         catch (Exception e) when (e is System.ClientModel.ClientResultException or JsonException or InvalidOperationException or KeyNotFoundException)
         {

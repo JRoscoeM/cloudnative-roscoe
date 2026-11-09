@@ -182,6 +182,11 @@ public static class OccupancyApi
         {
             estimate = await analyzer.AnalyzeAsync(jpeg, definition, cancellationToken);
         }
+        catch (SnapshotTimedOutException)
+        {
+            AppTelemetry.Snapshots.Add(1, new KeyValuePair<string, object?>("outcome", "timed_out"));
+            return Error(StatusCodes.Status504GatewayTimeout, "That took too long. Please try again.");
+        }
         catch (SnapshotFailedException)
         {
             AppTelemetry.Snapshots.Add(1, new KeyValuePair<string, object?>("outcome", "failed"));

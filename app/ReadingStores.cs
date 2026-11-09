@@ -30,7 +30,11 @@ public sealed class ElasticReadingStore(ElasticsearchClient client) : IReadingSt
     {
         await EnsureIndexAsync(cancellationToken);
 
-        var response = await client.IndexAsync(ReadingDocument.From(reading), IndexName, cancellationToken);
+        // Set explicitly: a string passed positionally here is taken as the document id.
+        var response = await client.IndexAsync(
+            ReadingDocument.From(reading),
+            request => request.Index(IndexName),
+            cancellationToken);
         if (!response.IsValidResponse)
         {
             throw new ReadingStoreException($"Couldn't save a reading: {response.ElasticsearchServerError?.Error?.Type}");

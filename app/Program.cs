@@ -29,8 +29,9 @@ builder.Services.AddSingleton<IVenueStore>(_ => backends.Elasticsearch is { } ve
     ? new ElasticVenueStore(venueClient)
     : new LocalVenueStore());
 builder.Services.AddSingleton<VenueService>();
-builder.Services.AddSingleton(new OrganizerAuth(
-    builder.Configuration["ORGANIZER_KEY"] is { Length: > 0 } organizerKey ? organizerKey : builder.Configuration["SENSOR_KEY"]));
+builder.Services.AddSingleton(services => new OrganizerAuth(
+    builder.Configuration["ORGANIZER_KEY"] is { Length: > 0 } organizerKey ? organizerKey : builder.Configuration["SENSOR_KEY"],
+    services.GetRequiredService<TimeProvider>()));
 builder.Services.AddSingleton<SiteHealthService>();
 builder.Services.AddHttpClient<PrometheusClient>(client =>
 {

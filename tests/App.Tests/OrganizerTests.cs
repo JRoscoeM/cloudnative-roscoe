@@ -184,6 +184,115 @@ public class OrganizerApiTests(WebApplicationFactory<Program> factory) : IClassF
     }
 }
 
+public class OrganizerAuthTests
+{
+    private sealed class Clock : TimeProvider
+    {
+        public DateTimeOffset Now { get; set; } = new(2026, 11, 9, 20, 0, 0, TimeSpan.Zero);
+
+        public override DateTimeOffset GetUtcNow() => Now;
+    }
+
+    private readonly Clock _clock = new();
+
+    [Fact]
+    public void A_token_works_until_it_expires()
+    {
+        var auth = new OrganizerAuth("key", _clock);
+        var token = auth.Token();
+
+        _clock.Now = _clock.Now.AddHours(11);
+        Assert.True(auth.IsValidToken(token));
+
+        _clock.Now = _clock.Now.AddHours(2);
+        Assert.False(auth.IsValidToken(token));
+    }
+
+    [Fact]
+    public void The_expiry_cannot_be_extended_by_editing_the_token()
+    {
+        var auth = new OrganizerAuth("key", _clock);
+        var signature = auth.Token().Split('.')[1];
+        var later = _clock.Now.AddDays(30).ToUnixTimeSeconds();
+
+        Assert.False(auth.IsValidToken($"{later}.{signature}"));
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData("not-a-token")]
+    [InlineData("abc.def")]
+    [InlineData("1.2.3")]
+    public void Malformed_tokens_are_rejected(string? token)
+    {
+        Assert.False(new OrganizerAuth("key", _clock).IsValidToken(token));
+    }
+
+    [Fact]
+    public void A_token_from_another_key_is_rejected()
+    {
+        var other = new OrganizerAuth("other", _clock).Token();
+
+        Assert.False(new OrganizerAuth("key", _clock).IsValidToken(other));
+    }
+}
+
+public class VenueServiceFreshReadTests
+{
+    private sealed class SwitchableStore : IVenueStore
+    {
+        public VenueSnapshot Venue { get; set; } = App.Venue.Default;
+        public bool Broken { get; set; }
+
+        public Task<VenueSnapshot> LoadAsync(CancellationToken cancellationToken) =>
+            Broken ? throw new VenueStoreException("down") : Task.FromResult(Venue);
+
+        public Task SaveRoomAsync(RoomDefinition room, CancellationToken cancellationToken) => Task.CompletedTask;
+
+        public Task SaveQueueAsync(QueueDefinition queue, CancellationToken cancellationToken) => Task.CompletedTask;
+
+        public Task DeleteAsync(string id, CancellationToken cancellationToken) => Task.CompletedTask;
+    }
+
+    private static VenueService Service(IVenueStore store) => new(
+        store,
+        new Microsoft.Extensions.Caching.Memory.MemoryCache(new Microsoft.Extensions.Caching.Memory.MemoryCacheOptions()),
+        Microsoft.Extensions.Logging.Abstractions.NullLogger<VenueService>.Instance);
+
+    [Fact]
+    public async Task A_fresh_read_sees_a_change_the_cache_has_not()
+    {
+        var store = new SwitchableStore();
+        var service = Service(store);
+        await service.GetAsync(CancellationToken.None);
+
+        store.Venue = new VenueSnapshot([new RoomDefinition("only", "Only", 1)], []);
+
+        Assert.Equal("only", Assert.Single((await service.GetFreshAsync(CancellationToken.None))!.Rooms).Id);
+    }
+
+    [Fact]
+    public async Task A_fresh_read_never_falls_back_to_old_data()
+    {
+        var store = new SwitchableStore();
+        var service = Service(store);
+        await service.GetAsync(CancellationToken.None);
+
+        store.Broken = true;
+
+        Assert.Null(await service.GetFreshAsync(CancellationToken.None));
+    }
+
+    [Fact]
+    public async Task The_public_read_still_works_during_an_outage()
+    {
+        var store = new SwitchableStore { Broken = true };
+
+        Assert.NotEmpty((await Service(store).GetAsync(CancellationToken.None)).Rooms);
+    }
+}
+
 public class FloorPlanTests
 {
     private static VenueSnapshot Venue(int rooms, int queues) => new(

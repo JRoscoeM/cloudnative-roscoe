@@ -7,9 +7,12 @@ namespace App;
 /// A key unlocks one organizer token. ORGANIZER_KEY if set, otherwise SENSOR_KEY,
 /// so a venue can start with one key and separate them later.
 /// </summary>
-public sealed class OrganizerAuth(string? key)
+public sealed class OrganizerAuth(string? key, TimeProvider time)
 {
     private const string TokenScope = "organizer:dashboard";
+
+    // Long enough for an event day, short enough that a copied token goes stale.
+    private static readonly TimeSpan TokenLifetime = TimeSpan.FromHours(12);
 
     private readonly SensorAuth _keys = new(key);
 
@@ -17,9 +20,20 @@ public sealed class OrganizerAuth(string? key)
 
     public bool IsKey(string? candidate) => _keys.IsSetupKey(candidate);
 
-    public string Token() => _keys.TokenFor(TokenScope);
+    public string Token()
+    {
+        var expires = (time.GetUtcNow() + TokenLifetime).ToUnixTimeSeconds();
+        return $"{expires}.{_keys.TokenFor($"{TokenScope}:{expires}")}";
+    }
 
-    public bool IsValidToken(string? token) => _keys.IsValidToken(TokenScope, token);
+    public bool IsValidToken(string? token)
+    {
+        var parts = token?.Split('.');
+        return parts is [var expiry, var signature]
+            && long.TryParse(expiry, out var expires)
+            && expires > time.GetUtcNow().ToUnixTimeSeconds()
+            && _keys.IsValidToken($"{TokenScope}:{expiry}", signature);
+    }
 }
 
 public sealed record OrganizerSessionRequest(string? Key);
@@ -140,7 +154,10 @@ public static class OrganizerApi
             return problem;
         }
 
-        var venue = await venues.GetAsync(cancellationToken);
+        if (await venues.GetFreshAsync(cancellationToken) is not { } venue)
+        {
+            return VenueUnavailable();
+        }
         var room = new RoomDefinition(VenueIds.New(request.Name!, venue), request.Name!.Trim(), request.Capacity);
         return await SaveAsync(() => venues.SaveRoomAsync(room, cancellationToken), room);
     }
@@ -152,7 +169,10 @@ public static class OrganizerApi
             return problem;
         }
 
-        var venue = await venues.GetAsync(cancellationToken);
+        if (await venues.GetFreshAsync(cancellationToken) is not { } venue)
+        {
+            return VenueUnavailable();
+        }
         if (venue.FindRoom(id) is null)
         {
             return Error(StatusCodes.Status404NotFound, "That room no longer exists.");
@@ -164,7 +184,10 @@ public static class OrganizerApi
 
     private static async Task<IResult> DeleteRoom(string id, VenueService venues, CancellationToken cancellationToken)
     {
-        var venue = await venues.GetAsync(cancellationToken);
+        if (await venues.GetFreshAsync(cancellationToken) is not { } venue)
+        {
+            return VenueUnavailable();
+        }
         if (venue.FindRoom(id) is null)
         {
             return Error(StatusCodes.Status404NotFound, "That room no longer exists.");
@@ -185,7 +208,10 @@ public static class OrganizerApi
             return problem;
         }
 
-        var venue = await venues.GetAsync(cancellationToken);
+        if (await venues.GetFreshAsync(cancellationToken) is not { } venue)
+        {
+            return VenueUnavailable();
+        }
         var queue = ToQueue(VenueIds.New(request.Name!, venue), request);
         return await SaveAsync(() => venues.SaveQueueAsync(queue, cancellationToken), queue);
     }
@@ -197,7 +223,10 @@ public static class OrganizerApi
             return problem;
         }
 
-        var venue = await venues.GetAsync(cancellationToken);
+        if (await venues.GetFreshAsync(cancellationToken) is not { } venue)
+        {
+            return VenueUnavailable();
+        }
         if (venue.FindQueue(id) is null)
         {
             return Error(StatusCodes.Status404NotFound, "That line no longer exists.");
@@ -209,7 +238,10 @@ public static class OrganizerApi
 
     private static async Task<IResult> DeleteQueue(string id, VenueService venues, CancellationToken cancellationToken)
     {
-        var venue = await venues.GetAsync(cancellationToken);
+        if (await venues.GetFreshAsync(cancellationToken) is not { } venue)
+        {
+            return VenueUnavailable();
+        }
         return venue.FindQueue(id) is null
             ? Error(StatusCodes.Status404NotFound, "That line no longer exists.")
             : await SaveAsync(() => venues.DeleteAsync(id, cancellationToken), new { id });
@@ -279,6 +311,9 @@ public static class OrganizerApi
 
     private static bool IsValidName(string? name) =>
         !string.IsNullOrWhiteSpace(name) && name.Trim().Length <= MaxNameLength;
+
+    private static IResult VenueUnavailable() =>
+        Error(StatusCodes.Status503ServiceUnavailable, "The venue couldn't be checked. Please try again.");
 
     private static IResult Error(int status, string message) =>
         Results.Json(new { error = message }, statusCode: status);

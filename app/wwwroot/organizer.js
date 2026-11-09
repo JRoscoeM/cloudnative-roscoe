@@ -282,11 +282,14 @@ function buildRow(space, kind) {
     const body = isRoom
       ? { name: name.value, capacity: Number(amount.value) }
       : { name: name.value, secondsPerPerson: Number(amount.value) };
-    row.dataset.dirty = '';
-    run(() => api(`/${isRoom ? 'rooms' : 'queues'}/${encodeURIComponent(space.id)}`, {
-      method: 'PUT',
-      body: JSON.stringify(body),
-    }), 'Saved.');
+    run(async () => {
+      await api(`/${isRoom ? 'rooms' : 'queues'}/${encodeURIComponent(space.id)}`, {
+        method: 'PUT',
+        body: JSON.stringify(body),
+      });
+      // Only after it saved: a failed save must keep what was typed.
+      row.dataset.dirty = '';
+    }, 'Saved.');
   });
 
   const link = element('button', 'button button-quiet', 'Sensor link');

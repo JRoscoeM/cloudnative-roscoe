@@ -223,6 +223,27 @@ public sealed class VenueService(IVenueStore store, IMemoryCache cache, ILogger<
             }
         }))!;
 
+    /// <summary>
+    /// Skips the cache, because the other replica may have just changed the
+    /// venue. Use before an edit. Null when the store can't be reached, so an
+    /// edit is never checked against old data.
+    /// </summary>
+    public async Task<VenueSnapshot?> GetFreshAsync(CancellationToken cancellationToken)
+    {
+        try
+        {
+            var venue = Sorted(await store.LoadAsync(cancellationToken));
+            Volatile.Write(ref _lastKnown, venue);
+            cache.Set(CacheKey, venue, CacheFor);
+            return venue;
+        }
+        catch (Exception e) when (e is VenueStoreException or HttpRequestException or Elastic.Transport.TransportException)
+        {
+            logger.LogError(e, "Couldn't load the venue for an edit");
+            return null;
+        }
+    }
+
     public async Task SaveRoomAsync(RoomDefinition room, CancellationToken cancellationToken)
     {
         await store.SaveRoomAsync(room, cancellationToken);

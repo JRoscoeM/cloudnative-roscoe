@@ -11,4 +11,4 @@ resources:
 images:
   - name: app
     newName: ghcr.io/jroscoem/cloudnative-roscoe
-    newTag: 6654f9c
+    newTag: 93490c5
